@@ -1,0 +1,1 @@
+document.write("<iframe width=\"468\" scrolling=\"no\" height=\"60\" frameborder=\"0\" src=\"http://www.haiyaotuan.com/ads/46860.html\" marginwidth=\"0\" marginheight=\"0\" vspace=\"0\" hspace=\"0\" allowtransparency=\"true\"></iframe>");
