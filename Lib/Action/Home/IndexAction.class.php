@@ -8,6 +8,6 @@ class IndexAction extends HomeAction{
 		}	
 		$this->assign('title',C('site_name').''.C('site_by'));
 		$this->assign('pplist',A("Home"));
-	    $this->display('pp_index');
+	    $this->display('piao_index');
     }	
 }?>
