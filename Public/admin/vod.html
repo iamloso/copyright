@@ -134,6 +134,9 @@ function showhtml(vodid){
                 <option value="{$pp.list_id}" <eq name="pp.list_id" value="$vod_cid">selected</eq>>{$pp.list_name}</option>
                 <volist name="pp['son']" id="pp">
                 <option value="{$pp.list_id}" <eq name="pp.list_id" value="$vod_cid">selected</eq>>├ {$pp.list_name}</option>
+					<volist name="pp['son']" id="pp">
+						<option value="{$pp.list_id}" <eq name="pp.list_id" value="$vod_cid">selected</eq>>├ {$pp.list_name}</option>
+					</volist>
                 </volist>
               </volist>
             </select>
@@ -255,6 +258,9 @@ function showhtml(vodid){
           <option value="{$pp.list_id}" <eq name="pp.list_id" value="$vod_cid">selected</eq>>{$pp.list_name}</option>
               <volist name="pp['son']" id="pp">
               <option value="{$pp.list_id}" <eq name="pp.list_id" value="$vod_cid">selected</eq>>├ {$pp.list_name}</option>
+				  <volist name="pp['son']" id="pp">
+					  <option value="{$pp.list_id}" <eq name="pp.list_id" value="$vod_cid">selected</eq>>&nbsp;&nbsp;├ {$pp.list_name}</option>
+				 </volist>  
               </volist>
           </volist></select>&nbsp;&nbsp;
           <select name="vod_stars">
