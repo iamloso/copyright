@@ -20,31 +20,25 @@
       </tr>
       <tr align="center" class="tb_title">
         <td width="50">选中</td>
-        <td width="100">系统模块</td>
         <td width="180">分类名称</td>
         <td width="100">排序ID</td>
         <td width="150">分类模板</td>
-        <td >栏目别名或外部链接</td>
         <td width="100">编辑</td>
       </tr>
       <volist name="listtree" id="pp">
       <tr class="firstalt">
         <td align="center"><input name='list_id[{$pp.list_id}]' type='checkbox' value='{$pp.list_id}' style='border:none' checked><font color="blue">({$pp.list_id})</font></td>
-        <td align="center"><select name="list_sid[{$pp.list_id}]"><option value="1" <eq name="pp.list_sid" value="1">selected</eq>>视频模块</option><option value="2" <eq name="pp.list_sid" value="2">selected</eq>>新闻模块</option><option value="9" <eq name="pp.list_sid" value="9">selected</eq>>外部链接</option></select></td>
         <td align="center"><input type='text' name='list_name[{$pp.list_id}]' value='{$pp.list_name}' class="tbpinput" size=25></td>
         <td align="center"><input type='text' name='list_oid[{$pp.list_id}]' value='{$pp.list_oid}' class="tbpinput" size=10></td>
         <td align="center"><input type='text' name='list_skin[{$pp.list_id}]' value='{$pp.list_skin}' class="tbpinput" size=20></td>
-        <td ><input type='text' name='list_dir[{$pp.list_id}]' value='{$pp.list_dir}' class="tbpinput" style="width:98%;text-align:left"></td>
         <td align="center"><a href="index.php?s=Admin-List-Add-list_id-{$pp.list_id}"><img src="__PUBLIC__/images/edit.gif" alt="编辑" width="14" height="14" border="0" title="编辑"></a> <a href="index.php?s=Admin-List-Del-list_id-{$pp.list_id}" onClick="return confirm('确定删除?')"><img src="__PUBLIC__/images/del.gif" alt="删除" width="14" height="14" border="0" title="删除"></a> <a href="index.php?s=Admin-List-Add-list_pid-{$pp.list_id}" ><img src="__PUBLIC__/images/add.gif" alt="添加二级分类" width="14" height="14" border="0" title="添加二级分类"></a></td>
       </tr>
       <volist name="pp['son']" id="pp">
       <tr class="firstalt">
         <td align="center"><input name='list_id[{$pp.list_id}]' type='checkbox' value='{$pp.list_id}' style='border:none' checked>({$pp.list_id})</td>
-        <td align="center"><select name="list_sid[{$pp.list_id}]" class="tbsselect"><option value="1" <eq name="pp.list_sid" value="1">selected</eq>>视频模块</option><option value="2" <eq name="pp.list_sid" value="2">selected</eq>>新闻模块</option></select></td>
         <td align="center"><input type='text' name='list_name[{$pp.list_id}]' value='{$pp.list_name}' class="tbsinput" size=25></td>
         <td align="center"><input type='text' name='list_oid[{$pp.list_id}]' value='{$pp.list_oid}' class="tbsinput" size=10></td>
         <td align="center"><input type='text' name='list_skin[{$pp.list_id}]' value='{$pp.list_skin}' class="tbsinput" size=20></td>
-        <td ><input type='text' name='list_dir[{$pp.list_id}]' value='{$pp.list_dir}' class="tbsinput" style="width:98%; text-align:left"></td>
         <td align="center"><a href="index.php?s=Admin-List-Add-list_id-{$pp.list_id}"><img src="__PUBLIC__/images/edit.gif" alt="编辑" width="14" height="14" border="0" title="编辑"></a> <a href="index.php?s=Admin-List-Del-list_id-{$pp.list_id}" onClick="return confirm('确定删除?')"><img src="__PUBLIC__/images/del.gif" alt="删除" width="14" height="14" border="0" title="删除"></a></td>
       </tr>
       </volist>
