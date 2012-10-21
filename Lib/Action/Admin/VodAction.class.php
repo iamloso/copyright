@@ -94,7 +94,7 @@ class VodAction extends BaseAction{
 		$array['vod_year_list']=explode(',',C('play_year'));		
 		$this->ppvod_play();
 		$this->assign($array);
-		$this->assign('listvod',F('_ppvod/listvod'));
+		$this->assign('listvod',F('_ppvod/listtree'));
 		$this->display(APP_PATH.'/Public/admin/vod.html');
     }	
 	
