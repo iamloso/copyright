@@ -5,13 +5,27 @@
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/home/css/style.css" />
 <script language="javascript" type="text/javascript" src="__ROOT__/Public/home/js/jquery.js"> </script>
 
-<title>无标题文档</title>
+<title>中数版权</title>
 </head>
 
 <body>
+<php>$vod_stars=$pplist->ppvod('num:10;order:vod_stars desc,vod_hits desc');
+$vod_news=$pplist->ppvod('num:15;order:vod_addtime desc');
+$vod_movie_pic=$pplist->ppvod('pid:1;num:2');
+$vod_movie_con=$pplist->ppvod('pid:1;num:1');
+$vod_movie_list=$pplist->ppvod('pid:1;num:2,30');
+$vod_tv_pic=$pplist->ppvod('pid:2;num:2');
+$vod_tv_con=$pplist->ppvod('pid:2;num:1');
+$vod_tv_list=$pplist->ppvod('pid:2;num:2,30');
+$vod_kt_pic=$pplist->ppvod('pid:3;num:2');
+$vod_kt_con=$pplist->ppvod('pid:3;num:1');
+$vod_kt_list=$pplist->ppvod('pid:3;num:2,30');
+$vod_zy_pic=$pplist->ppvod('pid:4;num:2');
+$vod_zy_con=$pplist->ppvod('pid:4;num:1');
+$vod_zy_list=$pplist->ppvod('pid:4;num:2,30');
+$vod_hot_80=$pplist->ppvod('num:80;order:vod_golder,vod_hits desc');</php>
 
-<iframe src="__ROOT__/Public/home/piao_head.html" scrolling="no" width=100%  height="213px"frameborder=0 id=""></iframe>
-
+<include file="piao_header" />
 <div style="clear:both"></div>
 
 <div class="recommended">
@@ -2164,10 +2178,6 @@ obja.style.color="#fff";
   </tr>
   <th height="10"> </th>
 </table>
-
-     
-     
-     
      </td>
       <td  style="width:246px; height:265px;border-top:1px #CCC solid; border-right:1px #CCC solid; text-align:center;" align="center">
      <table  class="Classifiedfenlei" align="center" >
@@ -2293,10 +2303,6 @@ obja.style.color="#fff";
   </tr>
   <th height="10"> </th>
 </table>
-
-     
-     
-     
      </td>
       <td  style="width:246px; height:265px;border-top:1px #CCC solid ;  text-align:center;" align="center">
      <table width="244" align="center"  class="Classifiedfenlei"  style="border:0" >
@@ -2422,18 +2428,12 @@ obja.style.color="#fff";
   </tr>
   <th height="10"> </th>
 </table>
-
-     
-     
-     
      </td>
   
   </tr>
 
 </table>
 </div>
-
-
 <div id="newA8" style=" display:none;">
  <table width="987" height="367" border="0" cellspacing="0" cellpadding="0" >
     <tr align="center">
