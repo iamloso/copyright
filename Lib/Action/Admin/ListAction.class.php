@@ -3,7 +3,7 @@ class ListAction extends BaseAction{
 	// 显示分类
     public function show(){
 	    $sid=$_GET['sid'];
-		if($sid){$where='list_sid='.$sid;}
+		//if($sid){$where='list_sid='.$sid;}
 	    $rs=D("Admin.List");
 		$list=$rs->where($where)->order('list_oid asc')->select();
 		if($list){
@@ -33,6 +33,7 @@ class ListAction extends BaseAction{
 		$this->assign($array);
 		$this->assign('listvod',F('_ppvod/listvod'));
 		$this->assign('listnews',F('_ppvod/listnews'));
+		$this->assign('ppmenu',F('_ppvod/listtree'));
 		$this->display(APP_PATH.'/Public/admin/list.html');
     }
 	
