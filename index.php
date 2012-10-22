@@ -15,4 +15,5 @@ require(THINK_PATH.'/ThinkPHP.php');
 $App = new App();
 //初始化
 $App->run();
+
 ?>
