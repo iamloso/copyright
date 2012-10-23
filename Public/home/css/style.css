@@ -405,7 +405,7 @@ paginator#body {
 /**************************************图片分类****************************/
 .tufenlei{width:987px;margin:0 auto;}
 .tufenlei ul{ text-align:center; float:left; text-align:center;}
-.tufenlei ul li{width:140px; height:123px; float:left; text-align:center; padding-left:18px;}
+.tufenlei ul li{width:155px; height:123px; float:left; text-align:center; padding-left:9px;}
 .tuleipic{width:140px; height:93px; text-align:center; }
 .tuleiming{ width:140px; height:30px; text-align:center; font-size:13px; color:#666;  font-weight:bold;}
 .category {
@@ -418,8 +418,8 @@ paginator#body {
 }
 
 #main {
-    position: relative;
-    width: 960px;
+  
+    width: 980px;
     margin: 0px auto;
 }
 .tools, .dir {
@@ -440,7 +440,7 @@ element {
     float: left;
     height: auto;
     overflow: hidden;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 
@@ -495,6 +495,17 @@ element {
     overflow: hidden;
     margin-top: 10px;
 }
+
+/*********************************************图片列表页面********************************************/
+.tuliebiao{width:987px;margin:0 auto;}
+.tuliebiaoli{width:184px; height:230px; float:left; text-align:center; padding-left:13px; padding-top:10px;}
+.tuliebiaoimg{width:168px; height:168px; text-align:center;}
+.tuliebiaomingz{ width:168px; height:30px; line-height:40px; text-align:center;}
+.tuliebiaomingz span{ padding-left:5px; float:12px; color:#900;}
+.tuliebiaoming{ width:168px; height:30px; text-align:center;}
+.tuliebiaoming ul{width:168px; height:30px; text-align:center;float:left; }
+.tuliebiaoming ul li{height:30px; width:55px; float:left; text-align:center; }
+
 
 
 
