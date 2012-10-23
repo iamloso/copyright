@@ -264,25 +264,21 @@ function showhtml(vodid){
               </volist>
           </volist></select>&nbsp;&nbsp;
           <select name="vod_stars">
-          <option value="1" <eq name="vod_stars" value="1">selected</eq>>一星</option>
-          <option value="2" <eq name="vod_stars" value="2">selected</eq>>二星</option>
-          <option value="3" <eq name="vod_stars" value="3">selected</eq>>三星</option>
-          <option value="4" <eq name="vod_stars" value="4">selected</eq>>四星</option>
-          <option value="5" <eq name="vod_stars" value="5">selected</eq>>五星</option>
+          <option value="0" <eq name="vod_stars" value="0">selected</eq>>授权地区</option>
+          <option value="1" <eq name="vod_stars" value="2">selected</eq>>国内</option>
+          <option value="2" <eq name="vod_stars" value="3">selected</eq>>国外</option>
+          <option value="3" <eq name="vod_stars" value="4">selected</eq>>国内外</option>
           </select>&nbsp;&nbsp;
           <select name="vod_del">
           <option value="0" <eq name="vod_del" value="0">selected</eq>>显示</option>
           <option value="1" <eq name="vod_del" value="1">selected</eq>>隐藏</option>
           </select>&nbsp;&nbsp;
           <select name="vod_color">
-          <option value=''>颜色</option>                                            
-          <option value='#000000' style='background-color:#000000' <eq name="news_color" value="#000000">selected</eq>></option>
-          <option value='#FFFFFF' style='background-color:#FFFFFF' <eq name="news_color" value="#FFFFFF">selected</eq>></option>
-          <option value='#008000' style='background-color:#008000' <eq name="news_color" value="#008000">selected</eq>></option>
-          <option value='#FFFF00' style='background-color:#FFFF00' <eq name="news_color" value="#FFFF00">selected</eq>></option>
-          <option value='#FF0000' style='background-color:#FF0000' <eq name="news_color" value="#FF0000">selected</eq>></option>
-          <option value='#0000FF' style='background-color:#0000FF' <eq name="news_color" value="#0000FF">selected</eq>></option>
-          <option value=''>无色</option>           
+          <option value=''>授权期限</option>                                            
+          <option value='1'  <eq name="news_color" value="1">selected</eq>>1-3年</option>
+          <option value='2'  <eq name="news_color" value="2">selected</eq>>3-5年</option>
+          <option value='3'  <eq name="news_color" value="3">selected</eq>>5-10年</option>
+          <option value='4'  <eq name="news_color" value="4">selected</eq>>10年以上</option>
           </select>&nbsp;&nbsp;
           <select name="vod_year">
           <option value=''>年代</option>
@@ -301,7 +297,7 @@ function showhtml(vodid){
           <volist name="vod_language_list" id="val">
           <option value="{$val}" <eq name="val" value="$vod_language">selected</eq>>{$val}</option>
           </volist>
-          </select>&nbsp;&nbsp;<label>栏目|权重|审核|颜色|年代|地区|语言</label>
+          </select>&nbsp;&nbsp;<label>栏目|地区|审核|期限|年代|地区|语言</label>
           </td>
         </tr>
         <tr class="firstalt">
@@ -322,15 +318,60 @@ function showhtml(vodid){
         </tr>
         <tr class="firstalt">
           <td align="right">总时长：</td>
-          <td><input name="vod_keywords" type="text" size="11" value="{$vod_keywords}">&nbsp;&nbsp;集数：<input name="vod_skin" size="10" type="text" value="{$vod_skin}" style="text-align:center">&nbsp;&nbsp;录入：<input name="vod_inputer" type="text" size="10" value="{$vod_inputer}" style="text-align:center">&nbsp;&nbsp;素材介质：<input name="vod_gold" type="text" size="5" value="{$vod_gold}" style="text-align:center">&nbsp;&nbsp;节目编号：<input name="vod_golder" type="text" size="5" value="{$vod_golder}" style="text-align:center">&nbsp;&nbsp;顶：<input name="vod_up" size="5" type="text" value="{$vod_up}" style="text-align:center">&nbsp;&nbsp;踩：<input name="vod_down" size="5" type="text" value="{$vod_down}" style="text-align:center"></td>
+          <td><input name="vod_keywords" type="text" size="11" value="{$vod_keywords}">&nbsp;&nbsp;集数：<input name="vod_skin" size="10" type="text" value="{$vod_skin}" style="text-align:center">&nbsp;&nbsp;录入：<input name="vod_inputer" type="text" size="10" value="{$vod_inputer}" style="text-align:center">&nbsp;&nbsp;素材介质：<input name="vod_gold" type="text" size="5" value="{$vod_gold}" style="text-align:center">&nbsp;&nbsp;节目编号：<input name="vod_golder" type="text" size="5" value="{$vod_golder}" style="text-align:center">首播时间：<input name="vod_up" size="5" type="text" value="{$vod_up}" style="text-align:center">&nbsp;&nbsp;踩：<input name="vod_down" size="5" type="text" value="{$vod_down}" style="text-align:center"></td>
         </tr> 
         <tr class="firstalt">
           <td align="right">上传海报：</td>
           <td><span style="float:left; margin-top:5px"><input name="vod_pic" type="hidden" size="60" maxlength="255" value="{$vod_pic}" onMouseOver="if(this.value)showpic(event, '{&upload_path}/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_pic" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span></td>
         </tr>              
         <tr class="firstalt">
-			<td align="right">授权方公司名称：</td><td></td>
+			<td align="right">授权方公司名称：</td>
+			<td><input name="company" value="" type="text"/> </td>
 		</tr>	
+        <tr class="firstalt">
+			<td align="right">联系人：</td>
+			<td><input name="people" value="" type="text"/> </td>
+		</tr>	
+		 <tr class="firstalt">
+			<td align="right">手机：</td>
+			<td><input name="phone" value="" type="text"/> </td>
+		</tr>	
+		 <tr class="firstalt">
+			<td align="right">电话：</td>
+			<td><input name="tele" value="" type="text"/> </td>
+		</tr>
+		 <tr class="firstalt">
+			<td align="right">邮箱：</td>
+			<td><input name="email" value="" type="text"/> </td>
+		</tr>
+		 <tr class="firstalt">
+			<td align="right">版权报价：</td>
+			<td><input name="email" value="" type="text"/> </td>
+		</tr>
+		 <tr class="firstalt">
+			<td align="right">授权渠道：</td>
+			<td><input name="ditch" value="0" type="checkbox" />互联网 <input name="ditch" value="1" type="checkbox" />无线网  
+				<input name="ditch" value="2" type="checkbox"/>电视台  <input name="ditch" value="3" type="checkbox"/>院线
+				<input name="ditch" value="4" type="checkbox"/>音像  <input name="ditch" value="5" type="checkbox"/>其他
+				<input name="ditch" value="0|1|2|3|4|5" type="checkbox"/>全部
+			</td>
+		</tr>
+		<tr class="firstalt">
+			<td align="right">授权方式：</td>
+			<td><input name="way" value="0" type="checkbox" />独家 <input name="way" value="1" type="checkbox" />非独家  
+			</td>
+		</tr>
+		<tr class="firstalt">
+			<td align="right">热门推荐：</td>
+			<td><input name="hot" value="0" type="radio" checked="true"/>否 <input name="hot" value="1" type="radio" />是  
+			</td>
+		</tr>
+		<tr class="firstalt">
+			<td align="right">当月推荐：</td>
+			<td><input name="mhot" value="0" type="radio" checked="true"/>否 <input name="mhot" value="1" type="radio" />是  
+			</td>
+		</tr>
+		<!--
         <tbody id="urlmoban" style="display:none;">
         <tr class="firstalt">
           <td align="right">数据地址：</td>
@@ -358,9 +399,9 @@ function showhtml(vodid){
         <tr class="firstalt">
           <td align="right">新加地址：</td>
           <td><a onClick="addurl();" class="serverlist"><img src="__PUBLIC__/images/add.gif" alt="添加新播放器" border="0"> 点击新加一组播放器</a></td>
-        </tr> 
+	  </tr>--> 
         <tr class="firstalt">
-          <td align="right">视频简介：</td>
+          <td align="right">简介：</td>
           <td><textarea id="content" name="vod_content" style="width:715px;height:300px;">{$vod_content}</textarea></td>
         </tr>
         <tr class="firstalt">
