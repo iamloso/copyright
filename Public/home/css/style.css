@@ -17,31 +17,26 @@ td tr th table{padding:0px;}
 
 
 /****************************************************************公用部分结束*********************************************************************/
-
 .top{width:987px; height:153px; background:url(../images/topbg.png) no-repeat; margin:0 auto;}
-.logo{padding-top:43px; padding-left:36px; width:242px; height:94px; background:url(../images/logobg.png) no-repeat right ; float:left;}
+.logo{padding-top:43px; padding-left:36px; width:242px; height:94px; background:url(../images/logobg.png) no-repeat  right ; float:left;}
 .logoleft{width:708px; height:153px; float:left;}
-.zhongshu{padding-left:80px; padding-top:45px; width:125px; height:31px; font-size:30px; font-family:"Arial Black", Gadget, sans-serif; font-weight:bold; color:#333;  }
-.kehu{padding-top:55px; padding-left:443px; width:262px; height:18px;}
-.kehu ul{width:262px; height:16px;}
+.zhongshu{padding-left:80px; padding-top:45px; width:125px; height:74px; font-size:30px; font-family:"Arial Black", Gadget, sans-serif; font-weight:bold; color:#333;  }
+.kehu{padding-top:9px; padding-left:443px; width:262px; height:24px;}
+.kehu ul{width:262px; height:24px;}
 .kehu ul li{padding-left:10px; float:left; font-size:14px; color:#825358;}
 .kehu ul li a{ font-size:14px; color:#825358;}
 .kehu ul li a:hover{ text-decoration:underline;}
-/*****************************************************************top头部*********************************************************************/
 
+
+
+/*****************************************************************top头部*********************************************************************/
 .nav{ height:60px; background:url(../images/navbg.png) repeat-x; margin:0 auto;}
 .navcontent{width:987px; height:55px; margin:0 auto;}
 .navcontent ul{ padding-top:6px;  height:47px; margin:0 auto; }
-.navcontent ul li {width:89px; height:48px;}
-.navdaohang{width:89px; height:48px; float:left;}
-.navcontent ul a:hover ul li{ font-family:"微软雅黑" font-size:16px; color:#4b4b4b;}
-.navcontent ul a:hover ul li p{ font-family:"微软雅黑"  font-size:10px; color:#4b4b4b;}
-.navcontent ul li ul li{ font-family:"微软雅黑" width:89px; height:20px; font-size:16px; color:#CCC; font-weight:bold; text-align:center;}
-.navcontent ul li ul li a{  font-family:" 微软雅黑" font-size:16px; color:#CCC;}
-.navcontent ul li ul li a:hover{ font-family:"微软雅黑" font-size:16px; color:#4b4b4b;}
-.navcontent ul li ul li p { font-size:10px;  color:#CCC; text-align:center; font-weight:normal; line-height:10px;}
-.navcontent ul li ul li p a:hover{ font-size:10px; color:#4b4b4b;}
-.dangqianwei{width:265px; height:23px; float:left; padding-left:5px; padding-top:12px;}
+.navcontent ul li {width:89px; height:48px;  float:left; text-align:center; line-height:23px;}
+.navcontent ul li a{font-family:"微软雅黑"; width:89px; height:48px; font-size:15px; color:#CCC; font-weight:bold; text-align:center; text-decoration:none;}
+.navcontent ul li  p { font-size:10px;  color:#ccc; text-align:center; font-weight:normal; line-height:10px;text-decoration:none;}
+.dangqianwei{width:265px; height:23px; float:left; padding-left:5px; padding-top:12px;text-decoration:none;}
 .dangqianwei a{ font-size:13px; color:#666; padding-right:5px;padding-left:5px;}
 .dangqianwei a:hover{ font-size:13px; color:#000000; text-decoration:underline;}
 /*****************************************************************导航*********************************************************************/
