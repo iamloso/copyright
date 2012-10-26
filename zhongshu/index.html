@@ -1,0 +1,1580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet"; type="text/css" href="css/style.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script language="javascript" type="text/javascript" src="js/jquery.js"> </script>
+
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<iframe src="head.html" scrolling="no" width=100%  height="213px"frameborder=0 id=""></iframe>
+
+
+<div style="clear:both"></div>
+
+<div class="recommended">
+<div class="recommendedmark"></div>
+<div class="search">
+<form>
+  <select name="select">
+<option  selected="selected">电影</option>
+<option>电视剧</option>
+<option>动画片</option>
+<option>图片素材</option>
+<option>视频素材</option>
+<option>科教记录</option>
+<option>漫画</option>
+<option>综艺娱乐</option>
+<option>版权登记</option>
+<option>版权服务</option>
+
+</select>
+
+<select>
+<option selected="selected">电影</option>
+<option>电视剧</option>
+<option>动画片</option>
+<option>图片素材</option>
+<option>视频素材</option>
+<option>科教记录</option>
+<option>漫画</option>
+<option>综艺娱乐</option>
+<option>版权登记</option>
+<option>版权服务</option>
+
+</select>
+<select>
+<option selected="selected">电影</option>
+<option>电视剧</option>
+<option>动画片</option>
+<option>图片素材</option>
+<option>视频素材</option>
+<option>科教记录</option>
+<option>漫画</option>
+<option>综艺娱乐</option>
+<option>版权登记</option>
+<option>版权服务</option>
+
+</select>
+</form>
+<div class="inputkuang">
+  <input style="width:245px; height:25px;" type="text" />
+  <input type="image" style="width:66px; height:27px;" src="images/searchbutton.png" />
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div style="clear:both"></div>
+
+
+
+<SCRIPT type=text/javascript>
+// 幻灯片切换功能
+var timer = null;
+var offset = 5000;
+var index = 6;/* 控制图片播放位置 */
+
+//大图交替轮换
+function slideImage(i){
+	var id = 'image_'+ target[i];
+		$('#'+ id).animate({opacity: 1}, 800, function(){
+			$(this).find('.word').animate({height: 'show'}, 'slow');
+		}).show().siblings(':visible').find('.word').animate({height: 'hide'},'fast',function(){
+			$(this).parent().animate({opacity: 0}, 800).hide();
+	});
+}
+//bind thumb a
+function hookThumb(){    
+	$('#thumbs li a').bind('click', function(){
+		if(timer){
+			clearTimeout(timer);
+		}                
+		var id = this.id;            
+		index = getIndex(id.substr(6));
+		rechange(index);
+		slideImage(index); 
+		timer = window.setTimeout(auto, offset);  
+		this.blur();            
+		return false;
+	});
+}
+//bind next/prev img
+function hookBtn(){
+	$('#thumbs li img').filter('#play_prev,#play_next').bind('click', function(){
+		if(timer){
+			clearTimeout(timer);
+		}
+		var id = this.id;
+		if(id == 'play_prev'){
+			index--;
+			if(index < 0) index = 6;
+		}else{
+			index++;
+			if(index > 6) index = 0;
+		}
+		rechange(index);
+		slideImage(index);
+		timer = window.setTimeout(auto, offset);
+	});
+}
+//得到指标
+function getIndex(v){
+	for(var i=0; i < target.length; i++){
+		if(target[i] == v)
+		return i;
+	}
+}
+function rechange(loop){
+    var id = 'thumb_'+ target[loop];
+    $('#thumbs li a.current').removeClass('current');
+    $('#'+ id).addClass('current');
+}
+function auto(){
+    index++;
+    if (index > 6){
+        index = 0;
+    }
+    rechange(index);
+    slideImage(index);
+    timer = window.setTimeout(auto, offset);
+}
+$(function(){    
+    //change opacity
+    $('div.word').css({opacity: 0.85});
+    auto();  
+    hookThumb(); 
+    hookBtn();
+    
+});
+
+var target = ["xixi-01","xixi-02","xixi-03","xixi-04","xixi-05","xixi-06","xixi-07"];
+
+</SCRIPT>
+
+<div class="hotpicgundong">
+<DIV id=featured>
+<DIV id=image_xixi-01 class=items><A 
+title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果" 
+href="http://www.jsfoot.com/html5/items/2011-08-29/153.html"><img src="images/indexlunbopic1.png" /></A> 
+<DIV class=word  style="background:none">
+<H3>&nbsp;</H3></DIV></DIV>
+<DIV id=image_xixi-02 class=items><A 
+title="jquery 图片放大镜 图片类似放大镜效果鼠标滑过小图异步加载中图、大图" 
+href="http://www.jsfoot.com/jquery/items/2011-08-28/151.html"><img src="images/indexlunbopic2.png" /></A> 
+<DIV class=word style="background:none">
+<H3>&nbsp;</H3></DIV></DIV>
+<DIV id=image_xixi-03 class=items><A 
+title="jquery cycle 循环幻灯片插件多功能幻灯片插件支持多种幻灯片特效" 
+href="http://www.jsfoot.com/jquery/items/2011-08-24/143.html"><img src="images/indexlunbopic3.png" /></A> 
+<DIV class=word style="background:none">
+<H3>&nbsp;</H3></DIV></DIV>
+<DIV id=image_xixi-04 class=items><A 
+title="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" 
+href="http://www.jsfoot.com/jquery/items/2011-08-22/139.html"><img src="images/indexlunbopic4.png" /></A> 
+<DIV class=word style="background:none">
+<H3>&nbsp;</H3></DIV></DIV>
+<DIV id=image_xixi-05 class=items><A 
+title="jquery 图片特效用CSS3和HTML5制作仿动画头条报纸缩小到放大翻转图片展示" 
+href="http://www.jsfoot.com/jquery/items/2011-08-13/120.html"><img src="images/indexlunbopic5.png" /></A> 
+<DIV class=word style="background:none">
+<H3>&nbsp;</H3></DIV></DIV>
+</DIV><!--featured end-->
+
+
+<DIV id=thumbs>
+<UL>
+  <LI class="first btnPrev" ><IMG id=play_prev alt=上一个 
+ src="images/gundongbuttona.png" 
+ ></LI>
+
+
+  <LI class=slideshowItem><A id=thumb_xixi-01 
+  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-04"><IMG 
+  alt="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" 
+   src="images/indexlunbopicx1.png"></A> </LI>
+  <LI class=slideshowItem><A id=thumb_xixi-02 
+  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-05"><IMG 
+  alt="jquery 图片特效用CSS3和HTML5制作仿动画头条报纸缩小到放大翻转图片展示" 
+  src="images/indexlunbopicx2.png"></A> </LI>
+  <LI class=slideshowItem><A id=thumb_xixi-03 
+  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-06"><IMG 
+  alt="jquery 图片切换插件制作banner图片滚动播放、按钮控制图片滚动、选项卡等基于多功能jquery slide插件" 
+ src="images/indexlunbopicx3.png"></A> </LI>
+  <LI class=slideshowItem><A id=thumb_xixi-04 
+  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-07"><IMG 
+  alt=" javascript滚动图片按钮控制图片左右自动滚动javascript滚动图片按钮控制图片左右自动滚动javascript滚动图片按钮控制图片左右自动滚动" 
+  src="images/indexlunbopicx4.png"></A> </LI>
+   <LI class=slideshowItem><A id=thumb_xixi-05 
+  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-07"><IMG 
+  alt=" javascript滚动图片按钮控制图片左右自动javascript滚动图片按钮控制图片左右自动滚动javascript滚动图片按钮控制图片左右自动滚动滚动" 
+ src="images/indexlunbopicx5.png"></A> </LI>
+ 
+ 
+  
+  
+  <LI class="last btnNext"><IMG id=play_next alt=下一个 
+   src="images/gundongbuttonb.png"
+  ></LI></UL></DIV><!--thumbs end--><!--演示内容结束-->
+<SCRIPT type=text/javascript>
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14442e1b4a44fe4f270d8e118982bed2' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+</div>
+
+
+
+
+
+
+
+<div style="clear:both"></div>
+<div class="hot">
+<div class="hotmark"></div>
+<div class="hotnav">
+<ul>
+<li id="newB1"  class=""><a class="" onmouseover="RectChange('new',1,8,'fbg')" href="##">电影</a></li>
+<li id="newB2" class=""><a class=""  onmouseover="RectChange('new',2,8,'fbg')" href="##">电视剧</a></li>
+<li id="newB3" class=""><a  class=""  onmouseover="RectChange('new',3,8,'fbg')" href="##">动画片</a></li>
+<li id="newB4" class=""><a class=""  onmouseover="RectChange('new',4,8,'fbg')" href="##">图片素材</a></li>
+<li id="newB5" class=""><a class=""  onmouseover="RectChange('new',5,8,'fbg')" href="##">视频素材</a></li>
+<li id="newB6" class=""><a  class=""  onmouseover="RectChange('new',6,8,'fbg')" href="##">科教纪录</a></li>
+<li id="newB7" class=""><a  class=""  onmouseover="RectChange('new',7,8,'fbg')" href="##">漫画</a></li>
+<li id="newB8" class=""><a  class=""  onmouseover="RectChange('new',8,8,'fbg')" href="##">综艺娱乐</a></li>
+<script language="javascript"  type="text/javascript">
+
+	window.onload= function(){RectChange('new',1,8,'fbg')}
+function RectChange(id,cur,len,fbg) {
+   for(i=1;i<=len;++i)
+   {
+	  document.getElementById(id + "A" +i).style.display='none';
+	  document.getElementById(id + "B" +i).className='';
+   }
+     document.getElementById(id + "A" +cur).style.display='block';
+     document.getElementById(id + "B" +cur).className='fbg';
+ for(i=1;i<=len;++i){	
+  var objli=document.getElementById(id + "B" +i);
+      var obja=objli.childNodes[0];
+	  obja.style.color="#333";
+ 
+ var objli=document.getElementById(id + "B" +cur);
+var obja=objli.childNodes[0];
+obja.style.color="#fff";
+}
+}
+</script>
+
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+<div style="clear:both"></div>
+<div class="indexhotmor">
+<div class="indexhotmore">
+<a href="##">更多more>></a>
+</div>
+</div>
+<div style="height:10px; width:980px; margin:0 auto;"></div>
+<div style="clear:both">
+ 
+</div>
+
+<div id="newA1" class="hotpicl" style="display:">
+<ul>
+<li>
+  <div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+
+ </div>
+<div id="newA2" class="hotpicl"  style="display:none;">
+ <ul>
+<li>
+  <div class="hotpicimg"><a href="##"></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+</div>
+
+
+<div id="newA3" class="hotpicl"  style="display:none;">
+<ul>
+<li>
+  <div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div id="newA4" class="hotpicl"  style="display:none;">
+<ul>
+<li>
+  <div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+</div>
+
+
+<div id="newA5" class="hotpicl"  style="display:none;">
+<ul>
+<li>
+  <div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+</div>
+
+
+
+
+<div id="newA6" class="hotpicl"  style="display:none;">
+ <ul>
+<li>
+  <div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+</div>
+
+<div id="newA7" class="hotpicl"  style="display:none;">
+<ul>
+<li>
+  <div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+</div>
+
+<div id="newA8" class="hotpicl"  style="display:none;">
+<ul>
+<li>
+  <div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+
+<li>
+<div class="hotpicimg"><a href="##"><img src="images/hotpic.png" /></a></div>
+<div class="hotpicming">逃学战警</div>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div style="clear:both"></div>
+<div class="Classifiedmark"><div class="Classifiedmarkxian"><img src="images/classifiedxian.jpg" /></div></div>
+<div style="clear:both"></div>
+
+
+
+
+
+
+<div class="Classified">
+<ul class="class1">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+<ul  class="class2">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+
+
+<ul class="class3">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+
+
+<ul class="class4">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+
+
+<ul  class="class5">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+
+
+<ul  class="class6">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+
+
+<ul  class="class7">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+
+
+<ul class="class8">
+<li style="width:240px; height:38px;font-size:16px; color:#333;">电影  Film</li>
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+
+<li>
+<a href="##">爱情</a>
+<p><a href="##">love</a></p>
+</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+<div style="height:20px; clear:both"></div>
+<iframe src="foot.html" scrolling="no" width=100%  height="139px"frameborder=0 id=""></iframe>
+
+</body>
+</html>
