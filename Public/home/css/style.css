@@ -2,10 +2,12 @@
 /* CSS Document */
 body {font-family: "宋体"; font-size: 12px; margin:0px; padding:0px; color:#333; background:#ffffff;}
 *{ margin:0px; padding:0px;}
-ul,li {list-style-type:none; text-transform:capitalize; margin:0px; padding:0px;}
+ul,li, form {list-style-type:none; text-transform:capitalize; margin:0px; padding:0px;}
 a {text-decoration:none;}
+a:hover {text-decoration:none;}
 img {border:0px;}
 td tr th table{padding:0px;}
+
 .clear{ clear:both;}
 
 
@@ -16,7 +18,9 @@ td tr th table{padding:0px;}
 
 
 
-/****************************************************************公用部分结束*********************************************************************/
+
+/*****************************************************************公用部分结束*********************************************************************/
+
 .top{width:987px; height:153px; background:url(../images/topbg.png) no-repeat; margin:0 auto;}
 .logo{padding-top:43px; padding-left:36px; width:242px; height:94px; background:url(../images/logobg.png) no-repeat  right ; float:left;}
 .logoleft{width:708px; height:153px; float:left;}
@@ -26,16 +30,14 @@ td tr th table{padding:0px;}
 .kehu ul li{padding-left:10px; float:left; font-size:14px; color:#825358;}
 .kehu ul li a{ font-size:14px; color:#825358;}
 .kehu ul li a:hover{ text-decoration:underline;}
-
-
-
 /*****************************************************************top头部*********************************************************************/
+
 .nav{ height:60px; background:url(../images/navbg.png) repeat-x; margin:0 auto;}
 .navcontent{width:987px; height:55px; margin:0 auto;}
 .navcontent ul{ padding-top:6px;  height:47px; margin:0 auto; }
 .navcontent ul li {width:89px; height:48px;  float:left; text-align:center; line-height:23px;}
 .navcontent ul li a{font-family:"微软雅黑"; width:89px; height:48px; font-size:15px; color:#CCC; font-weight:bold; text-align:center; text-decoration:none;}
-.navcontent ul li  p { font-size:10px;  color:#ccc; text-align:center; font-weight:normal; line-height:10px;text-decoration:none;}
+.navcontent ul li a p { font-size:10px;  color:#ccc; text-align:center; font-weight:normal; line-height:10px;text-decoration:none;}
 .dangqianwei{width:265px; height:23px; float:left; padding-left:5px; padding-top:12px;text-decoration:none;}
 .dangqianwei a{ font-size:13px; color:#666; padding-right:5px;padding-left:5px;}
 .dangqianwei a:hover{ font-size:13px; color:#000000; text-decoration:underline;}
@@ -344,10 +346,10 @@ BODY {
 .xiangqingcont{width:735px;}
 .xiangqingcontl{width:735px; height:50px; padding-top:5px;padding-bottom:5px; float:left; border-bottom:1px #bd3d3e solid;}
 .xuhao{ width:15px; float:left; font-size:14px; color:#000;line-height:25px;  height:16px; }
-.xiangqingcontla{ float:left; width:650px;}
+.xiangqingcontla{ float:left; width:646px;}
 .xiangqingcontla ul li{width:128px; height:25px;  line-height:25px;  float:left; font:; color:#666;}
 .xiangqingcontla ul li span img{ padding-left:5px;}
-.jiarudingdanr{width:70px; height:28ppx; padding-top:20px; float:
+.jiarudingdanr{width:73px; height:28ppx; padding-top:20px; float:
 left;}
 .jiarudingdanr ul li{ float:left;}
 
@@ -371,7 +373,7 @@ paginator#body {
 }
 
 
-.tumorecontent{width:730px; padding-left:5px; padding-top:10px; float:left;}
+.tumorecontent{width:733px; padding-left:5px; padding-top:10px; float:left;}
 .tumorecont{width:720px; height:130px; padding-bottom:5px;}
 .tumorepic{width:97px; height:130px; float:left;}
 .tumorexin{width:485px; height:130px; padding-left:40px; float:left;}
@@ -516,7 +518,6 @@ element {
 .dingdanlx ul li input{  width:500px; height:20px; }
 .dingdanlxzi{width:100px; height:20px; float:left;}
 .dingdantibt{width:705px; height:30px; padding-top:40px; text-align:center;}
-
 
 
 /**********************************************注册页面***************************************************/
