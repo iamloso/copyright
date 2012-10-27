@@ -8,7 +8,7 @@ class VodAction extends HomeAction{
 		$this->assign('pplist',A("Home.Vod"));
 		$this->assign('title',$list[0]['list_name'].'第'.$list[0]['list_page'].'页-'.C('site_name').C('site_by'));
 		$skin=$list[0]['list_skin'];if(empty($skin)){$skin='pp_vodlist';}
-		$this->display($skin);
+		$this->display('piao_erji');
     }
     //搜索影视列表
     public function search(){
