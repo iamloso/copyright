@@ -1,0 +1,66 @@
+<!--<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet"; type="text/css" href="css/style.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script language="javascript" type="text/javascript" src="js/jquery.js"> </script>
+
+<title>无标题文档</title>-->
+<script language="javascript" type="text/javascript">
+
+function shownavbga(key)
+{
+	document.getElementById("shownavbga"+key).style.backgroundColor="#efefef";
+    document.getElementById("navengl"+key).style.color="#3f3f3f";
+    document.getElementById("navhany"+key).style.color="#3f3f3f";
+}
+
+function hiddennavbga(key)
+{
+	document.getElementById("shownavbga"+key).style.backgroundColor=""
+    document.getElementById("navengl"+key).style.color="#ccc";
+    document.getElementById("navhany"+key).style.color="#ccc";
+}
+
+</script>
+
+<div style="width:987px; height:153px; background: url(__ROOT__/Public/home/images/topbg.png) no-repeat; margin:0 auto;">
+<div class="logo"><img src="__ROOT__/Public/home/images/logo.png" />
+</div>
+<div class="logoleft">
+<div class="zhongshu">中数版权</div>
+<div class="kehu">
+<ul>
+<li><a href="###">登陆</a></li>
+<li>|</li>
+<li><a href="zhuce.html">注册</a></li>
+<li>|</li>
+<li><a href="###">我要发布</a></li>
+<li>|</li>
+<li><a href="###">订单中心</a></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<div style="clear:both"></div>
+
+<div class="nav">
+<div class="navcontent">
+<ul>
+<li id="shownavbga1">
+<a id="navhany1" onmouseover="shownavbga($key)" onmouseout="hiddennavbga($key)" href="{$root}" >首页
+<P id="navengl1" >Home page Home page</P></a></li>
+<volist id='menu' name='ppmenu'>
+<li id="shownavbga1">
+<a id="navhany1" onmouseover="shownavbga($key)" onmouseout="hiddennavbga($key)" href="?s=Vod-show-id-{$menu.list_id}.html" >{$menu.list_name}
+<P id="navengl1" >{$menu.list_skin}</P></a></li>
+</volist>
+
+</ul>
+
+</div>
+
+</div>
