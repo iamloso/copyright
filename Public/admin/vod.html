@@ -318,7 +318,7 @@ function showhtml(vodid){
         </tr>
         <tr class="firstalt">
           <td align="right">总时长：</td>
-          <td><input name="vod_keywords" type="text" size="11" value="{$vod_keywords}">&nbsp;&nbsp;集数：<input name="vod_skin" size="10" type="text" value="{$vod_skin}" style="text-align:center">&nbsp;&nbsp;录入：<input name="vod_inputer" type="text" size="10" value="{$vod_inputer}" style="text-align:center">&nbsp;&nbsp;素材介质：<input name="vod_gold" type="text" size="5" value="{$vod_gold}" style="text-align:center">&nbsp;&nbsp;节目编号：<input name="vod_golder" type="text" size="5" value="{$vod_golder}" style="text-align:center">首播时间：<input name="vod_up" size="5" type="text" value="{$vod_up}" style="text-align:center">&nbsp;&nbsp;踩：<input name="vod_down" size="5" type="text" value="{$vod_down}" style="text-align:center"></td>
+          <td><input name="vod_keywords" type="text" size="11" value="{$vod_keywords}">&nbsp;&nbsp;集数：<input name="vod_skin" size="10" type="text" value="{$vod_skin}" style="text-align:center">&nbsp;&nbsp;录入：<input name="vod_inputer" type="text" size="10" value="{$vod_inputer}" style="text-align:center">&nbsp;&nbsp;素材介质：<input name="vod_gold" type="text" size="5" value="{$vod_gold}" style="text-align:center">&nbsp;&nbsp;节目编号：<input name="vod_golder" type="text" size="5" value="{$vod_golder}" style="text-align:center">首播时间：<input name="vod_up" size="19" type="text" value="{$vod_up|date='Y-m-d H:i:s',###}" style="text-align:center">&nbsp;&nbsp;踩：<input name="vod_down" size="5" type="text" value="{$vod_down}" style="text-align:center"></td>
         </tr> 
         <tr class="firstalt">
           <td align="right">上传海报：</td>
@@ -326,31 +326,31 @@ function showhtml(vodid){
         </tr>              
         <tr class="firstalt">
 			<td align="right">授权方公司名称：</td>
-			<td><input name="company" value="" type="text"/> </td>
+			<td><input name="vod_company" value="" type="text"/> </td>
 		</tr>	
         <tr class="firstalt">
 			<td align="right">联系人：</td>
-			<td><input name="people" value="" type="text"/> </td>
+			<td><input name="vod_people" value="" type="text"/> </td>
 		</tr>	
 		 <tr class="firstalt">
 			<td align="right">手机：</td>
-			<td><input name="phone" value="" type="text"/> </td>
+			<td><input name="vod_phone" value="" type="text"/> </td>
 		</tr>	
 		 <tr class="firstalt">
 			<td align="right">电话：</td>
-			<td><input name="tele" value="" type="text"/> </td>
+			<td><input name="vod_tele" value="" type="text"/> </td>
 		</tr>
 		 <tr class="firstalt">
 			<td align="right">邮箱：</td>
-			<td><input name="email" value="" type="text"/> </td>
+			<td><input name="vod_email" value="" type="text"/> </td>
 		</tr>
 		 <tr class="firstalt">
 			<td align="right">版权报价：</td>
-			<td><input name="email" value="" type="text"/> </td>
+			<td><input name="vod_money" value="" type="text"/> </td>
 		</tr>
 		 <tr class="firstalt">
 			<td align="right">授权渠道：</td>
-			<td><input name="ditch" value="0" type="checkbox" />互联网 <input name="ditch" value="1" type="checkbox" />无线网  
+			<td><input name="vod_ditch" value="0" type="checkbox" />互联网 <input name="ditch" value="1" type="checkbox" />无线网  
 				<input name="ditch" value="2" type="checkbox"/>电视台  <input name="ditch" value="3" type="checkbox"/>院线
 				<input name="ditch" value="4" type="checkbox"/>音像  <input name="ditch" value="5" type="checkbox"/>其他
 				<input name="ditch" value="0|1|2|3|4|5" type="checkbox"/>全部
@@ -358,17 +358,17 @@ function showhtml(vodid){
 		</tr>
 		<tr class="firstalt">
 			<td align="right">授权方式：</td>
-			<td><input name="way" value="0" type="checkbox" />独家 <input name="way" value="1" type="checkbox" />非独家  
+			<td><input name="vod_way" value="0" type="checkbox" />独家 <input name="vod_way" value="1" type="checkbox" />非独家  
 			</td>
 		</tr>
 		<tr class="firstalt">
 			<td align="right">热门推荐：</td>
-			<td><input name="hot" value="0" type="radio" checked="true"/>否 <input name="hot" value="1" type="radio" />是  
+			<td><input name="vod_hot" value="0" type="radio" checked="true"/>否 <input name="hot" value="1" type="radio" />是  
 			</td>
 		</tr>
 		<tr class="firstalt">
 			<td align="right">当月推荐：</td>
-			<td><input name="mhot" value="0" type="radio" checked="true"/>否 <input name="mhot" value="1" type="radio" />是  
+			<td><input name="vod_mhot" value="0" type="radio" checked="true"/>否 <input name="mhot" value="1" type="radio" />是  
 			</td>
 		</tr>
 		<!--
