@@ -27,8 +27,9 @@ return array (
   'admin_order_type' => 'addtime',
   'upload_path' => 'Upload',
   'upload_style' => 'Y-m',
+
   'upload_class' => 'jpg,gif,png,jpeg.bmp',
-  'upload_thumb' => false,
+  'upload_thumb' => true,
   'upload_thumb_w' => '120',
   'upload_thumb_h' => '140',
   'upload_water' => false,
