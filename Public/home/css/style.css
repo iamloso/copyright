@@ -61,6 +61,7 @@ td tr th table{padding:0px;}
 #featured .word H3 {
 	HEIGHT: 16px; FONT-SIZE: 13px; OVERFLOW: hidden
 }
+
 .slideshowItem img{ width:264px; height:71px;}
 #thumbs {
 	WIDTH:260px; HEIGHT:360px; float:left; text-align:center; padding-left:10px;}
