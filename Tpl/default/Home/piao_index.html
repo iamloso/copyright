@@ -72,10 +72,10 @@ function hookBtn(){
 		var id = this.id;
 		if(id == 'play_prev'){
 			index--;
-			if(index < 0) index = 6;
+			if(index < 0) index = 4;
 		}else{
 			index++;
-			if(index > 6) index = 0;
+			if(index > 4) index = 0;
 		}
 		rechange(index);
 		slideImage(index);
@@ -96,7 +96,7 @@ function rechange(loop){
 }
 function auto(){
     index++;
-    if (index > 6){
+    if (index > 4){
         index = 0;
     }
     rechange(index);
@@ -112,7 +112,7 @@ $(function(){
     
 });
 
-var target = ["xixi-01","xixi-02","xixi-03","xixi-04","xixi-05","xixi-06","xixi-07"];
+var target = ["xixi-01","xixi-02","xixi-03","xixi-04","xixi-05"];
 
 </SCRIPT>
 
