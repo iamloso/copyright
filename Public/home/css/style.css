@@ -53,7 +53,7 @@ td tr th table{padding:0px;}
 .recommendlunbo{width:987px; height:393px; background:#FF0; margin:auto;}
 .hotpicgundong{ width:980px; height:393px; margin:auto; border:#CCC solid 1px;}
 #featured {
-	BORDER-BOTTOM: #ddd 1px solid; float:left; BORDER-LEFT: #ddd 1px solid; WIDTH: 690px; HEIGHT: 393px; OVERFLOW: hidden; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid
+	BORDER-BOTTOM: #ddd 1px solid; float:left; BORDER-LEFT: #ddd 1px solid; WIDTH: 770px; HEIGHT: 393px; OVERFLOW: hidden; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid
  }
 #featured .word {
 	Z-INDEX: 10; POSITION: absolute; PADDING-BOTTOM: 5px; LINE-HEIGHT: 16px; PADDING-LEFT: 5px; WIDTH: 610px; BOTTOM: 0px; PADDING-RIGHT: 5px; BACKGROUND: #222; HEIGHT: 32px; COLOR: #fff; PADDING-TOP: 5px; LEFT: 0px
@@ -62,15 +62,15 @@ td tr th table{padding:0px;}
 	HEIGHT: 16px; FONT-SIZE: 13px; OVERFLOW: hidden
 }
 
-.slideshowItem img{ width:264px; height:71px;}
+.slideshowItem img{ width:185px; height:71px;}
 #thumbs {
-	WIDTH:260px; HEIGHT:360px; float:left; text-align:center; padding-left:10px;}
+	WIDTH:190px; HEIGHT:360px; float:left; text-align:center; padding-left:10px;}
 
 #thumbs ul LI {
-	WIDTH: 270px; DISPLAY: inline;   text-align:center; 
+	WIDTH: 190px; DISPLAY: inline;   text-align:center; 
 }
 #thumbs UL {
-  height:360px; width:270px; text-align:center;
+  height:360px; width:190px; text-align:center;
 }
 #thumbs LI.last_img {
 	MARGIN-RIGHT: 4px
@@ -89,8 +89,8 @@ td tr th table{padding:0px;}
 }
 #thumbs LI A.current {
 	BORDER:#F93 1px solid;}
-.items{ width:691px; height:394px;}
-.items img{ width:691px; height:392px;}
+.items{ width:770px; height:394px;}
+.items img{ width:770px; height:392px;}
 
 A {
 	
