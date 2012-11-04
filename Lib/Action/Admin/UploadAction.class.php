@@ -45,7 +45,7 @@ class UploadAction extends BaseAction{
 		   Image::water($uppath.$uploadList[0]['savename'],C('upload_water_img'),'',C('upload_water_pct'),C('upload_water_pos'));
 		}
 		//是否生成缩略图
-		if (C('upload_thumb')) {
+		if (C('upload_thumb') || 1 ) {
 		   $thumbdir = substr($uploadList[0]['savename'],0,strrpos($uploadList[0]['savename'], '/'));
 		   mkdirss($uppath_s.$thumbdir);
 		   import("ORG.Util.Image");

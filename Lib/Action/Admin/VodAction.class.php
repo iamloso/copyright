@@ -63,6 +63,7 @@ class VodAction extends BaseAction{
 
 	// 添加编辑影片
     public function add(){
+		$this->assign('http_root', "http://{$_SERVER['HTTP_HOST']}/copyright/Upload-s/");
 		$vod=D("Admin.Vod");$array=array();
 		$vod_id=$_GET['vod_id'];
 		if($vod_id>0){

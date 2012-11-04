@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/home/css/style.css" />
 <script language="javascript" type="text/javascript" src="__ROOT__/Public/home/js/jquery.js"> </script>
 
-<title>无标题文档</title>
+<title>中数版权</title>
 </head>
 
 <body>
@@ -118,31 +118,13 @@ var target = ["xixi-01","xixi-02","xixi-03","xixi-04","xixi-05","xixi-06","xixi-
 
 <div class="hotpicgundong">
 <DIV id=featured>
-<DIV id=image_xixi-01 class=items><A 
+<volist id='list' name="mhot_data" key="key">	
+<DIV id=image_xixi-0{$key} class=items><A 
 title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果" 
-href="http://www.jsfoot.com/html5/items/2011-08-29/153.html"><img src="__ROOT__/Public/home/images/indexlunbopic1.png" /></A> 
+href="http://www.jsfoot.com/html5/items/2011-08-29/153.html"><img src="./Upload/{$list.vod_pic}" /></A> 
 <DIV class=word  style="background:none">
 <H3>&nbsp;</H3></DIV></DIV>
-<DIV id=image_xixi-02 class=items><A 
-title="jquery 图片放大镜 图片类似放大镜效果鼠标滑过小图异步加载中图、大图" 
-href="http://www.jsfoot.com/jquery/items/2011-08-28/151.html"><img src="__ROOT__/Public/home/images/indexlunbopic2.png" /></A> 
-<DIV class=word style="background:none">
-<H3>&nbsp;</H3></DIV></DIV>
-<DIV id=image_xixi-03 class=items><A 
-title="jquery cycle 循环幻灯片插件多功能幻灯片插件支持多种幻灯片特效" 
-href="http://www.jsfoot.com/jquery/items/2011-08-24/143.html"><img src="__ROOT__/Public/home/images/indexlunbopic3.png" /></A> 
-<DIV class=word style="background:none">
-<H3>&nbsp;</H3></DIV></DIV>
-<DIV id=image_xixi-04 class=items><A 
-title="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" 
-href="http://www.jsfoot.com/jquery/items/2011-08-22/139.html"><img src="__ROOT__/Public/home/images/indexlunbopic4.png" /></A> 
-<DIV class=word style="background:none">
-<H3>&nbsp;</H3></DIV></DIV>
-<DIV id=image_xixi-05 class=items><A 
-title="jquery 图片特效用CSS3和HTML5制作仿动画头条报纸缩小到放大翻转图片展示" 
-href="http://www.jsfoot.com/jquery/items/2011-08-13/120.html"><img src="__ROOT__/Public/home/images/indexlunbopic5.png" /></A> 
-<DIV class=word style="background:none">
-<H3>&nbsp;</H3></DIV></DIV>
+</volist>
 </DIV><!--featured end-->
 <DIV id=thumbs>
 <UL>
@@ -151,28 +133,12 @@ href="http://www.jsfoot.com/jquery/items/2011-08-13/120.html"><img src="__ROOT__
  ></LI>
 
 
-  <LI class=slideshowItem><A id=thumb_xixi-01 
-  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-04"><IMG 
+<volist id='list' name="mhot_data" key="key">	
+<LI class=slideshowItem><A id=thumb_xixi-0{$key} 
+	href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-0{$key}"><IMG 
   alt="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" 
-   src="__ROOT__/Public/home/images/indexlunbopicx1.png"></A> </LI>
-  <LI class=slideshowItem><A id=thumb_xixi-02 
-  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-05"><IMG 
-  alt="jquery 图片特效用CSS3和HTML5制作仿动画头条报纸缩小到放大翻转图片展示" 
-  src="__ROOT__/Public/home/images/indexlunbopicx2.png"></A> </LI>
-  <LI class=slideshowItem><A id=thumb_xixi-03 
-  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-06"><IMG 
-  alt="jquery 图片切换插件制作banner图片滚动播放、按钮控制图片滚动、选项卡等基于多功能jquery slide插件" 
- src="__ROOT__/Public/home/images/indexlunbopicx3.png"></A> </LI>
-  <LI class=slideshowItem><A id=thumb_xixi-04 
-  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-07"><IMG 
-  alt=" javascript滚动图片按钮控制图片左右自动滚动javascript滚动图片按钮控制图片左右自动滚动javascript滚动图片按钮控制图片左右自动滚动" 
-  src="__ROOT__/Public/home/images/indexlunbopicx4.png"></A> </LI>
-   <LI class=slideshowItem><A id=thumb_xixi-05 
-  href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-07"><IMG 
-  alt=" javascript滚动图片按钮控制图片左右自动javascript滚动图片按钮控制图片左右自动滚动javascript滚动图片按钮控制图片左右自动滚动滚动" 
- src="__ROOT__/Public/home/images/indexlunbopicx5.png"></A> </LI>
- 
- 
+  src="./Upload-s/{$list.vod_pic}"></A> </LI>
+</volist> 
   
   
   <LI class="last btnNext"><IMG id=play_next alt=下一个 

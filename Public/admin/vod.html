@@ -125,10 +125,11 @@ function showhtml(vodid){
     <form action="index.php?s=Admin-Vod-Show" method="post">{__NOTOKEN__}
       <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
         <tr class="tb_head">
-          <td colspan="5"><h2>数据列表：如果希望某部自己添加或修改过的影片强制为手动更新,请将录入作者改为<a href="index.php?s=Admin-Vod-Show-vod_inputer-ppvod">ppvod</a>即可!</h2></td>
         </tr>
         <tr class="firstalt">
-          <td colspan="5" style="line-height:30px;"> 筛选内容：
+			<td colspan="5" style="line-height:30px;">
+				<!--
+			 	筛选内容：
             <select name="vod_cid" id="vod_cid" ><option value='<eq name="vod_cid" value="0">0</eq>'>全部分类</option>
               <volist name="listvod" id="pp">
                 <option value="{$pp.list_id}" <eq name="pp.list_id" value="$vod_cid">selected</eq>>{$pp.list_name}</option>
@@ -143,8 +144,8 @@ function showhtml(vodid){
             &nbsp;&nbsp;
             <select name="vod_play"><option value="0">服务器组</option><volist name="playtree" id="ppvod" >
               <option value='{$key}' <eq name="key" value="$vod_play">selected</eq>>{$ppvod}</option>
-              </volist></select>
-            &nbsp;&nbsp;
+			  </volist></select>
+			  &nbsp;&nbsp;
             <select name="vod_stars" id="vod_stars" class="select">
               <option value="0" <eq name="vod_stars" value="0">selected</eq>>所有星级</option>
               <option value="1" <eq name="vod_stars" value="1">selected</eq>>一星内容</option>
@@ -152,7 +153,7 @@ function showhtml(vodid){
               <option value="3" <eq name="vod_stars" value="3">selected</eq>>三星内容</option>
               <option value="4" <eq name="vod_stars" value="4">selected</eq>>四星内容</option>
               <option value="5" <eq name="vod_stars" value="5">selected</eq>>五星内容</option>
-            </select>
+		  </select>-->
             &nbsp;&nbsp;
             <select name="vod_del" id="vod_del" class="select">
               <option value="0">全部状态</option>
@@ -160,20 +161,17 @@ function showhtml(vodid){
               <option value="1" <eq name="vod_del" value="1">selected</eq>>未审核</option>
             </select>
             &nbsp;&nbsp;
+			<!--
             <select name="vod_continu" id="vod_continu" class="select">
               <option value="0">连载状态</option>
               <option value="2" <eq name="vod_continu" value="2">selected</eq>>已完结</option>
               <option value="1" <eq name="vod_continu" value="1">selected</eq>>连载中</option>
             </select>            
-            &nbsp;&nbsp;
+			&nbsp;&nbsp;-->
             <select name="vod_type" id="vod_type" class="select">
               <option value="0">排序方式</option>
-              <option value="vod_hits" <eq name="vod_type" value="vod_hits">selected</eq>>人气</option>
               <option value="vod_addtime" <eq name="vod_type" value="vod_addtime">selected</eq>>时间</option>
               <option value="vod_id" <eq name="vod_type" value="vod_id">selected</eq>>ID</option>
-              <option value="vod_gold" <eq name="vod_type" value="vod_gold">selected</eq>>评分</option>
-              <option value="vod_up" <eq name="vod_type" value="vod_up">selected</eq>>顶</option>
-              <option value="vod_down" <eq name="vod_type" value="vod_down">selected</eq>>踩</option>
             </select>            
             &nbsp;&nbsp;
             <select name="vod_order" id="vod_order" class="select">
@@ -190,17 +188,16 @@ function showhtml(vodid){
       <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
         <tr align="center" class="tb_title" >
           <td width="2%" nowrap >ID</td>
-          <td width="5%" nowrap>连载</td>
-          <td >影片分类 标题 服务器组</td>
-          <td width="5%" nowrap >点击</td>
-          <td width="5%" nowrap >顶/踩</td>
-          <td width="4%" nowrap >评分</td>
-          <td width="13%" nowrap >时间</td>
-          <td width="12%" nowrap >权重</td>
+          <td width="5%" nowrap>序号</td>
+          <td >影片分类 标题 </td>
+          <td width="5%" nowrap >报价</td>
+          <td width="5%" nowrap >出品公司</td>
+          <td width="4%" nowrap >导演</td>
+          <td width="13%" nowrap >公映时间</td>
           <td width="3%" nowrap >状态</td>
           <td width="5%" nowrap >编辑</td>
         </tr>
-        <volist name="list" id="ppcms">
+        <volist name="list" id="ppcms" key="key">
         <php>if($ppcms["vod_del"]==0){
             $isok_img = 'yes.gif';
             $isok_title= '已审核';
@@ -212,19 +209,18 @@ function showhtml(vodid){
         $hot[$ppcms["vod_stars"]] = 'class="hot_on"';</php>
           <tr class="firstalt">
             <td ><input name='vod_id[{$ppcms.vod_id}]' type='checkbox' value='{$ppcms.vod_id}' style='border:none' checked></td>
-           <td align="center"><input name="vod_continu[{$ppcms.vod_id}]" type="text" value="{$ppcms.vod_continu}" style="border:#CCC 1px solid;width:98%;text-align:center;color:green"></td>
+           <td align="center"><input type="text" value="{$key}" style="border:#CCC 1px solid;width:98%;text-align:center;color:green"></td>
             <td><span style="float:right;color:#666">{$ppcms.vod_play|str_replace='$$$',' ',###}</span><if condition="c('url_html') gt 0"><a href="javascript:showhtml({$ppcms.vod_id});"><font color="green">生成</font></a></if><span class="conlist_cate"><a href="{$ppcms.vod_showid}">『{:getlistname($ppcms["vod_cid"])}』</a></span><a href="{$ppcms.vod_readid}" onMouseOver="showpic(event, '{$ppcms.vod_pic|getpicurl}');" target="_blank" onMouseOut="hiddenpic();">{$ppcms.vod_name} {$ppcms.vod_title}</a> ({$ppcms.vod_id}) <neq name="ppcms['vod_continu']" value="0"><img src="__PUBLIC__/images/continu.gif" title="连载中"></neq></td>
-            <td align="center">{$ppcms.vod_hits}</td>
-            <td align="center" style="color:#666">{$ppcms.vod_up}/{$ppcms.vod_down}</td>
-            <td align="center">{$ppcms.vod_gold}</td>
+            <td align="center">{$ppcms.vod_money}</td>
+            <td align="center" style="color:#666">{$ppcms.vod_reurl}</td>
+            <td align="center">{$ppcms.vod_director}</td>
             <td align="center">{$ppcms.vod_addtime|date='Y-m-d H:i:s',###}</td>
-            <td align="center"><div class="hot_set"> <a id="hot_{$ppcms.vod_id}_1" href="javascript:sethot('{$ppcms.vod_id}',1)"{$hot[1]}>1</a> <a id="hot_{$ppcms.vod_id}_2" href="javascript:sethot('{$ppcms.vod_id}',2)"{$hot[2]}>2</a> <a id="hot_{$ppcms.vod_id}_3" href="javascript:sethot('{$ppcms.vod_id}',3)"{$hot[3]}>3</a> <a id="hot_{$ppcms.vod_id}_4" href="javascript:sethot('{$ppcms.vod_id}',4)"{$hot[4]}>4</a> <a id="hot_{$ppcms.vod_id}_5" href="javascript:sethot('{$ppcms.vod_id}',5)"{$hot[5]}>5</a></div></td>
             <td align="center" nowrap><a href="javascript:setisok('{$ppcms.vod_id}')"><img id="isok_{$ppcms.vod_id}" src="__PUBLIC__/images/{$isok_img}" title="{$isok_title}"></a></td>
             <td width="5%" colspan="2" align="center" nowrap ><a href="index.php?s=Admin-Vod-Add-vod_id-{$ppcms.vod_id}"><img src="__PUBLIC__/images/edit.gif" alt="编辑" width="14" height="14" border="0" align="absmiddle" title="编辑"></a><a href="index.php?s=Admin-Vod-Del-vod_id-{$ppcms.vod_id}" onClick="return confirm('确定删除?')"><img src="__PUBLIC__/images/del.gif" alt="删除" width="14" height="14" border="0" align="absmiddle" title="删除"></a></td>
           </tr>
         </volist>
         <tr class="firstalt">
-          <td colspan="10" style=" padding:10px;"><div style="background:#CFF; padding:5px;"><input type="button" class="mininput" value="全/反选" onClick="CheckAll(this.form)" /> <if condition="c('url_html') eq 1"><input type="submit" class="mininput" value="生成静态" onClick="ChangeAction('index.php?s=Admin-Vod-ishtml')"/></if> <input type="submit" class="mininput" value="已审核" onClick="ChangeAction('index.php?s=Admin-Vod-isok')"/> <input type="submit" class="mininput" value="未审核" onClick="ChangeAction('index.php?s=Admin-Vod-notok')"/> <input type="submit" class="mininput" value="设置连载" onClick="ChangeAction('index.php?s=Admin-Vod-continu')"/> <input type="submit" class="mininput" value="删除影片" onClick="ChangeAction('index.php?s=Admin-Vod-delall');return confirm('确定删除?')"/>&nbsp;转移到<select name="vod_cid"><volist name="listvod" id="pp"><option value="{$pp.list_id}">{$pp.list_name}</option><volist name="pp['son']" id="pp"><option value="{$pp.list_id}">├ {$pp.list_name}</option></volist></volist><option value="0">临时库</option></select><input type="submit" class="mininput" value="批量移动" onClick="ChangeAction('index.php?s=Admin-Vod-listgo');return confirm('确定转移分类吗?')"/>&nbsp;设置为<select name="vod_stars" class="select"><option value="1">一星内容</option><option value="2">二星内容</option><option value="3">三星内容</option><option value="4">四星内容</option><option value="5">五星内容</option></select><input type="submit" class="mininput" value="设置星级" onClick="ChangeAction('index.php?s=Admin-Vod-stars')"/>&nbsp;更换为<input name="vod_otherkey" type="text" style="width:100px"> <select name="vod_other" class="select"><option value="0" selected>选择条件</option><option value="continu">连载集数</option><option value="hits">点击次数</option><option value="area">影片地区</option><option value="year">影片年代</option><option value="inputer">录入作者</option><option value="addtime">更新时间</option><option value="tag">标签TAG</option><option value="gold">更改评分</option><option value="up">顶一下</option><option value="down">踩一下</option></select><input type="submit" class="mininput" value="批量变更" onClick="ChangeAction('index.php?s=Admin-Vod-other')"/></div></td>
+          <td colspan="10" style=" padding:10px;"><div style="background:#CFF; padding:5px;"><input type="button" class="mininput" value="全/反选" onClick="CheckAll(this.form)" /> <if condition="c('url_html') eq 1"><input type="submit" class="mininput" value="生成静态" onClick="ChangeAction('index.php?s=Admin-Vod-ishtml')"/></if> <input type="submit" class="mininput" value="已审核" onClick="ChangeAction('index.php?s=Admin-Vod-isok')"/> <input type="submit" class="mininput" value="未审核" onClick="ChangeAction('index.php?s=Admin-Vod-notok')"/> <input type="submit" class="mininput" value="删除影片" onClick="ChangeAction('index.php?s=Admin-Vod-delall');return confirm('确定删除?')"/>&nbsp;</div></td>
         </tr>
         <tr class=firstalt>
           <td colspan="10"><div class="pages">{$page}</div></td>
@@ -265,9 +261,9 @@ function showhtml(vodid){
           </volist></select>&nbsp;&nbsp;
           <select name="vod_stars">
           <option value="0" <eq name="vod_stars" value="0">selected</eq>>授权地区</option>
-          <option value="1" <eq name="vod_stars" value="2">selected</eq>>国内</option>
-          <option value="2" <eq name="vod_stars" value="3">selected</eq>>国外</option>
-          <option value="3" <eq name="vod_stars" value="4">selected</eq>>国内外</option>
+          <option value="1" <eq name="vod_stars" value="1">selected</eq>>国内</option>
+          <option value="2" <eq name="vod_stars" value="2">selected</eq>>国外</option>
+          <option value="3" <eq name="vod_stars" value="3">selected</eq>>国内外</option>
           </select>&nbsp;&nbsp;
           <select name="vod_del">
           <option value="0" <eq name="vod_del" value="0">selected</eq>>显示</option>
@@ -275,10 +271,10 @@ function showhtml(vodid){
           </select>&nbsp;&nbsp;
           <select name="vod_color">
           <option value=''>授权期限</option>                                            
-          <option value='1'  <eq name="news_color" value="1">selected</eq>>1-3年</option>
-          <option value='2'  <eq name="news_color" value="2">selected</eq>>3-5年</option>
-          <option value='3'  <eq name="news_color" value="3">selected</eq>>5-10年</option>
-          <option value='4'  <eq name="news_color" value="4">selected</eq>>10年以上</option>
+          <option value='1'  <eq name="vod_color" value="1">selected</eq>>1-3年</option>
+          <option value='2'  <eq name="vod_color" value="2">selected</eq>>3-5年</option>
+          <option value='3'  <eq name="vod_color" value="3">selected</eq>>5-10年</option>
+          <option value='4'  <eq name="vod_color" value="4">selected</eq>>10年以上</option>
           </select>&nbsp;&nbsp;
           <select name="vod_year">
           <option value=''>年代</option>
@@ -323,30 +319,31 @@ function showhtml(vodid){
         <tr class="firstalt">
           <td align="right">上传海报：</td>
           <td><span style="float:left; margin-top:5px"><input name="vod_pic" id="vod_pic" type="hidden" size="60" maxlength="255" value="{$vod_pic}" onMouseOver="if(this.value)showpic(event, '{&upload_path}/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_pic" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span></td>
+		  <td><img src="{$http_root}{$vod_pic}"></img></td>
         </tr>              
         <tr class="firstalt">
 			<td align="right">授权方公司名称：</td>
-			<td><input name="vod_company" value="" type="text"/> </td>
+			<td><input name="vod_company" value="{$vod_company}" type="text"/> </td>
 		</tr>	
         <tr class="firstalt">
 			<td align="right">联系人：</td>
-			<td><input name="vod_people" value="" type="text"/> </td>
+			<td><input name="vod_people" value="{$vod_people}" type="text"/> </td>
 		</tr>	
 		 <tr class="firstalt">
 			<td align="right">手机：</td>
-			<td><input name="vod_phone" value="" type="text"/> </td>
+			<td><input name="vod_phone" value="{$vod_phone}" type="text"/> </td>
 		</tr>	
 		 <tr class="firstalt">
 			<td align="right">电话：</td>
-			<td><input name="vod_tele" value="" type="text"/> </td>
+			<td><input name="vod_tele" value="{$vod_tele}" type="text"/> </td>
 		</tr>
 		 <tr class="firstalt">
 			<td align="right">邮箱：</td>
-			<td><input name="vod_email" value="" type="text"/> </td>
+			<td><input name="vod_email" value="{$vod_email}" type="text"/> </td>
 		</tr>
 		 <tr class="firstalt">
 			<td align="right">版权报价：</td>
-			<td><input name="vod_money" value="" type="text"/> </td>
+			<td><input name="vod_money" value="{$vod_money}" type="text"/> </td>
 		</tr>
 		 <tr class="firstalt">
 			<td align="right">授权渠道：</td>
@@ -359,17 +356,17 @@ function showhtml(vodid){
 
 		<tr class="firstalt">
 			<td align="right">授权方式：</td>
-			<td><input name="vod_way" value="0" type="checkbox" />独家 <input name="vod_way" value="1" type="checkbox" />非独家  
+			<td><input name="vod_way" value="0" type="checkbox" <eq name="vod_way" value="0"> checked</eq>/>独家 <input name="vod_way" value="1" type="checkbox" <eq name="vod_way" value="1">checked</eq>/>非独家  
 			</td>
 		</tr>
 		<tr class="firstalt">
 			<td align="right">热门推荐：</td>
-			<td><input name="vod_hot" value="0" type="radio" checked="true"/>否 <input name="vod_hot" value="1" type="radio" />是  
+			<td><input name="vod_hot" value="0" type="radio" <eq name="vod_hot" value="0">checked</eq> />否 <input name="vod_hot" value="1" type="radio" <eq name="vod_hot" value="1">checked</eq> />是  
 			</td>
 		</tr>
 		<tr class="firstalt">
 			<td align="right">当月推荐：</td>
-			<td><input name="vod_mhot" value="0" type="radio" checked="true"/>否 <input name="vod_mhot" value="1" type="radio" />是  
+			<td><input name="vod_mhot" value="0" type="radio" <eq name="vod_mhot" value="0">checked="true"</eq>/>否 <input name="vod_mhot" value="1" type="radio" <eq name="vod_mhot" value="1">checked="true"</eq> />是  
 			</td>
 		</tr>
 		<!--
