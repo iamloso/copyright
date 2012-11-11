@@ -51,12 +51,12 @@ function hiddennavbga(key)
 <div class="navcontent">
 <ul>
 <li id="shownavbga1">
-<a id="navhany1" onmouseover="shownavbga($key)" onmouseout="hiddennavbga($key)" href="{$root}" >首页
+<a id="navhany1" onmouseover="shownavbga(1)" onmouseout="hiddennavbga(1)" href="{$root}" >首页
 <P id="navengl1" >Home page </P></a></li>
-<volist id='menu' name='ppmenu'>
-<li id="shownavbga1">
-<a id="navhany1" onmouseover="shownavbga($key)" onmouseout="hiddennavbga($key)" href="?s=Vod-show-id-{$menu.list_id}.html" >{$menu.list_name}
-<P id="navengl1" >{$menu.list_skin}</P></a></li>
+<volist id='menu' name='ppmenu' key="key">
+<li id="shownavbga{$key+1}">
+<a id="navhany{$key+1}" onmouseover="shownavbga({$key+1})" onmouseout="hiddennavbga({$key+1})" href="?s=Vod-show-id-{$menu.list_id}.html" >{$menu.list_name}
+	<P id="navengl{$key+1}" >{$menu.list_skin}</P></a></li>
 </volist>
 
 </ul>

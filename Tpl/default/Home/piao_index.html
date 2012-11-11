@@ -28,6 +28,7 @@ $vod_hot_80=$pplist->ppvod('num:80;order:vod_golder,vod_hits desc');</php>
 <div style="clear:both"></div>
 <div class="recommended">
 <div class="recommendedmark"></div>
+<php> unset($ppmenu[8], $ppmenu[9]);</php>
 <include file="./Tpl/default/Home/piao_search.html"/>
 
 </div>
@@ -115,60 +116,6 @@ $(function(){
 var target = ["xixi-01","xixi-02","xixi-03","xixi-04","xixi-05"];
 
 </SCRIPT>
-
-<div class="hotpicgundong">
-<DIV id=featured>
-<volist id='list' name="mhot_data" key="key">	
-<DIV id=image_xixi-0{$key} class=items><A 
-title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果" 
-href="http://www.jsfoot.com/html5/items/2011-08-29/153.html"><img src="./Upload/{$list.vod_pic}" /></A> 
-<DIV class=word  style="background:none">
-<H3>&nbsp;</H3></DIV></DIV>
-</volist>
-</DIV><!--featured end-->
-<DIV id=thumbs>
-<UL>
-  <LI class="first btnPrev" ><IMG id=play_prev alt=上一个 
- src="__ROOT__/Public/home/images/gundongbuttona.png" 
- ></LI>
-
-
-<volist id='list' name="mhot_data" key="key">	
-<LI class=slideshowItem><A id=thumb_xixi-0{$key} 
-	href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-0{$key}"><IMG 
-  alt="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" 
-  src="./Upload-s/{$list.vod_pic}"></A> </LI>
-</volist> 
-  
-  
-  <LI class="last btnNext"><IMG id=play_next alt=下一个 
-   src="__ROOT__/Public/home/images/gundongbuttonb.png"
-  ></LI></UL></DIV><!--thumbs end--><!--演示内容结束-->
-<SCRIPT type=text/javascript>
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14442e1b4a44fe4f270d8e118982bed2' type='text/javascript'%3E%3C/script%3E"));
-</SCRIPT>
-</div>
-
-
-
-
-
-
-
-<div style="clear:both"></div>
-<div class="hot">
-<div class="hotmark"></div>
-<div class="hotnav">
-<ul>
-<li id="newB1"  class=""><a class="" onmouseover="RectChange('new',1,8,'fbg')" href="##">电影</a></li>
-<li id="newB2" class=""><a class=""  onmouseover="RectChange('new',2,8,'fbg')" href="##">电视剧</a></li>
-<li id="newB3" class=""><a  class=""  onmouseover="RectChange('new',3,8,'fbg')" href="##">动画片</a></li>
-<li id="newB4" class=""><a class=""  onmouseover="RectChange('new',4,8,'fbg')" href="##">图片素材</a></li>
-<li id="newB5" class=""><a class=""  onmouseover="RectChange('new',5,8,'fbg')" href="##">视频素材</a></li>
-<li id="newB6" class=""><a  class=""  onmouseover="RectChange('new',6,8,'fbg')" href="##">科教纪录</a></li>
-<li id="newB7" class=""><a  class=""  onmouseover="RectChange('new',7,8,'fbg')" href="##">漫画</a></li>
-<li id="newB8" class=""><a  class=""  onmouseover="RectChange('new',8,8,'fbg')" href="##">综艺娱乐</a></li>
 <script language="javascript"  type="text/javascript">
 
 	window.onload= function(){RectChange('new',1,8,'fbg')}
@@ -192,13 +139,51 @@ obja.style.color="#fff";
 }
 </script>
 
+<div class="hotpicgundong">
+<DIV id=featured>
+<volist id='list' name="mhot_data" key="key">	
+<DIV id=image_xixi-0{$key} class=items><A 
+title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果" 
+href="http://www.jsfoot.com/html5/items/2011-08-29/153.html"><img src="./Upload/{$list.vod_pic}" /></A> 
+<DIV class=word  style="background:none">
+<H3>&nbsp;</H3></DIV></DIV>
+</volist>
+</DIV><!--featured end-->
+<DIV id=thumbs>
+<UL>
+  <LI class="first btnPrev" ><IMG id=play_prev alt=上一个 
+ src="__ROOT__/Public/home/images/gundongbuttona.png" 
+ ></LI>
 
-</ul>
 
-
+<volist id='list' name="mhot_data" key="key">	
+<LI class=slideshowItem><A id=thumb_xixi-0{$key} 
+	href="http://www.jsfoot.com/jquery/demo/2011-09-02/162.html#image_xixi-0{$key}"><IMG 
+  alt="jquery菜单特效 鼠标滑过菜单区域图标和文本类似flash动画酷炫移动展示" 
+  src="./Upload/{$list.vod_pic}"></A> </LI>
+</volist> 
+  
+  
+  <LI class="last btnNext"><IMG id=play_next alt=下一个 
+   src="__ROOT__/Public/home/images/gundongbuttonb.png"
+  ></LI></UL></DIV><!--thumbs end--><!--演示内容结束-->
+<SCRIPT type=text/javascript>
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14442e1b4a44fe4f270d8e118982bed2' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
 </div>
 
+<div style="clear:both"></div>
+<div class="hot">
+<div class="hotmark"></div>
+<div class="hotnav">
+<ul>
+<volist id="menu" name="ppmenu" key="key">
+<li id="newB{$key}"  class=""><a class="" onmouseover="RectChange('new',{$key},8,'fbg')" href="##">{$menu.list_name}</a></li>
 
+</volist>
+</ul>
+</div>
 </div>
 
 
@@ -210,703 +195,24 @@ obja.style.color="#fff";
 </div>
 <div style="height:10px; width:980px; margin:0 auto;"></div>
 <div style="clear:both">
- 
 </div>
 
-<div id="newA1" class="hotpicl" style="display:">
-<ul>
-<li>
-  <div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-</ul>
-
-
- </div>
-<div id="newA2" class="hotpicl"  style="display:none;">
+<volist id='product' name="hot_data" key="key"> 
+<div id="newA{$key}" class="hotpicl">
  <ul>
+<volist id="son" name="product['son']">	 
 <li>
-  <div class="hotpicimg"><a href="##"></a></div>
-<div class="hotpicming">逃学战警</div>
+<div class="hotpicimg"><a href="##"><img src="./Upload-s/{$son.vod_pic}" /></a></div>
+<div class="hotpicming">{$son.vod_name}</div>
 </li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
+</volist>
 </ul>
-
 </div>
-
-
-<div id="newA3" class="hotpicl"  style="display:none;">
-<ul>
-<li>
-  <div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-</ul>
-
-</div>
-
-
-
-<div id="newA4" class="hotpicl"  style="display:none;">
-<ul>
-<li>
-  <div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-</ul>
-
-</div>
-
-
-<div id="newA5" class="hotpicl"  style="display:none;">
-<ul>
-<li>
-  <div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-</ul>
-
-</div>
-
-
-
-
-<div id="newA6" class="hotpicl"  style="display:none;">
- <ul>
-<li>
-  <div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-</ul>
-
-</div>
-
-<div id="newA7" class="hotpicl"  style="display:none;">
-<ul>
-<li>
-  <div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-</ul>
-
-</div>
-
-<div id="newA8" class="hotpicl"  style="display:none;">
-<ul>
-<li>
-  <div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-
-<li>
-<div class="hotpicimg"><a href="##"><img src="__ROOT__/Public/home/images/hotpic.png" /></a></div>
-<div class="hotpicming">逃学战警</div>
-</li>
-
-</ul>
-
-</div>
-
-
-
+</volist>
 <div style="clear:both"></div>
 <div class="Classifiedmark"><div class="Classifiedmarkxian"><img src="__ROOT__/Public/home/images/classifiedxian.jpg" /></div></div>
 <div style="clear:both"></div>
 
-<php> unset($ppmenu[8], $ppmenu[9]);</php>
 <div class="Classified">
 <volist id='menu' name='ppmenu' key="key">
 <ul class="class{$key}">
@@ -917,8 +223,6 @@ obja.style.color="#fff";
 <p><a href="##">{$son.list_skin}</a></p>
 </li>
 </volist>
-
-
 </ul>
 </volist>
 </div>

@@ -1,43 +1,51 @@
+   <script type="text/javascript">
+	    function getcity(){
+	        var a = $("#one").val();
+			if(a=='')return false;
+	        $.post("?s=Index-ajax_menu",{list_id: a},
+	            function(data){
+	                var obj = eval('('+data+')');
+	                $("#two").empty();
+	                $("#two").prepend("<option value=''>请选择!</option>");        
+	                for(var p in obj){
+	                    $("#two").append("<option value="+obj[p].list_id+">"+obj[p].list_name+"</option>");
+	                     
+	                }
+	            }
+	        ); 
+	    }
+	    function getq(){
+	        var a = $("#two").val();
+			if(a=='')return false;
+	        $.post("?s=Index-ajax_menu",{list_id: a, is_two: 1},
+	            function(data){
+	                var obj = eval('('+data+')');
+	                $("#three").empty();
+	                $("#three").prepend("<option value=''>请选择!</option>");        
+	                for(var p in obj){
+	                    $("#three").append("<option value="+obj[p].list_id+">"+obj[p].list_name+"</option>");
+	                     
+	                }
+	            }
+	        );
+	    }
+	</script>
+
 <div class="search">
 <form>
-  <select name="select">
-<option  selected="selected">电影</option>
-<option>电视剧</option>
-<option>动画片</option>
-<option>图片素材</option>
-<option>视频素材</option>
-<option>科教记录</option>
-<option>漫画</option>
-<option>综艺娱乐</option>
-<option>版权登记</option>
-<option>版权服务</option>
-
+  <select name="select" onchange="getcity()" id="one">
+	  <option value=''>请选择！</option>	  
+<volist id="menu" name="ppmenu" key="key">
+<option value="{$menu.list_id}">{$menu.list_name}</option>
+</volist>
 </select>
 
-<select>
-<option selected="selected">电影</option>
-<option>电视剧</option>
-<option>动画片</option>
-<option>图片素材</option>
-<option>视频素材</option>
-<option>科教记录</option>
-<option>漫画</option>
-<option>综艺娱乐</option>
-<option>版权登记</option>
-<option>版权服务</option>
+<select onchange="getq()" id='two'>
+<option>请选择！</option>
 
 </select>
-<select>
-<option selected="selected">电影</option>
-<option>电视剧</option>
-<option>动画片</option>
-<option>图片素材</option>
-<option>视频素材</option>
-<option>科教记录</option>
-<option>漫画</option>
-<option>综艺娱乐</option>
-<option>版权登记</option>
-<option>版权服务</option>
+<select id='three'>
+<option>请选择！</option>
 
 </select>
 </form>
