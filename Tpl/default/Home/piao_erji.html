@@ -29,7 +29,7 @@
 
 <volist id='menu' name='ppmenu'>
 <ul>
-	<li style="width:190px; height:40px;font-size:15px; color:#616161;font-weight:bold;">{$menu.list_name}<div style="font-size:12px; color:#616161;font-weight:bold;width:190px; height:15px;overflow:hidden; float:left;"> {$menu.list_skin}</div><span style="font-size:14px;color:#933; font-weight:normal;">（556部）</span></li>
+	<li style="width:190px; height:40px;font-size:15px; color:#616161;font-weight:bold;">{$menu.list_name}<div style="font-size:12px; color:#616161;font-weight:bold;width:190px; height:15px;overflow:hidden; float:left;"> {$menu.list_skin}</div><span style="font-size:14px;color:#933; font-weight:normal;">（{$menu.count}部）</span></li>
 <volist id='son' name="menu['son']">	
 <li>
 <a href="##">{$son.list_name}</a>
@@ -51,383 +51,28 @@
 </div>
 </div>
 
-
 <div class="tumorecontent">
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
+<volist id='list' name='vod_list'>
+<div class="tumorecont"><div class="xuhao"><span></span></div>
+	<div class="tumorepic"><img src="./Upload-s/{$list.vod_pic}" /></div>
 <div class="tumorexin">
 <ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
+	<li>片名：<span style="font:; color:#9725244;"><{$list.vod_name}></span></li>
+	<li>集数：<span>{$list.vod_skin}</span></li>
+	<li>导演：<span>{$list.vod_director}</span></li>
+	<li>主要演员：<span>{$list.vod_actor}</span></li>
+	<li>上映时间：<span>{$list.vod_addtime|date='Y-m-d',###}</span></li>
 </ul>
-
-
 </div>
+
 <div class="jiarudingdanr" style="padding-top:60px;">
 <UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
 
 </div>
 </div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
-<div class="tumorecont"><div class="xuhao"><span>1.</span></div>
-<div class="tumorepic"><img src="images/tumorepic.png" /></div>
-<div class="tumorexin">
-<ul>
-<li>片名：<span style="font:; color:#9725244;">风雨风雨</span></li>
-<li>集数：<span></span></li>
-<li>导演：<span></span></li>
-<li>主要演员：<span></span></li>
-<li>上映时间：<span></span></li>
-</ul>
-
-
-</div>
-<div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
-
-</div>
-</div>
-
-
+</volist>
 
 <div style="clear:both;"></div>
-
-
 
 
 <DIV style="WIDTH:640px; float:left;" id=Prolist1_AspNetPager1 class=paginator 
@@ -435,8 +80,10 @@
  	<table style="float:left;" width="650px" border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td width=180px; align="left" valign="bottom" nowrap="true" class="paginator"><font color=#003399>第2页，共11页，共有108个节目</font></td>
-            
-            <td width= align="notset" valign="bottom" nowrap="true" class="paginator" style=><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','1')"><<</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','1')"><</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','1')">1</a><span style="width:5px;"></span><font style="font-weight:Bold;color:red;">2</font><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','3')">3</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','4')">4</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','5')">5</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','6')">6</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','7')">7</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','8')">8</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','9')">9</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','10')">10</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','11')">...</a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','3')">></a><span style="width:5px;"></span><a class="paginator" href="javascript:__doPostBack('Prolist1$AspNetPager1','11')">>></a><span style="width:5px;"></span></td>
+            <td>
+				{$pagehtml}
+			</td>            
+           
 		</tr>
 	</table>
   
