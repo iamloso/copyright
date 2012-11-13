@@ -124,17 +124,19 @@ function showhtml(vodid){
 <?php if(strtolower(ACTION_NAME) == show ): ?><form action="index.php?s=Admin-Vod-Show" method="post">{__NOTOKEN__}
       <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
         <tr class="tb_head">
-          <td colspan="5"><h2>数据列表：如果希望某部自己添加或修改过的影片强制为手动更新,请将录入作者改为<a href="index.php?s=Admin-Vod-Show-vod_inputer-ppvod">ppvod</a>即可!</h2></td>
         </tr>
         <tr class="firstalt">
-          <td colspan="5" style="line-height:30px;"> 筛选内容：
+			<td colspan="5" style="line-height:30px;">
+				<!--
+			 	筛选内容：
             <select name="vod_cid" id="vod_cid" ><option value='<?php if(($vod_cid)  ==  "0"): ?>0<?php endif; ?>'>全部分类</option>
               <?php if(is_array($listvod)): $i = 0; $__LIST__ = $listvod;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>><?php echo ($pp["list_name"]); ?></option>
-                <?php if(is_array($pp['son'])): $i = 0; $__LIST__ = $pp['son'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>>├ <?php echo ($pp["list_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php if(is_array($pp['son'])): $i = 0; $__LIST__ = $pp['son'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>>├ <?php echo ($pp["list_name"]); ?></option>
+					<?php if(is_array($pp['son'])): $i = 0; $__LIST__ = $pp['son'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>>├ <?php echo ($pp["list_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?><?php endforeach; endif; else: echo "" ;endif; ?><?php endforeach; endif; else: echo "" ;endif; ?>
             </select>
             &nbsp;&nbsp;
             <select name="vod_play"><option value="0">服务器组</option><?php if(is_array($playtree)): $i = 0; $__LIST__ = $playtree;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ppvod): ++$i;$mod = ($i % 2 )?><option value='<?php echo ($key); ?>' <?php if(($key)  ==  $vod_play): ?>selected<?php endif; ?>><?php echo ($ppvod); ?></option><?php endforeach; endif; else: echo "" ;endif; ?></select>
-            &nbsp;&nbsp;
+			  &nbsp;&nbsp;
             <select name="vod_stars" id="vod_stars" class="select">
               <option value="0" <?php if(($vod_stars)  ==  "0"): ?>selected<?php endif; ?>>所有星级</option>
               <option value="1" <?php if(($vod_stars)  ==  "1"): ?>selected<?php endif; ?>>一星内容</option>
@@ -142,7 +144,7 @@ function showhtml(vodid){
               <option value="3" <?php if(($vod_stars)  ==  "3"): ?>selected<?php endif; ?>>三星内容</option>
               <option value="4" <?php if(($vod_stars)  ==  "4"): ?>selected<?php endif; ?>>四星内容</option>
               <option value="5" <?php if(($vod_stars)  ==  "5"): ?>selected<?php endif; ?>>五星内容</option>
-            </select>
+		  </select>-->
             &nbsp;&nbsp;
             <select name="vod_del" id="vod_del" class="select">
               <option value="0">全部状态</option>
@@ -150,20 +152,17 @@ function showhtml(vodid){
               <option value="1" <?php if(($vod_del)  ==  "1"): ?>selected<?php endif; ?>>未审核</option>
             </select>
             &nbsp;&nbsp;
+			<!--
             <select name="vod_continu" id="vod_continu" class="select">
               <option value="0">连载状态</option>
               <option value="2" <?php if(($vod_continu)  ==  "2"): ?>selected<?php endif; ?>>已完结</option>
               <option value="1" <?php if(($vod_continu)  ==  "1"): ?>selected<?php endif; ?>>连载中</option>
             </select>            
-            &nbsp;&nbsp;
+			&nbsp;&nbsp;-->
             <select name="vod_type" id="vod_type" class="select">
               <option value="0">排序方式</option>
-              <option value="vod_hits" <?php if(($vod_type)  ==  "vod_hits"): ?>selected<?php endif; ?>>人气</option>
               <option value="vod_addtime" <?php if(($vod_type)  ==  "vod_addtime"): ?>selected<?php endif; ?>>时间</option>
               <option value="vod_id" <?php if(($vod_type)  ==  "vod_id"): ?>selected<?php endif; ?>>ID</option>
-              <option value="vod_gold" <?php if(($vod_type)  ==  "vod_gold"): ?>selected<?php endif; ?>>评分</option>
-              <option value="vod_up" <?php if(($vod_type)  ==  "vod_up"): ?>selected<?php endif; ?>>顶</option>
-              <option value="vod_down" <?php if(($vod_type)  ==  "vod_down"): ?>selected<?php endif; ?>>踩</option>
             </select>            
             &nbsp;&nbsp;
             <select name="vod_order" id="vod_order" class="select">
@@ -180,17 +179,16 @@ function showhtml(vodid){
       <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
         <tr align="center" class="tb_title" >
           <td width="2%" nowrap >ID</td>
-          <td width="5%" nowrap>连载</td>
-          <td >影片分类 标题 服务器组</td>
-          <td width="5%" nowrap >点击</td>
-          <td width="5%" nowrap >顶/踩</td>
-          <td width="4%" nowrap >评分</td>
-          <td width="13%" nowrap >时间</td>
-          <td width="12%" nowrap >权重</td>
+          <td width="5%" nowrap>序号</td>
+          <td >影片分类 标题 </td>
+          <td width="5%" nowrap >报价</td>
+          <td width="5%" nowrap >出品公司</td>
+          <td width="4%" nowrap >导演</td>
+          <td width="13%" nowrap >公映时间</td>
           <td width="3%" nowrap >状态</td>
           <td width="5%" nowrap >编辑</td>
         </tr>
-        <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ppcms): ++$i;$mod = ($i % 2 )?><?php if($ppcms["vod_del"]==0){
+        <?php if(is_array($list)): $key = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ppcms): ++$key;$mod = ($key % 2 )?><?php if($ppcms["vod_del"]==0){
             $isok_img = 'yes.gif';
             $isok_title= '已审核';
         }else{
@@ -201,18 +199,17 @@ function showhtml(vodid){
         $hot[$ppcms["vod_stars"]] = 'class="hot_on"'; ?>
           <tr class="firstalt">
             <td ><input name='vod_id[<?php echo ($ppcms["vod_id"]); ?>]' type='checkbox' value='<?php echo ($ppcms["vod_id"]); ?>' style='border:none' checked></td>
-           <td align="center"><input name="vod_continu[<?php echo ($ppcms["vod_id"]); ?>]" type="text" value="<?php echo ($ppcms["vod_continu"]); ?>" style="border:#CCC 1px solid;width:98%;text-align:center;color:green"></td>
+           <td align="center"><input type="text" value="<?php echo ($key); ?>" style="border:#CCC 1px solid;width:98%;text-align:center;color:green"></td>
             <td><span style="float:right;color:#666"><?php echo (str_replace('$$$',' ',$ppcms["vod_play"])); ?></span><?php if(c('url_html') > 0): ?><a href="javascript:showhtml(<?php echo ($ppcms["vod_id"]); ?>);"><font color="green">生成</font></a><?php endif; ?><span class="conlist_cate"><a href="<?php echo ($ppcms["vod_showid"]); ?>">『<?php echo getlistname($ppcms["vod_cid"]);?>』</a></span><a href="<?php echo ($ppcms["vod_readid"]); ?>" onMouseOver="showpic(event, '<?php echo (getpicurl($ppcms["vod_pic"])); ?>');" target="_blank" onMouseOut="hiddenpic();"><?php echo ($ppcms["vod_name"]); ?> <?php echo ($ppcms["vod_title"]); ?></a> (<?php echo ($ppcms["vod_id"]); ?>) <?php if(($ppcms['vod_continu'])  !=  "0"): ?><img src="__PUBLIC__/images/continu.gif" title="连载中"><?php endif; ?></td>
-            <td align="center"><?php echo ($ppcms["vod_hits"]); ?></td>
-            <td align="center" style="color:#666"><?php echo ($ppcms["vod_up"]); ?>/<?php echo ($ppcms["vod_down"]); ?></td>
-            <td align="center"><?php echo ($ppcms["vod_gold"]); ?></td>
+            <td align="center"><?php echo ($ppcms["vod_money"]); ?></td>
+            <td align="center" style="color:#666"><?php echo ($ppcms["vod_reurl"]); ?></td>
+            <td align="center"><?php echo ($ppcms["vod_director"]); ?></td>
             <td align="center"><?php echo (date('Y-m-d H:i:s',$ppcms["vod_addtime"])); ?></td>
-            <td align="center"><div class="hot_set"> <a id="hot_<?php echo ($ppcms["vod_id"]); ?>_1" href="javascript:sethot('<?php echo ($ppcms["vod_id"]); ?>',1)"<?php echo ($hot[1]); ?>>1</a> <a id="hot_<?php echo ($ppcms["vod_id"]); ?>_2" href="javascript:sethot('<?php echo ($ppcms["vod_id"]); ?>',2)"<?php echo ($hot[2]); ?>>2</a> <a id="hot_<?php echo ($ppcms["vod_id"]); ?>_3" href="javascript:sethot('<?php echo ($ppcms["vod_id"]); ?>',3)"<?php echo ($hot[3]); ?>>3</a> <a id="hot_<?php echo ($ppcms["vod_id"]); ?>_4" href="javascript:sethot('<?php echo ($ppcms["vod_id"]); ?>',4)"<?php echo ($hot[4]); ?>>4</a> <a id="hot_<?php echo ($ppcms["vod_id"]); ?>_5" href="javascript:sethot('<?php echo ($ppcms["vod_id"]); ?>',5)"<?php echo ($hot[5]); ?>>5</a></div></td>
             <td align="center" nowrap><a href="javascript:setisok('<?php echo ($ppcms["vod_id"]); ?>')"><img id="isok_<?php echo ($ppcms["vod_id"]); ?>" src="__PUBLIC__/images/<?php echo ($isok_img); ?>" title="<?php echo ($isok_title); ?>"></a></td>
             <td width="5%" colspan="2" align="center" nowrap ><a href="index.php?s=Admin-Vod-Add-vod_id-<?php echo ($ppcms["vod_id"]); ?>"><img src="__PUBLIC__/images/edit.gif" alt="编辑" width="14" height="14" border="0" align="absmiddle" title="编辑"></a><a href="index.php?s=Admin-Vod-Del-vod_id-<?php echo ($ppcms["vod_id"]); ?>" onClick="return confirm('确定删除?')"><img src="__PUBLIC__/images/del.gif" alt="删除" width="14" height="14" border="0" align="absmiddle" title="删除"></a></td>
           </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         <tr class="firstalt">
-          <td colspan="10" style=" padding:10px;"><div style="background:#CFF; padding:5px;"><input type="button" class="mininput" value="全/反选" onClick="CheckAll(this.form)" /> <?php if(c('url_html') == 1): ?><input type="submit" class="mininput" value="生成静态" onClick="ChangeAction('index.php?s=Admin-Vod-ishtml')"/><?php endif; ?> <input type="submit" class="mininput" value="已审核" onClick="ChangeAction('index.php?s=Admin-Vod-isok')"/> <input type="submit" class="mininput" value="未审核" onClick="ChangeAction('index.php?s=Admin-Vod-notok')"/> <input type="submit" class="mininput" value="设置连载" onClick="ChangeAction('index.php?s=Admin-Vod-continu')"/> <input type="submit" class="mininput" value="删除影片" onClick="ChangeAction('index.php?s=Admin-Vod-delall');return confirm('确定删除?')"/>&nbsp;转移到<select name="vod_cid"><?php if(is_array($listvod)): $i = 0; $__LIST__ = $listvod;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>"><?php echo ($pp["list_name"]); ?></option><?php if(is_array($pp['son'])): $i = 0; $__LIST__ = $pp['son'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>">├ <?php echo ($pp["list_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?><?php endforeach; endif; else: echo "" ;endif; ?><option value="0">临时库</option></select><input type="submit" class="mininput" value="批量移动" onClick="ChangeAction('index.php?s=Admin-Vod-listgo');return confirm('确定转移分类吗?')"/>&nbsp;设置为<select name="vod_stars" class="select"><option value="1">一星内容</option><option value="2">二星内容</option><option value="3">三星内容</option><option value="4">四星内容</option><option value="5">五星内容</option></select><input type="submit" class="mininput" value="设置星级" onClick="ChangeAction('index.php?s=Admin-Vod-stars')"/>&nbsp;更换为<input name="vod_otherkey" type="text" style="width:100px"> <select name="vod_other" class="select"><option value="0" selected>选择条件</option><option value="continu">连载集数</option><option value="hits">点击次数</option><option value="area">影片地区</option><option value="year">影片年代</option><option value="inputer">录入作者</option><option value="addtime">更新时间</option><option value="tag">标签TAG</option><option value="gold">更改评分</option><option value="up">顶一下</option><option value="down">踩一下</option></select><input type="submit" class="mininput" value="批量变更" onClick="ChangeAction('index.php?s=Admin-Vod-other')"/></div></td>
+          <td colspan="10" style=" padding:10px;"><div style="background:#CFF; padding:5px;"><input type="button" class="mininput" value="全/反选" onClick="CheckAll(this.form)" /> <?php if(c('url_html') == 1): ?><input type="submit" class="mininput" value="生成静态" onClick="ChangeAction('index.php?s=Admin-Vod-ishtml')"/><?php endif; ?> <input type="submit" class="mininput" value="已审核" onClick="ChangeAction('index.php?s=Admin-Vod-isok')"/> <input type="submit" class="mininput" value="未审核" onClick="ChangeAction('index.php?s=Admin-Vod-notok')"/> <input type="submit" class="mininput" value="删除影片" onClick="ChangeAction('index.php?s=Admin-Vod-delall');return confirm('确定删除?')"/>&nbsp;</div></td>
         </tr>
         <tr class=firstalt>
           <td colspan="10"><div class="pages"><?php echo ($page); ?></div></td>
@@ -241,27 +238,24 @@ function showhtml(vodid){
           <td width="120" align="right">参数：</td>
           <td ><select name="vod_cid">
           <?php if(is_array($listvod)): $i = 0; $__LIST__ = $listvod;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>><?php echo ($pp["list_name"]); ?></option>
-              <?php if(is_array($pp['son'])): $i = 0; $__LIST__ = $pp['son'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>>├ <?php echo ($pp["list_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?><?php endforeach; endif; else: echo "" ;endif; ?></select>&nbsp;&nbsp;
+              <?php if(is_array($pp['son'])): $i = 0; $__LIST__ = $pp['son'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>>├ <?php echo ($pp["list_name"]); ?></option>
+				  <?php if(is_array($pp['son'])): $i = 0; $__LIST__ = $pp['son'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pp): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($pp["list_id"]); ?>" <?php if(($pp["list_id"])  ==  $vod_cid): ?>selected<?php endif; ?>>&nbsp;&nbsp;├ <?php echo ($pp["list_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?><?php endforeach; endif; else: echo "" ;endif; ?><?php endforeach; endif; else: echo "" ;endif; ?></select>&nbsp;&nbsp;
           <select name="vod_stars">
-          <option value="1" <?php if(($vod_stars)  ==  "1"): ?>selected<?php endif; ?>>一星</option>
-          <option value="2" <?php if(($vod_stars)  ==  "2"): ?>selected<?php endif; ?>>二星</option>
-          <option value="3" <?php if(($vod_stars)  ==  "3"): ?>selected<?php endif; ?>>三星</option>
-          <option value="4" <?php if(($vod_stars)  ==  "4"): ?>selected<?php endif; ?>>四星</option>
-          <option value="5" <?php if(($vod_stars)  ==  "5"): ?>selected<?php endif; ?>>五星</option>
+          <option value="0" <?php if(($vod_stars)  ==  "0"): ?>selected<?php endif; ?>>授权地区</option>
+          <option value="1" <?php if(($vod_stars)  ==  "1"): ?>selected<?php endif; ?>>国内</option>
+          <option value="2" <?php if(($vod_stars)  ==  "2"): ?>selected<?php endif; ?>>国外</option>
+          <option value="3" <?php if(($vod_stars)  ==  "3"): ?>selected<?php endif; ?>>国内外</option>
           </select>&nbsp;&nbsp;
           <select name="vod_del">
           <option value="0" <?php if(($vod_del)  ==  "0"): ?>selected<?php endif; ?>>显示</option>
           <option value="1" <?php if(($vod_del)  ==  "1"): ?>selected<?php endif; ?>>隐藏</option>
           </select>&nbsp;&nbsp;
           <select name="vod_color">
-          <option value=''>颜色</option>                                            
-          <option value='#000000' style='background-color:#000000' <?php if(($news_color)  ==  "#000000"): ?>selected<?php endif; ?>></option>
-          <option value='#FFFFFF' style='background-color:#FFFFFF' <?php if(($news_color)  ==  "#FFFFFF"): ?>selected<?php endif; ?>></option>
-          <option value='#008000' style='background-color:#008000' <?php if(($news_color)  ==  "#008000"): ?>selected<?php endif; ?>></option>
-          <option value='#FFFF00' style='background-color:#FFFF00' <?php if(($news_color)  ==  "#FFFF00"): ?>selected<?php endif; ?>></option>
-          <option value='#FF0000' style='background-color:#FF0000' <?php if(($news_color)  ==  "#FF0000"): ?>selected<?php endif; ?>></option>
-          <option value='#0000FF' style='background-color:#0000FF' <?php if(($news_color)  ==  "#0000FF"): ?>selected<?php endif; ?>></option>
-          <option value=''>无色</option>           
+          <option value=''>授权期限</option>                                            
+          <option value='1'  <?php if(($vod_color)  ==  "1"): ?>selected<?php endif; ?>>1-3年</option>
+          <option value='2'  <?php if(($vod_color)  ==  "2"): ?>selected<?php endif; ?>>3-5年</option>
+          <option value='3'  <?php if(($vod_color)  ==  "3"): ?>selected<?php endif; ?>>5-10年</option>
+          <option value='4'  <?php if(($vod_color)  ==  "4"): ?>selected<?php endif; ?>>10年以上</option>
           </select>&nbsp;&nbsp;
           <select name="vod_year">
           <option value=''>年代</option>
@@ -274,31 +268,81 @@ function showhtml(vodid){
           <select name="vod_language">
           <option value=''>语言</option>
           <?php if(is_array($vod_language_list)): $i = 0; $__LIST__ = $vod_language_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): ++$i;$mod = ($i % 2 )?><option value="<?php echo ($val); ?>" <?php if(($val)  ==  $vod_language): ?>selected<?php endif; ?>><?php echo ($val); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-          </select>&nbsp;&nbsp;<label>栏目|权重|审核|颜色|年代|地区|语言</label>
+          </select>&nbsp;&nbsp;<label>栏目|地区|审核|期限|年代|地区|语言</label>
           </td>
         </tr>
         <tr class="firstalt">
           <td align="right">标题：</td>
-         <td><input name="vod_name" type="text" size="60" maxlength="255" value="<?php echo ($vod_name); ?>">&nbsp;&nbsp;副&nbsp;&nbsp;&nbsp;&nbsp;标：<input name="vod_title" type="text" size="10" value="<?php echo ($vod_title); ?>">&nbsp;&nbsp;标&nbsp;&nbsp;&nbsp;&nbsp;签：<input name="vod_tag" id="vod_tag" type="text" size="27" value="<?php echo ($vod_tag); ?>"> <a href="javascript:showtags()"><img src="__PUBLIC__/images/tag.gif" alt="选择标签" width="26" height="26" border="0" align="absmiddle"></a></td>
+         <td><input name="vod_name" type="text" size="60" maxlength="255" value="<?php echo ($vod_name); ?>">&nbsp;&nbsp;英名称：<input name="vod_title" type="text" size="10" value="<?php echo ($vod_title); ?>">&nbsp;&nbsp;标&nbsp;&nbsp;&nbsp;&nbsp;签：<input name="vod_tag" id="vod_tag" type="text" size="27" value="<?php echo ($vod_tag); ?>"> <a href="javascript:showtags()"><img src="__PUBLIC__/images/tag.gif" alt="选择标签" width="26" height="26" border="0" align="absmiddle"></a></td>
         </tr>
          <tr class="firstalt">
           <td align="right">演员：</td>
-          <td><input name="vod_actor" type="text" size="60" maxlength="255" value="<?php echo ($vod_actor); ?>">&nbsp;&nbsp;导&nbsp;&nbsp;&nbsp;&nbsp;演：<input name="vod_director" type="text" size="10" value="<?php echo ($vod_director); ?>">&nbsp;&nbsp;连载中：<input name="vod_continu" type="text" size="10" value="<?php echo ($vod_continu); ?>" style="text-align:center">&nbsp;&nbsp;人气：<input name="vod_hits" type="text" size="9" value="<?php echo ($vod_hits); ?>" style="text-align:center"></td>
+          <td><input name="vod_actor" type="text" size="60" maxlength="255" value="<?php echo ($vod_actor); ?>">&nbsp;&nbsp;导&nbsp;&nbsp;&nbsp;&nbsp;演：<input name="vod_director" type="text" size="10" value="<?php echo ($vod_director); ?>">&nbsp;&nbsp;分钟/集：<input name="vod_continu" type="text" size="10" value="<?php echo ($vod_continu); ?>" style="text-align:center">&nbsp;&nbsp;分钟：<input name="vod_hits" type="text" size="9" value="<?php echo ($vod_hits); ?>" style="text-align:center"></td>
         </tr>       
         <tr class="firstalt">
-          <td align="right">来源：</td>
-          <?php if(($vod_id)  >  "0"): ?><td><input name="vod_reurl" type="text" size="60" value="<?php echo ($vod_reurl); ?>">&nbsp;&nbsp;首字母：<input name="vod_letter" type="text" size="5" value="<?php echo ($vod_letter); ?>" style="text-align:center">&nbsp;&nbsp;时&nbsp;&nbsp;&nbsp;&nbsp;间：<input name="vod_addtime" type="text" size="24" value="<?php echo (date('Y-m-d H:i:s',$vod_addtime)); ?>"> 更新<input name="vod_time" type="checkbox" style="border:none" value="1" <?php if(c('admin_time_edit') == 1): ?>checked<?php endif; ?>></td>
+          <td align="right">出品公司：</td>
+          <?php if(($vod_id)  >  "0"): ?><td><input name="vod_reurl" type="text" size="60" value="<?php echo ($vod_reurl); ?>">&nbsp;&nbsp;首字母：<input name="vod_letter" type="text" size="5" value="<?php echo ($vod_letter); ?>" style="text-align:center">&nbsp;&nbsp;公映时间：<input name="vod_addtime" type="text" size="24" value="<?php echo (date('Y-m-d H:i:s',$vod_addtime)); ?>"> 更新<input name="vod_time" type="checkbox" style="border:none" value="1" <?php if(c('admin_time_edit') == 1): ?>checked<?php endif; ?>></td>
           <?php else: ?>
-          <td><input name="vod_reurl" type="text" size="60" value="<?php echo ($vod_reurl); ?>">&nbsp;&nbsp;首字母：<input name="vod_letter" type="text" size="10" value="<?php echo ($vod_letter); ?>" style="text-align:center">&nbsp;&nbsp;时&nbsp;&nbsp;&nbsp;&nbsp;间：<input name="vod_addtime" type="text" size="33" value="<?php echo (date('Y-m-d H:i:s',$vod_addtime)); ?>"></td><?php endif; ?>
+          <td><input name="vod_reurl" type="text" size="60" value="<?php echo ($vod_reurl); ?>">&nbsp;&nbsp;首字母：<input name="vod_letter" type="text" size="10" value="<?php echo ($vod_letter); ?>" style="text-align:center">&nbsp;&nbsp;公映时间：<input name="vod_addtime" type="text" size="33" value="<?php echo (date('Y-m-d H:i:s',$vod_addtime)); ?>"></td><?php endif; ?>
         </tr>
         <tr class="firstalt">
-          <td align="right">关键字：</td>
-          <td><input name="vod_keywords" type="text" size="11" value="<?php echo ($vod_keywords); ?>">&nbsp;&nbsp;模板：<input name="vod_skin" size="10" type="text" value="<?php echo ($vod_skin); ?>" style="text-align:center">&nbsp;&nbsp;录入：<input name="vod_inputer" type="text" size="10" value="<?php echo ($vod_inputer); ?>" style="text-align:center">&nbsp;&nbsp;评&nbsp;&nbsp;&nbsp;&nbsp;分：<input name="vod_gold" type="text" size="5" value="<?php echo ($vod_gold); ?>" style="text-align:center">&nbsp;&nbsp;人气：<input name="vod_golder" type="text" size="5" value="<?php echo ($vod_golder); ?>" style="text-align:center">&nbsp;&nbsp;顶：<input name="vod_up" size="5" type="text" value="<?php echo ($vod_up); ?>" style="text-align:center">&nbsp;&nbsp;踩：<input name="vod_down" size="5" type="text" value="<?php echo ($vod_down); ?>" style="text-align:center"></td>
+          <td align="right">总时长：</td>
+          <td><input name="vod_keywords" type="text" size="11" value="<?php echo ($vod_keywords); ?>">&nbsp;&nbsp;集数：<input name="vod_skin" size="10" type="text" value="<?php echo ($vod_skin); ?>" style="text-align:center">&nbsp;&nbsp;录入：<input name="vod_inputer" type="text" size="10" value="<?php echo ($vod_inputer); ?>" style="text-align:center">&nbsp;&nbsp;素材介质：<input name="vod_gold" type="text" size="5" value="<?php echo ($vod_gold); ?>" style="text-align:center">&nbsp;&nbsp;节目编号：<input name="vod_golder" type="text" size="5" value="<?php echo ($vod_golder); ?>" style="text-align:center">首播时间：<input name="vod_up" size="19" type="text" value="<?php echo (date('Y-m-d H:i:s',$vod_up)); ?>" style="text-align:center">&nbsp;&nbsp;踩：<input name="vod_down" size="5" type="text" value="<?php echo ($vod_down); ?>" style="text-align:center"></td>
         </tr> 
         <tr class="firstalt">
-          <td align="right">缩略图：</td>
-          <td><span style="float:left; margin-top:5px"><input name="vod_pic" type="text" size="60" maxlength="255" value="<?php echo ($vod_pic); ?>" onMouseOver="if(this.value)showpic(event, '<?php echo C("upload_path");?>/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_pic" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span></td>
+          <td align="right">上传海报：</td>
+          <td><span style="float:left; margin-top:5px"><input name="vod_pic" id="vod_pic" type="hidden" size="60" maxlength="255" value="<?php echo ($vod_pic); ?>" onMouseOver="if(this.value)showpic(event, '<?php echo C("upload_path");?>/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_pic" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span></td>
+		  <td><img src="<?php echo ($http_root); ?><?php echo ($vod_pic); ?>"></img></td>
         </tr>              
+        <tr class="firstalt">
+			<td align="right">授权方公司名称：</td>
+			<td><input name="vod_company" value="<?php echo ($vod_company); ?>" type="text"/> </td>
+		</tr>	
+        <tr class="firstalt">
+			<td align="right">联系人：</td>
+			<td><input name="vod_people" value="<?php echo ($vod_people); ?>" type="text"/> </td>
+		</tr>	
+		 <tr class="firstalt">
+			<td align="right">手机：</td>
+			<td><input name="vod_phone" value="<?php echo ($vod_phone); ?>" type="text"/> </td>
+		</tr>	
+		 <tr class="firstalt">
+			<td align="right">电话：</td>
+			<td><input name="vod_tele" value="<?php echo ($vod_tele); ?>" type="text"/> </td>
+		</tr>
+		 <tr class="firstalt">
+			<td align="right">邮箱：</td>
+			<td><input name="vod_email" value="<?php echo ($vod_email); ?>" type="text"/> </td>
+		</tr>
+		 <tr class="firstalt">
+			<td align="right">版权报价：</td>
+			<td><input name="vod_money" value="<?php echo ($vod_money); ?>" type="text"/> </td>
+		</tr>
+		 <tr class="firstalt">
+			<td align="right">授权渠道：</td>
+			<td><input name="vod_ditch" value="0" type="checkbox" />互联网 <input name="ditch" value="1" type="checkbox" />无线网  
+				<input name="ditch" value="2" type="checkbox"/>电视台  <input name="ditch" value="3" type="checkbox"/>院线
+				<input name="ditch" value="4" type="checkbox"/>音像  <input name="ditch" value="5" type="checkbox"/>其他
+				<input name="ditch" value="0|1|2|3|4|5" type="checkbox"/>全部
+			</td>
+		</tr>
+
+		<tr class="firstalt">
+			<td align="right">授权方式：</td>
+			<td><input name="vod_way" value="0" type="checkbox" <?php if(($vod_way)  ==  "0"): ?>checked<?php endif; ?>/>独家 <input name="vod_way" value="1" type="checkbox" <?php if(($vod_way)  ==  "1"): ?>checked<?php endif; ?>/>非独家  
+			</td>
+		</tr>
+		<tr class="firstalt">
+			<td align="right">热门推荐：</td>
+			<td><input name="vod_hot" value="0" type="radio" <?php if(($vod_hot)  ==  "0"): ?>checked<?php endif; ?> />否 <input name="vod_hot" value="1" type="radio" <?php if(($vod_hot)  ==  "1"): ?>checked<?php endif; ?> />是  
+			</td>
+		</tr>
+		<tr class="firstalt">
+			<td align="right">当月推荐：</td>
+			<td><input name="vod_mhot" value="0" type="radio" <?php if(($vod_mhot)  ==  "0"): ?>checked="true"<?php endif; ?>/>否 <input name="vod_mhot" value="1" type="radio" <?php if(($vod_mhot)  ==  "1"): ?>checked="true"<?php endif; ?> />是  
+			</td>
+		</tr>
+		<!--
         <tbody id="urlmoban" style="display:none;">
         <tr class="firstalt">
           <td align="right">数据地址：</td>
@@ -324,9 +368,9 @@ function showhtml(vodid){
         <tr class="firstalt">
           <td align="right">新加地址：</td>
           <td><a onClick="addurl();" class="serverlist"><img src="__PUBLIC__/images/add.gif" alt="添加新播放器" border="0"> 点击新加一组播放器</a></td>
-        </tr> 
+	  </tr>--> 
         <tr class="firstalt">
-          <td align="right">视频简介：</td>
+          <td align="right">简介：</td>
           <td><textarea id="content" name="vod_content" style="width:715px;height:300px;"><?php echo ($vod_content); ?></textarea></td>
         </tr>
         <tr class="firstalt">

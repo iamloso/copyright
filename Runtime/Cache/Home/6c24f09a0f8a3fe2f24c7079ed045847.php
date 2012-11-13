@@ -33,6 +33,7 @@
     </ul></div>
 </div>
 </div>
+
 <div class="main">
 <div class="bd960 clear"><?php echo getadsurl('top960');?></div>
 <div class="datal">

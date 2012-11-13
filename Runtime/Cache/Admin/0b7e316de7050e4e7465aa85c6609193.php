@@ -22,16 +22,16 @@
     </ul>
   </div>
   <div id="main2" onclick=expandIt(2) class="expand">
-    <div class="expand_title">视频管理</div>
+    <div class="expand_title">产品管理</div>
   </div>
   <div id="sub2" style="display:none" class="expand_sub">
     <ul>
-    <li><a href="index.php?s=Admin-Vod-Show" target="content">视频管理</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-Vod-Add" target="content">添加视频</a></li>
-    <li><a href="index.php?s=Admin-List-Show-sid-1" target="content">视频分类</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-List-Add" target="content">添加分类</a></li>
-    <li><a href="index.php?s=Admin-Collect-Xmllist" target="content"><font color="red">一键采集视频</font></a></li>
-    <li><a href="index.php?s=Admin-Vod-Show-vod_del-1" target="content">未审核的视频</a></li>
-    <li><a href="index.php?s=Admin-Vod-Show-vod_continu-1" target="content">连载中的视频</a></li>
-    <li><a href="index.php?s=Admin-Vod-Show-vod_cid-0" target="content">未入库的视频</a></li>
+    <li><a href="index.php?s=Admin-Vod-Show" target="content">产品管理</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-Vod-Add" target="content">添加产品</a></li>
+    <li><a href="index.php?s=Admin-List-Show-sid-1" target="content">产品分类</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-List-Add" target="content">添加分类</a></li>
+    <li><a href="index.php?s=Admin-Collect-Xmllist" target="content"><font color="red">一键采集产品</font></a></li>
+    <li><a href="index.php?s=Admin-Vod-Show-vod_del-1" target="content">未审核的产品</a></li>
+    <li><a href="index.php?s=Admin-Vod-Show-vod_continu-1" target="content">连载中的产品</a></li>
+    <li><a href="index.php?s=Admin-Vod-Show-vod_cid-0" target="content">未入库的产品</a></li>
     </ul>
   </div>
   <div id="main3" onclick=expandIt(3) class="expand">
@@ -49,9 +49,9 @@
   </div>
   <div id="sub5" style="display:none" class="expand_sub">
     <ul>
-    <li><a href="index.php?s=Admin-Collect-Xmllist" target="content"><font color="red">一键采集视频</font></a></li>
-    <li><a href="index.php?s=Admin-Collect-Show" target="content">自定义采集视频管理</a></li>
-    <li><a href="index.php?s=Admin-Collect-Add" target="content">自定义采集视频添加</a></li>
+    <li><a href="index.php?s=Admin-Collect-Xmllist" target="content"><font color="red">一键采集产品</font></a></li>
+    <li><a href="index.php?s=Admin-Collect-Show" target="content">自定义采集产品管理</a></li>
+    <li><a href="index.php?s=Admin-Collect-Add" target="content">自定义采集产品添加</a></li>
     <li><a href="index.php?s=Admin-Collect-Export" target="content">自定义采集规则导出</a></li>
     <li><a href="index.php?s=Admin-Collect-Import" target="content">自定义采集规则导入</a></li>
     </ul>
@@ -63,7 +63,7 @@
     <ul>
     <li><a href="index.php?s=Admin-Html-Show" target="content">网站生成选项</a></li>     
     <li><a href="index.php?s=Admin-Html-Createindex" target="content">生成网站首页</a></li>
-    <li><a href="index.php?s=Admin-Html-Showvod-did-1-gid-1" target="content">一键生成当天视频</a></li>
+    <li><a href="index.php?s=Admin-Html-Showvod-did-1-gid-1" target="content">一键生成当天产品</a></li>
     <li><a href="index.php?s=Admin-Html-Shownews-did-1-gid-1" target="content">一键生成当天新闻</a></li>
     <li><a href="index.php?s=Admin-Html-Mapall" target="content">一键生成网页地图</a></li>
     </ul>
