@@ -3,11 +3,38 @@ class VodAction extends HomeAction{
     //影视列表
     public function show(){
 		$cid=$_GET['id'];
-		$list=list_search(F('_ppvod/list'),'list_id='.$cid);$list[0]["list_page"]=!empty($_GET['p'])?$_GET['p']:1;
-		$this->assign($list[0]);
-		$this->assign('pplist',A("Home.Vod"));
-		$this->assign('title',$list[0]['list_name'].'第'.$list[0]['list_page'].'页-'.C('site_name').C('site_by'));
-		$skin=$list[0]['list_skin'];if(empty($skin)){$skin='pp_vodlist';}
+		$pageSize = 20;
+    	$menu_data = F('_ppvod/listtree');
+		foreach($menu_data as $key => &$value)
+		{
+			 $temp_array = array();
+			 if($value['list_id']==$cid)
+			 {
+			     foreach($value['son'] as $k => $v)
+				 {
+				    $temp_array[] = $v['list_id']; 
+				 }
+				 $list_ids = implode(',', $temp_array);
+                 break;
+			 }
+			 else
+			 {
+			     continue;
+			 }
+		}
+
+		$sql = " select count(*) as count from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0";
+		$vod_count = M()->query($sql);
+
+        $p = new Page($vod_count[0]['count'], $pageSize);
+		$sql = " select * from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0 limit {$p->firstRow}, {$pageSize}";
+		$vod_data = M()->query($sql);
+		$this->assign('pagehtml', $p->show());
+		$this->assign('counts', $vod_count[0]['count']);
+		$this->assign('totalPages',	$p->totalPages);
+		$this->assign('totalRows', $p->totalRows);
+		$this->assign('nowPage', $p->nowPage);
+		$this->assign('vod_list', $vod_data);
 		$this->display('piao_erji');
     }
     //搜索影视列表
