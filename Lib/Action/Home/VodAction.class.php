@@ -5,37 +5,55 @@ class VodAction extends HomeAction{
 		$cid=$_GET['id'];
 		$pageSize = 20;
     	$menu_data = F('_ppvod/listtree');
-		foreach($menu_data as $key => &$value)
-		{
-			 $temp_array = array();
-			 if($value['list_id']==$cid)
-			 {
-			     foreach($value['son'] as $k => $v)
+		$sql = " select list_pid from pp_list where list_id={$cid}";
+		$list_cat = M()->query($sql);
+		if(empty($list_cat[0]['list_pic']))
+		{	
+			foreach($menu_data as $key => &$value)
+			{
+				 $temp_array = array();
+				 if($value['list_id']==$cid)
 				 {
-				    $temp_array[] = $v['list_id']; 
+					 foreach($value['son'] as $k => $v)
+					 {
+						$temp_array[] = $v['list_id']; 
+					 }
+					 $list_ids = implode(',', $temp_array);
+					 break;
 				 }
-				 $list_ids = implode(',', $temp_array);
-                 break;
-			 }
-			 else
-			 {
-			     continue;
-			 }
+				 else
+				 {
+					 continue;
+				 }
+			}
+			$sql = " select count(*) as count from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0";
+		    $sql1 = " select * from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0 order by vod_id desc ";
+		}	
+		else
+		{
+		    $sql = " select count(*) as count from pp_vod where vod_cid = {$cid} and vod_del=0";
+		    $sql1 = " select * from pp_vod where vod_cid = {$cid} and vod_del=0 order by vod_id desc ";
 		}
-
-		$sql = " select count(*) as count from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0";
 		$vod_count = M()->query($sql);
 
         $p = new Page($vod_count[0]['count'], $pageSize);
-		$sql = " select * from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0 limit {$p->firstRow}, {$pageSize}";
-		$vod_data = M()->query($sql);
+		$sql1 .= " limit {$p->firstRow}, {$pageSize}";
+		$vod_data = M()->query($sql1);
 		$this->assign('pagehtml', $p->show());
 		$this->assign('counts', $vod_count[0]['count']);
 		$this->assign('totalPages',	$p->totalPages);
 		$this->assign('totalRows', $p->totalRows);
 		$this->assign('nowPage', $p->nowPage);
 		$this->assign('vod_list', $vod_data);
-		$this->display('piao_erji');
+		$this->assign('cid', $cid);
+		if($_GET['type'])
+		{
+		   $this->display('piao_erjitoo');
+		}
+		else
+		{	
+		   $this->display('piao_erji');
+		}   
     }
     //搜索影视列表
     public function search(){
