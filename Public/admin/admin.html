@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>{&admin_name} 管理面版 v{&admin_var}</title>
+<title>管理面版</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="{&admin_keywords}">
 <meta name="description" content="{&admin_description}">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="right">
-    <div class="right_top">{&admin_welcome}</div>
+    <div class="right_top">欢迎管理系统后台</div>
     <div class="right_main">
     <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
       <tr class="tb_head" ><td><h2>操作导航：</h2></td></tr>
@@ -76,19 +76,9 @@
           <td>
           <input name="admin_ok[0]" type="checkbox" value="1" class="noborder" <eq name="admin.0" value="1">checked</eq>>后台用户
           <input name="admin_ok[1]" type="checkbox" value="1" class="noborder" <eq name="admin.1" value="1">checked</eq>>分类管理
-          <input name="admin_ok[2]" type="checkbox" value="1" class="noborder" <eq name="admin.2" value="1">checked</eq>>视频管理
+          <input name="admin_ok[2]" type="checkbox" value="1" class="noborder" <eq name="admin.2" value="1">checked</eq>>产品管理
           <input name="admin_ok[3]" type="checkbox" value="1" class="noborder" <eq name="admin.3" value="1">checked</eq>>新闻管理
           <input name="admin_ok[4]" type="checkbox" value="1" class="noborder" <eq name="admin.4" value="1">checked</eq>>用户管理
-          <input name="admin_ok[5]" type="checkbox" value="1" class="noborder" <eq name="admin.5" value="1">checked</eq>>采集管理
-          <input name="admin_ok[6]" type="checkbox" value="1" class="noborder" <eq name="admin.6" value="1">checked</eq>>数据备份
-          <input name="admin_ok[7]" type="checkbox" value="1" class="noborder" <eq name="admin.7" value="1">checked</eq>>上传管理<br>
-          <input name="admin_ok[8]" type="checkbox" value="1" class="noborder" <eq name="admin.8" value="1">checked</eq>>友链管理
-          <input name="admin_ok[9]" type="checkbox" value="1" class="noborder" <eq name="admin.9" value="1">checked</eq>>广告管理
-          <input name="admin_ok[10]" type="checkbox" value="1" class="noborder" <eq name="admin.10" value="1">checked</eq>>缓存管理
-          <input name="admin_ok[11]" type="checkbox" value="1" class="noborder" <eq name="admin.11" value="1">checked</eq>>生成管理
-          <input name="admin_ok[12]" type="checkbox" value="1" class="noborder" <eq name="admin.12" value="1">checked</eq>>模板管理
-          <input name="admin_ok[13]" type="checkbox" value="1" class="noborder" <eq name="admin.13" value="1">checked</eq>>评论管理
-          <input name="admin_ok[14]" type="checkbox" value="1" class="noborder" <eq name="admin.14" value="1">checked</eq>>留言管理
           <input name="admin_ok[15]" type="checkbox" value="1" class="noborder" <eq name="admin.15" value="1">checked</eq>>TAG管理
           </td>
         </tr> 
@@ -102,6 +92,5 @@
     </div>
     </div>
 </div>
-<include file="footer" />
 </body>
 </html>
