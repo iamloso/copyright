@@ -13,7 +13,15 @@
 <div style="clear:both"></div>
 
 <div class="recommended">
-<div class="dangqianwei"><a href="##">首页</a><span>&gt;</span><a href="##">电视剧</a><span>&gt;</span><a href="##">爱情</a></div>
+	<div class="dangqianwei"><a href="##">首页</a><span>&gt;</span><a href="?s=Vod-show-id-{$cid}-name-{$name}.html">{$name}</a>
+		<php>
+		if($subname && $subid)
+		{
+           echo "<span>&gt;</span><a href='?s=Vod-show-id-$cid-name-$name-subid-$subid-subname-$subname.html'>$subname</a>";
+		}
+	
+    </php>
+	</div>
 
 <include file="./Tpl/default/Home/piao_search.html"/>
 
@@ -30,8 +38,8 @@
 	<li style="width:190px; height:40px;font-size:15px; color:#616161;font-weight:bold;">{$menu.list_name}<div style="font-size:12px; color:#616161;font-weight:bold;width:190px; height:15px;overflow:hidden; float:left;"> {$menu.list_skin}</div><span style="font-size:14px;color:#933; font-weight:normal;">（{$menu.count}部）</span></li>
 <volist id='son' name="menu['son']">	
 <li>
-<a href="##">{$son.list_name}</a>
-<p><a href="##">{$son.list_skin}</a></p>
+<a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_name}</a>
+<p><a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_skin}</a></p>
 </li>
 </volist>
 </ul>
@@ -77,7 +85,7 @@
             CurrentPageButtonClass="cpb">
  	<table style="float:left;" width="650px" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td width=180px; align="left" valign="bottom" nowrap="true" class="paginator"><font color=#003399>第2页，共11页，共有108个节目</font></td>
+			<td width=180px; align="left" valign="bottom" nowrap="true" class="paginator"></td>
             <td>
 				{$pagehtml}
 			</td>            

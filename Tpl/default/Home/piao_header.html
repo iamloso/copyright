@@ -6,6 +6,7 @@
 <script language="javascript" type="text/javascript" src="js/jquery.js"> </script>
 
 <title>无标题文档</title>-->
+<script language="javascript" type="text/javascript" src="__ROOT__/Public/home/js/jquery.js"> </script>
 <script language="javascript" type="text/javascript">
 
 function shownavbga(key)
@@ -55,7 +56,7 @@ function hiddennavbga(key)
 <P id="navengl1" >Home page </P></a></li>
 <volist id='menu' name='ppmenu' key="key">
 <li id="shownavbga{$key+1}">
-<a id="navhany{$key+1}" onmouseover="shownavbga({$key+1})" onmouseout="hiddennavbga({$key+1})" href="?s=Vod-show-id-{$menu.list_id}-main-1.html" >{$menu.list_name}
+<a id="navhany{$key+1}" onmouseover="shownavbga({$key+1})" onmouseout="hiddennavbga({$key+1})" href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}.html" >{$menu.list_name}
 	<P id="navengl{$key+1}" >{$menu.list_skin}</P></a></li>
 </volist>
 

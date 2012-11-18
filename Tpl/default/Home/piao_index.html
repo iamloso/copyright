@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/home/css/style.css" />
-<script language="javascript" type="text/javascript" src="__ROOT__/Public/home/js/jquery.js"> </script>
 
 <title>中数版权</title>
 </head>
@@ -219,8 +218,8 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	<li style="width:240px; height:38px;font-size:16px; color:#333;">{$menu.list_name}  {$menu.list_skin}</li>
 <volist id='son' name='menu[son]'>	
 <li>
-<a href="##">{$son.list_name}</a>
-<p><a href="##">{$son.list_skin}</a></p>
+<a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_name}</a>
+<p><a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_skin}</a></p>
 </li>
 </volist>
 </ul>
