@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?>﻿<html>
 <head>
-<title><?php echo C("admin_name");?> 管理面版 v<?php echo C("admin_var");?></title>
+<title>管理面版</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="<?php echo C("admin_keywords");?>">
 <meta name="description" content="<?php echo C("admin_description");?>">
@@ -11,8 +11,7 @@
   <tr> 
     <td background="__PUBLIC__/images/top7.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr> 
-          <td width="600"><img src="__PUBLIC__/images/top6.gif" width="600" height="90"></td>
-          <td valign="top"><a href="?s=/index" target="_blank"><img src="__PUBLIC__/images/top20.gif" width="70" height="63" border="0"></a><a href="http://www.haiyaotuan.com/" target="_blank"><img src="__PUBLIC__/images/top21.gif" width="70" height="63" border="0"></a><a href="http://bbs.haiyaotuan.com" target="_blank"><img src="__PUBLIC__/images/top22.gif" width="70" height="63" border="0"></a><a href="index.php?s=Admin-Login-Logout" onClick="return confirm('确定退出?')" target="content"><img src="__PUBLIC__/images/top23.gif" width="70" height="63" border="0"></a><a href="http://bbs.haiyaotuan.com" target="_blank"><img src="__PUBLIC__/images/top24.gif" width="70" height="63" border="0"></a></td>
+          <td valign="top"><a href="index.php?s=Admin-Login-Logout" onClick="return confirm('确定退出?')" target="content"><img src="__PUBLIC__/images/top23.gif" width="70" height="63" border="0"></a></td>
         </tr>
       </table></td>
   </tr>

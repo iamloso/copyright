@@ -36,7 +36,7 @@ class HomeAction extends AllAction{
 				    $temp_array[] = $v['list_id']; 
 				 }
 				 $list_ids = implode(',', $temp_array);
-                 $sql = " select count(*) as count from pp_vod where vod_hot=1 and vod_cid in ('{$list_ids}') and vod_del=0";
+                 $sql = " select count(*) as count from pp_vod where vod_hot=1 and vod_cid in ({$list_ids}) and vod_del=0";
 				 $vod_data = M()->query($sql);
 			     $value['count'] = $vod_data[0]['count']; 
 			 }

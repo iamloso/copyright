@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><html>
 <head>
-<title><?php echo C("admin_name");?> 管理面版 v<?php echo C("admin_var");?></title>
+<title>管理面版</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="<?php echo C("admin_keywords");?>">
 <meta name="description" content="<?php echo C("admin_description");?>">
@@ -109,7 +109,7 @@ function showhtml(vodid){
 }
 </script>
 <div class="right">
-  <div class="right_top"><?php echo C("admin_welcome");?></div>
+  <div class="right_top">欢迎光临系统后台</div>
   <div class="right_main">
   <!--图片预览框-->
   <div id="preview" style="position:absolute;display:none;width:75;height:75;" class="showpic"><img name="pic_a1" id="pic_a1" width="75" height="75"></div>
@@ -320,10 +320,10 @@ function showhtml(vodid){
 		</tr>
 		 <tr class="firstalt">
 			<td align="right">授权渠道：</td>
-			<td><input name="vod_ditch" value="0" type="checkbox" />互联网 <input name="ditch" value="1" type="checkbox" />无线网  
-				<input name="ditch" value="2" type="checkbox"/>电视台  <input name="ditch" value="3" type="checkbox"/>院线
-				<input name="ditch" value="4" type="checkbox"/>音像  <input name="ditch" value="5" type="checkbox"/>其他
-				<input name="ditch" value="0|1|2|3|4|5" type="checkbox"/>全部
+			<td><input name="vod_ditch" value="0" type="checkbox" />互联网 <input name="vod_ditch" value="1" type="checkbox" />无线网  
+				<input name="vod_ditch" value="2" type="checkbox"/>电视台  <input name="vod_ditch" value="3" type="checkbox"/>院线
+				<input name="vod_ditch" value="4" type="checkbox"/>音像  <input name="vod_ditch" value="5" type="checkbox"/>其他
+				<input name="vod_ditch" value="0|1|2|3|4|5" type="checkbox"/>全部
 			</td>
 		</tr>
 
@@ -380,6 +380,5 @@ function showhtml(vodid){
     </form><?php endif; ?>
     </div>
 </div>
-<br /><center>Powered by： <a href="<?php echo C("admin_url");?>" target="_blank"><?php echo C("admin_name");?></a> v<?php echo C("admin_var");?></center>
 </body>
 </html>

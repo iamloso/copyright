@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?>﻿<html>
 <head>
-<title><?php echo C("admin_name");?> 管理面版 v<?php echo C("admin_var");?></title>
+<title>管理面版</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="<?php echo C("admin_keywords");?>">
 <meta name="description" content="<?php echo C("admin_description");?>">
@@ -12,7 +12,7 @@
 <div class="right">
   <iframe id="show_upload_iframe" frameborder=0 scrolling="no" style="display:none; position:absolute;"></iframe><div id="show_upload" style="height:350px;overflow:auto">nothing...</div>
   <div id="body_loading" onClick="loaded();"><img src="__PUBLIC__/images/body_load.gif"></div>
-  <div class="right_top"><?php echo C("admin_welcome");?></div>
+  <div class="right_top">欢迎光临系统后台</div>
   <div class="right_main">
     <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
       <tr class=tb_head>
@@ -75,26 +75,7 @@
         <td width="75%"><?=function_exists('iconv_strlen') ? '支持' : '<span style="color:red">不支持</span>'?></td>
       </tr>      
     </table>
-    <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
-      <tr  class=tb_head>
-        <td colspan="2"><h2>产品说明：</h2></td>
-      </tr>
-      <tr nowrap class="firstalt">
-        <td width="25%">官方主页：</td>
-        <td><font class="normalfont"><a href="<?php echo C("admin_url");?>" target="_blank"><?php echo C("admin_url");?></a></font> </td>
-      </tr>
-      <tr nowrap class="firstalt">
-        <td width="25%">程序开发：</td>
-        <td>舟舟(QQ：385776007) </td>
-      </tr>
-      <tr nowrap class="firstalt">
-        <td width="25%">最新版本：</td>
-        <td>2.0 </td>
-        
-      </tr>
-    </table>
   </div>
 </div>
-<br /><center>Powered by： <a href="<?php echo C("admin_url");?>" target="_blank"><?php echo C("admin_name");?></a> v<?php echo C("admin_var");?></center>
 </body>
 </html>

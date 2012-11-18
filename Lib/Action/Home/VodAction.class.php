@@ -3,11 +3,21 @@ class VodAction extends HomeAction{
     //影视列表
     public function show(){
 		$cid=$_GET['id'];
+		$subid=$_GET['subid'];
+		$name = $_GET['name'];
+		$subname = $_GET['subname'];
+		$this->assign('name', $name);
+		$this->assign('subname', $subname);
+		$this->assign('subid', $subid);
+		$this->assign('cid', $cid);
 		$pageSize = 20;
     	$menu_data = F('_ppvod/listtree');
+		$ditch = array('互联网', '无线网', ' 电视台', ' 院线', '音像', '其他');
+		$this->assign('ditch', $ditch);
+		$cid = $subid ? $subid : $cid;
 		$sql = " select list_pid from pp_list where list_id={$cid}";
 		$list_cat = M()->query($sql);
-		if(empty($list_cat[0]['list_pic']))
+		if($list_cat[0]['list_pid']==0)
 		{	
 			foreach($menu_data as $key => &$value)
 			{
@@ -26,8 +36,8 @@ class VodAction extends HomeAction{
 					 continue;
 				 }
 			}
-			$sql = " select count(*) as count from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0";
-		    $sql1 = " select * from pp_vod where vod_cid in ('{$list_ids}') and vod_del=0 order by vod_id desc ";
+			$sql = " select count(*) as count from pp_vod where vod_cid in ({$list_ids}) and vod_del=0";
+		    $sql1 = " select * from pp_vod where vod_cid in ({$list_ids}) and vod_del=0 order by vod_id desc ";
 		}	
 		else
 		{
@@ -35,7 +45,6 @@ class VodAction extends HomeAction{
 		    $sql1 = " select * from pp_vod where vod_cid = {$cid} and vod_del=0 order by vod_id desc ";
 		}
 		$vod_count = M()->query($sql);
-
         $p = new Page($vod_count[0]['count'], $pageSize);
 		$sql1 .= " limit {$p->firstRow}, {$pageSize}";
 		$vod_data = M()->query($sql1);
@@ -45,7 +54,6 @@ class VodAction extends HomeAction{
 		$this->assign('totalRows', $p->totalRows);
 		$this->assign('nowPage', $p->nowPage);
 		$this->assign('vod_list', $vod_data);
-		$this->assign('cid', $cid);
 		if($_GET['type'])
 		{
 		   $this->display('piao_erjitoo');

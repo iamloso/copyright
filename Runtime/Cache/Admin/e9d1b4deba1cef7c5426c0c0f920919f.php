@@ -18,9 +18,6 @@
   <tr>
     <td align="center"><table width="502" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td><img src="__PUBLIC__/images/top1.gif" width="502" height="70"></td>
-  </tr>
-  <tr>
     <td height="134" align="center" background="__PUBLIC__/images/top2.gif" bgcolor="#F2FFD1">
     <form method='post' action='index.php?s=Admin-Login-Check' name="form1">
         <table width="400" border="0" align="right" cellpadding="0" cellspacing="4">
@@ -41,18 +38,13 @@
           </tr>
           <tr>
             <td height="25" align="center">&nbsp;</td>
-            <td><input name="submit" type='image' src="__PUBLIC__/images/top4.gif" x=10 y=10 id="submit" class="noborder"><a href="__ROOT__" target="_blank"> <img src="__PUBLIC__/images/top5.gif" width="70" height="22" border="0" align="middle"></a></td>
+            <td><input name="submit" type='image' src="__PUBLIC__/images/top4.gif" x=10 y=10 id="submit" class="noborder"></td>
           </tr>
         </table>
       </form></td>
   </tr>
-  <tr>
-    <td><img src="__PUBLIC__/images/top3.gif" width="502" height="84"></td>
-  </tr>
 </table></td>
   </tr>
 </table>
-<!--请勿删除以下统计代码　不会对您有任意影响　做个统计有利于舟舟影视系统的发展 -->
-<span style="display:none"><script language="javascript" type="text/javascript" src="http://js.users.51.la/5425689.js"></script></span>
 </body>
 </html>

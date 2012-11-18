@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><html>
 <head>
-<title><?php echo C("admin_name");?> 管理面版 v<?php echo C("admin_var");?></title>
+<title>管理面版</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="<?php echo C("admin_keywords");?>">
 <meta name="description" content="<?php echo C("admin_description");?>">
@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="right">
-  <div class="right_top"><?php echo C("admin_welcome");?></div>
+  <div class="right_top">欢迎光临系统后台</div>
   <div class="right_main">
   <div class="right_main">
     <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
@@ -34,6 +34,7 @@
         </tr>
       </form>
     </table>
+	<!--
     <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
       <form action="index.php?s=Admin-Cache-Delhtml" method="post" name="myform">
         <tr nowrap  class="tb_head">
@@ -67,9 +68,9 @@
           <td><input name="ajaxshow" type="submit" class="mininput" value=" 更新AJAX自定义缓存 " > 清空自定义模板缓存, Html/Ajax_show</td>
         </tr>                           
       </form>
-    </table>
+  </table>
+  -->
   </div>
 </div>
-<br /><center>Powered by： <a href="<?php echo C("admin_url");?>" target="_blank"><?php echo C("admin_name");?></a> v<?php echo C("admin_var");?></center>
 </body>
 </html>

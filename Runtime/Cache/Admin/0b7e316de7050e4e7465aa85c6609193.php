@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><html>
 <head>
-<title><?php echo C("admin_name");?> 管理面版 v<?php echo C("admin_var");?></title>
+<title>管理面版</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="<?php echo C("admin_keywords");?>">
 <meta name="description" content="<?php echo C("admin_description");?>">
@@ -28,12 +28,17 @@
     <ul>
     <li><a href="index.php?s=Admin-Vod-Show" target="content">产品管理</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-Vod-Add" target="content">添加产品</a></li>
     <li><a href="index.php?s=Admin-List-Show-sid-1" target="content">产品分类</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-List-Add" target="content">添加分类</a></li>
-    <li><a href="index.php?s=Admin-Collect-Xmllist" target="content"><font color="red">一键采集产品</font></a></li>
-    <li><a href="index.php?s=Admin-Vod-Show-vod_del-1" target="content">未审核的产品</a></li>
-    <li><a href="index.php?s=Admin-Vod-Show-vod_continu-1" target="content">连载中的产品</a></li>
-    <li><a href="index.php?s=Admin-Vod-Show-vod_cid-0" target="content">未入库的产品</a></li>
     </ul>
   </div>
+   <div id="main8" onclick=expandIt(8) class="expand">
+    <div class="expand_title">插件工具</div>
+  </div>
+  <div id="sub8" style="display:none" class="expand_sub">
+    <ul>
+      <li><a href="index.php?s=Admin-Tag-Show" target="content">标签TAG管理</a></li>
+    </ul>
+</div>
+  <!--
   <div id="main3" onclick=expandIt(3) class="expand">
     <div class="expand_title">新闻管理</div>
   </div>
@@ -91,10 +96,11 @@
       <li><a href="index.php?s=Admin-Tag-Show" target="content">标签TAG管理</a></li>
       <li><a href="index.php?s=Admin-Tpl-Pic" target="content">无效图片清理</a></li>
       <li><a href="index.php?s=Admin-Tpl-Show" target="content">在线模板编辑</a></li>
-<!--      <li><a href="?g=Admin&m=communt" target="content">评论管理</a></li> 
-      <li><a href="index.php?s=Admin/main" target="content">帮助手册</a> &nbsp;|&nbsp;<a href="http://www.PicCMS.Com/help" target="_blank">在线</a> </li>   -->  
+-      <li><a href="?g=Admin&m=communt" target="content">评论管理</a></li> 
+      <li><a href="index.php?s=Admin/main" target="content">帮助手册</a> &nbsp;|&nbsp;<a href="http://www.PicCMS.Com/help" target="_blank">在线</a> </li>     
     </ul>
-  </div>    
+</div>
+-->
 </div>
 </body>
 </html>
