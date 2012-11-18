@@ -532,5 +532,19 @@ return array (
     'list_description' => '',
     'list_url' => '',
   ),
+  38 => 
+  array (
+    'list_id' => '42',
+    'list_pid' => '20',
+    'list_oid' => '39',
+    'list_sid' => '0',
+    'list_name' => 'cctv',
+    'list_skin' => 'pp_vodlist',
+    'list_dir' => '',
+    'list_keywords' => '',
+    'list_title' => '',
+    'list_description' => '',
+    'list_url' => '',
+  ),
 );
 ?>
