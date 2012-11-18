@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet"; type="text/css" href="css/style.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<include file="./Tpl/default/Home/piao_header.html"/>
+<div style="clear:both"></div>
+
+<div class="recommended">
+<div class="dangqianwei"><a href="##">首页</a><span>&gt;</span><a href="##">电视剧</a><span>&gt;</span><a href="##">爱情</a><span>&gt;</span><a href="#">风风雨雨</a></div>
+<include file="./Tpl/default/Home/piao_search.html"/>
+
+<div style="clear:both"></div>
+
+
+<div class="morecontent">
+<div class="cenav">
+<div class="cetitle">节目分类</div>
+<div class="cefenlei">
+<volist id='menu' name='ppmenu'>
+<ul>
+	<li style="width:190px; height:40px;font-size:15px; color:#616161;font-weight:bold;">{$menu.list_name}<div style="font-size:12px; color:#616161;font-weight:bold;width:190px; height:15px;overflow:hidden; float:left;"> {$menu.list_skin}</div><span style="font-size:14px;color:#933; font-weight:normal;">（{$menu.count}部）</span></li>
+<volist id='son' name="menu['son']">	
+<li>
+<a href="##">{$son.list_name}</a>
+<p><a href="##">{$son.list_skin}</a></p>
+</li>
+</volist>
+</ul>
+</volist>
+</div>
+</div>
+
+<div class="moreright">
+<div class="morerightt">
+<div class="morerighttil"><p>版权资质</p></div>
+<div class="zizhipic">
+<ul>
+<li><img src="images/ly1.png" /><span>公映许可证</span></li>
+<li><img src="images/ly2.png" /><span>音像批文</span></li>
+<li><img src="images/ly3.png" /><span>引进批文</span></li>
+<li><img src="images/ly4.png" /><span>版权登记</span></li>
+<li><img src="images/ly5.png" /><span>发行许可证</span></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="xiangcontent">
+<div class="xiangpic"><img src="images/xiangpic.jpg" /></div>
+<div class="xiangpicxi">
+<div class="xiangpicxit"><span style="font-size:15px; color:#903;font-weight:bold;">言承旭打造史上最悲情的爱情故事</span></div>
+<div  class="xiangpicxix">
+<ul>
+<li>片名(中文)：</li>
+<li>英文名称：</li>
+<li>主要演员：</li>
+<li>国家地区：</li>
+<li>语言：</li>
+<li>授权期限：</li>
+<li>授权方式：</li>
+<li>片名：</li>
+</ul>
+<ul>
+<li>公映时间：</li>
+<li>导演：</li>
+<li>集数：</li>
+<li>题材分类：</li>
+<li>证明文件：<img src="images/banquanl4.png" /><img src="images/banquanl4.png" /><img src="images/banquanl4.png" /><img src="images/banquanl4.png" /><img src="images/banquanl4.png" /></li>
+<li>授权渠道：</li>
+<li>授权地区：</li>
+<li style="padding-top:5px;"><a href="##"><img src="images/dinggoubt.jpg" /></a></li>
+</ul>
+
+</div>
+</div>
+<div  style="height:30px; float:left; width:700px;"></div>
+<div class="xiangjianjie" >dghrtrtrtrtrtrtrtrtrtrtf</div>
+
+</div>
+
+
+
+<div style="height:10px; clear:both"></div>
+
+<iframe src="foot.html" scrolling="no" width=100%  height="139px"frameborder=0 id=""></iframe>
+</body>
