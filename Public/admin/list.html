@@ -7,6 +7,23 @@
 <link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin.css'>
 <script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/js/admin.js"></script>
 <script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('tr.parent').click(function(){   // 获取所谓的父行
+			$(this)
+				.toggleClass("selected")   // 添加/删除高亮
+				.siblings('.son_'+this.id).toggle();  // 隐藏/显示所谓的子行
+	}).click();
+})
+</script>
+<style type="text/css">
+table		{ border:0;border-collapse:collapse;}
+td	{ font:normal 12px/17px Arial;padding:2px;width:100px;}
+th			{ font:bold 12px/17px Arial;text-align:left;padding:4px;border-bottom:1px solid #333;width:100px;}
+.parent		{ background:#FFF38F;cursor:pointer;}  /* 偶数行样式*/
+.odd		{ background:#FFFFEE;}  /* 奇数行样式*/
+.selected		{ background:#F6500;color:#fff;
+</style>
 </head>
 <body>
 <div class="right">
@@ -25,8 +42,9 @@
         <td width="150">英文名称</td>
         <td width="100">编辑</td>
       </tr>
-      <volist name="listtree" id="pp">
-      <tr class="firstalt">
+	  <tbody>
+      <volist name="listtree" id="pp" key="keys">
+	  <tr class="firstalt parent" id="row_{$keys}">
         <td align="center"><input name='list_id[{$pp.list_id}]' type='checkbox' value='{$pp.list_id}' style='border:none' checked><font color="blue">({$pp.list_id})</font></td>
         <td align="center"><input type='text' name='list_name[{$pp.list_id}]' value='{$pp.list_name}' class="tbpinput" size=25></td>
         <td align="center"><input type='text' name='list_oid[{$pp.list_id}]' value='{$pp.list_oid}' class="tbpinput" size=10></td>
@@ -34,15 +52,16 @@
         <td align="center"><a href="index.php?s=Admin-List-Add-list_id-{$pp.list_id}"><img src="__PUBLIC__/images/edit.gif" alt="编辑" width="14" height="14" border="0" title="编辑"></a> <a href="index.php?s=Admin-List-Del-list_id-{$pp.list_id}" onClick="return confirm('确定删除?')"><img src="__PUBLIC__/images/del.gif" alt="删除" width="14" height="14" border="0" title="删除"></a> <a href="index.php?s=Admin-List-Add-list_pid-{$pp.list_id}" ><img src="__PUBLIC__/images/add.gif" alt="添加二级分类" width="14" height="14" border="0" title="添加二级分类"></a></td>
       </tr>
       <volist name="pp['son']" id="pp">
-      <tr class="firstalt">
+	  <tr class="firstalt son_row_{$keys}">
         <td align="center"><input name='list_id[{$pp.list_id}]' type='checkbox' value='{$pp.list_id}' style='border:none' checked>({$pp.list_id})</td>
         <td align="center"><input type='text' name='list_name[{$pp.list_id}]' value='{$pp.list_name}' class="tbsinput" size=25></td>
         <td align="center"><input type='text' name='list_oid[{$pp.list_id}]' value='{$pp.list_oid}' class="tbsinput" size=10></td>
         <td align="center"><input type='text' name='list_skin[{$pp.list_id}]' value='{$pp.list_skin}' class="tbsinput" size=20></td>
-        <td align="center"><a href="index.php?s=Admin-List-Add-list_id-{$pp.list_id}"><img src="__PUBLIC__/images/edit.gif" alt="编辑" width="14" height="14" border="0" title="编辑"></a> <a href="index.php?s=Admin-List-Del-list_id-{$pp.list_id}" onClick="return confirm('确定删除?')"><img src="__PUBLIC__/images/del.gif" alt="删除" width="14" height="14" border="0" title="删除"></a></td>
+		<td align="center"><a href="index.php?s=Admin-List-Add-list_id-{$pp.list_id}"><img src="__PUBLIC__/images/edit.gif" alt="编辑" width="14" height="14" border="0" title="编辑"></a> <a href="index.php?s=Admin-List-Del-list_id-{$pp.list_id}" onClick="return confirm('确定删除?')"><img src="__PUBLIC__/images/del.gif" alt="删除" width="14" height="14" border="0" title="删除"></a><a href="index.php?s=Admin-Vod-Show-vod_cid-{$pp.list_id}" ><img src="__PUBLIC__/images/tiaozhuan.png" alt="添加二级分类" width="14" height="14" border="0" title="产品管理"></a></td>
       </tr>
       </volist>
       </volist>
+	  </tbody>
       <tr>
         <td colspan="7"><input type="button" value="全/反选" onClick="CheckAll(this.form)" /> <select name="list_type" id="list_type" onChange="ChangeAction(this.value)"><option value="index.php?s=Admin-List-Editall" >批量修改</option><option value="index.php?s=Admin-List-Delall">批量删除</option></select> <input class="mininput" type="submit" value="提交操作"> 注：删除分类将删除该分类下面的所有影片</td>
       </tr>
