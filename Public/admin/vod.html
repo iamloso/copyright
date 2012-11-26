@@ -272,13 +272,13 @@ function showhtml(vodid){
 			<td><input name="vod_tag" id="vod_tag" type="text" size="27" value="{$vod_tag}"> <a href="javascript:showtags()"><img src="__PUBLIC__/images/tag.gif" alt="选择标签" width="26" height="26" border="0" align="absmiddle"></a></td>
 		</tr>	
 		<tr class="firstalt">
-			<td align="right">公映时间：</td><td><input name="vod_addtime" type="text" size="27" value="{$vod_addtime|date='Y-m-d H:i:s',###}"></td>
+			<td align="right" id="gytime">公映时间：</td><td><input name="vod_addtime" type="text" size="27" value="{$vod_addtime|date='Y-m-d H:i:s',###}"></td>
         </tr>
-		<tr class="firstalt">
-			 <td align="right">导演：</td>
+		<tr class="firstalt" id="director" >
+			 <td align="right" id="vod_dir">导演：</td>
 			 <td><input name="vod_director" type="text" size="60" value="{$vod_director}"></td>
 		</tr>
-		<tr class="firstalt">
+		<tr class="firstalt" id="actor">
 			<td align="right">演员：</td><td><input name="vod_actor" type="text" size="60" maxlength="255" value="{$vod_actor}"></td>
         </tr>
 		<tr class="firstalt">
@@ -506,9 +506,11 @@ function showhtml(vodid){
 		   var type_id = $('#select_type').val();
 		   if(type_id==6)
 		   {
-		      $("table tr")
-					  .filter(":contains('公映时间')")
-					  .html().replace('首映时间', '公映时间'); 
+				 $("#gytime").text('首映时间：');
+		   }
+		   elseif(type_id)
+		   {
+		   
 		   }
 	    }
     );
