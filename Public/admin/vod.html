@@ -279,20 +279,19 @@ function showhtml(vodid){
 			 <td><input name="vod_director" type="text" size="60" value="{$vod_director}"></td>
 		</tr>
 		<tr class="firstalt" id="actor">
-			<td align="right">演员：</td><td><input name="vod_actor" type="text" size="60" maxlength="255" value="{$vod_actor}"></td>
+			<td align="right" id="vod_ac">演员：</td><td><input name="vod_actor" type="text" size="60" maxlength="255" value="{$vod_actor}"></td>
         </tr>
 		<tr class="firstalt">
-			<td align="right">集数： </td><td><input name="vod_skin" size="60" type="text" value="{$vod_skin}"></td>	
+			<td align="right" id="jishu">集数： </td><td><input name="vod_skin" size="60" type="text" value="{$vod_skin}"></td>	
 		</tr>
 		<tr class="firstalt">
 			<td align="right">出品公司：</td><td><input name="vod_reurl" type="text" size="60" value="{$vod_reurl}"></td>
 		</tr>	
         <tr class="firstalt">
-          <td align="right">上传海报：</td>
+          <td align="right" id="upload_file">上传海报：</td>
           <td><span style="float:left; margin-top:5px"><input name="vod_pic" id="vod_pic" type="hidden" size="60" maxlength="255" value="{$vod_pic}" onMouseOver="if(this.value)showpic(event, '{&upload_path}/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_pic" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span></td>
 		  <td><img src="{$http_root}{$vod_pic}"></img></td>
 	  </tr>      
-        
         <tr class="firstalt">
 			<td align="right">国家地区：</td><td> <select name="vod_area" style="width:60px;">
           <option value=''>地区</option>
@@ -301,20 +300,23 @@ function showhtml(vodid){
           </volist></td>
 		</tr> 
         <tr class="firstalt">
-			<td align="right">分钟/集：</td><td><input name="vod_continu" type="text" size="60" value="{$vod_continu}"></td>
+			<td align="right" id="fzmj">分钟/集：</td><td><input name="vod_continu" type="text" size="60" value="{$vod_continu}"></td>
 		</tr>
 		<tr class="firstalt">
-			<td align="right">总时长：</td><td><input name="vod_keywords" type="text" size="60" value="{$vod_keywords}">&nbsp;&nbsp;</td>
+			<td align="right" id="zongshichang">总时长：</td><td><input name="vod_keywords" type="text" size="60" value="{$vod_keywords}">&nbsp;&nbsp;</td>
 		</tr>	
-		<tr class="firstalt">
-		   <td align="right">语言：</td><td><select name="vod_language">
+		<tr class="firstalt" id="yuyan" >
+		   <td align="right" >语言：</td><td><select name="vod_language">
           <option value=''>语言</option>
           <volist name="vod_language_list" id="val">
           <option value="{$val}" <eq name="val" value="$vod_language">selected</eq>>{$val}</option>
           </volist></td>
 		</tr>
 		<tr class="firstalt">
-		     <td align="right">素材介质：</td><td><input name="vod_gold" type="text" size="60" value="{$vod_gold}"></td>
+		     <td align="right" id="scjz">素材介质：</td><td><input name="vod_gold" type="text" size="60" value="{$vod_gold}"></td>
+		</tr>
+		<tr class="firstalt">
+		     <td align="right" id="vod_sort">作品排序：</td><td><input name="vod_sort" type="text" size="60" value="{$vod_sort}"></td>
 		</tr>
 		<tr><td><B>版权证明文件:</B></td></tr>
 		<tr class="firstalt">
@@ -352,41 +354,6 @@ function showhtml(vodid){
           <option value="3" <eq name="vod_stars" value="3">selected</eq>>国内外</option>
           </select>&nbsp;&nbsp;</td>
 		</tr>		  
-		<!--
-        <tr class="firstalt">
-          <td width="120" align="right">参数：</td>
-          <td >&nbsp;&nbsp;
-         
-          <select name="vod_del">
-          <option value="0" <eq name="vod_del" value="0">selected</eq>>显示</option>
-          <option value="1" <eq name="vod_del" value="1">selected</eq>>隐藏</option>
-          </select>&nbsp;&nbsp;
-          &nbsp;&nbsp;
-          <select name="vod_year">
-          <option value=''>年代</option>
-          <volist name="vod_year_list" id="val">
-          <option value="{$val}" <eq name="val" value="$vod_year">selected</eq>>{$val}</option>
-          </volist>
-          </select>&nbsp;&nbsp;
-         
-          </select>&nbsp;&nbsp;
-          
-          </select>&nbsp;&nbsp;<label>栏目|地区|审核|期限|年代|地区|语言</label>
-          </td>
-        </tr>
-         <tr class="firstalt">
-          &nbsp;&nbsp&nbsp;&nbsp;分钟：<input name="vod_hits" type="text" size="9" value="{$vod_hits}" style="text-align:center"></td>
-        </tr>       
-        <tr class="firstalt">
-          <td align="right">出品公司：</td>
-          <gt name="vod_id" value="0">
-          <td><input name="vod_reurl" type="text" size="60" value="{$vod_reurl}">&nbsp;&nbsp;首字母：<input name="vod_letter" type="text" size="5" value="{$vod_letter}" style="text-align:center">&nbsp;&nbsp;公映时间：<input name="vod_addtime" type="text" size="24" value="{$vod_addtime|date='Y-m-d H:i:s',###}"> 更新<input name="vod_time" type="checkbox" style="border:none" value="1" <if condition="c('admin_time_edit') eq 1">checked</if>></td>
-          <else/>
-          <td><input name="vod_reurl" type="text" size="60" value="{$vod_reurl}">&nbsp;&nbsp;首字母：<input name="vod_letter" type="text" size="10" value="{$vod_letter}" style="text-align:center">&nbsp;&nbsp;公映时间：<input name="vod_addtime" type="text" size="33" value="{$vod_addtime|date='Y-m-d H:i:s',###}"></td>
-          </gt>
-        </tr>
-		-->
-        
         <tr class="firstalt">
 			<td align="right">授权方公司名称：</td>
 			<td><input name="vod_company" value="{$vod_company}" type="text" size="60"/> </td>
@@ -507,10 +474,25 @@ function showhtml(vodid){
 		   if(type_id==6)
 		   {
 				 $("#gytime").text('首映时间：');
+				 $("#vod_dir").text('栏目名称：');
+				 $("#actor").hide();
 		   }
-		   elseif(type_id)
+		   else if(type_id==7)
 		   {
-		   
+		         $("#gytime").text('创作时间：'); 
+		         $("#upload_file").text('作品封面：'); 
+				 $("#vod_dir").text('作品类别：');
+				 $("#vod_ac").text('总页数：');
+				 $("#jishu").text('创作进程：');
+				 $("#fzmj").text('作品署名：');
+				 $("#zhongshichang").text('发布状态：');
+				 $("#yuyan").hide();
+                 $("#scjz").text('图文作者：');
+		   }
+	       else if(type_id==7)
+		   {
+				 $("#gytime").text('首映时间：');
+				 $("#vod_dir").text('栏目名称：');
 		   }
 	    }
     );
