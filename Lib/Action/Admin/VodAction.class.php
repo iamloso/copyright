@@ -103,6 +103,9 @@ class VodAction extends BaseAction{
 	public function insert(){
 	    cookie('vod_cid',intval($_POST["vod_cid"]));
 		$this->checkpost();
+		$_POST['vod_ditch'] = implode('|', $_POST['vod_ditch']);
+		$_POST['vod_file']  = implode('|', $_POST['vod_file']);
+		$_POST['vod_way']   = implode('|', $_POST['vod_way']);
 		$Form=D("Admin.Vod");
 		if($Form->create()){
 			$vod_id=$Form->add();
@@ -122,6 +125,9 @@ class VodAction extends BaseAction{
 	public function update(){
 	    $this->checkpost();
 		$Form=D("Admin.Vod");
+		$_POST['vod_ditch'] = implode('|', $_POST['vod_ditch']);
+		$_POST['vod_file']  = implode('|', $_POST['vod_file']);
+		$_POST['vod_way']   = implode('|', $_POST['vod_way']);
 		if($Form->create()){
 			if(false!==$Form->save()){
 				if(!empty($_POST["vod_tag"])){
