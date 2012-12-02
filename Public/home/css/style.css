@@ -27,7 +27,7 @@ td tr th table{padding:0px;}
 .zhongshu{padding-left:80px; padding-top:45px; width:125px; height:74px; font-size:30px; font-family:"Arial Black", Gadget, sans-serif; font-weight:bold; color:#333;  }
 .kehu{padding-top:9px; padding-left:443px; width:262px; height:24px;}
 .kehu ul{width:262px; height:24px;}
-.kehu ul li{padding-left:10px; float:left; font-size:14px; color:#825358;}
+.kehu ul li{padding-left:5px; float:left; font-size:14px; color:#825358;}
 .kehu ul li a{ font-size:14px; color:#825358;}
 .kehu ul li a:hover{ text-decoration:underline;}
 /*****************************************************************top头部*********************************************************************/
@@ -51,9 +51,9 @@ td tr th table{padding:0px;}
 .inputkuang{width:320px; height:28px; padding-top:10px;float:left;}
 .search input{float:left; width:230px; height:23px; text-align:center; float:left;}
 .recommendlunbo{width:987px; height:393px; background:#FF0; margin:auto;}
-.hotpicgundong{ width:980px; height:393px; margin:auto; border:#CCC solid 1px;}
+.hotpicgundong{ width:980px; height:396px; margin:auto; border:#CCC solid 1px;}
 #featured {
-	BORDER-BOTTOM: #ddd 1px solid; float:left; BORDER-LEFT: #ddd 1px solid; WIDTH: 770px; HEIGHT: 393px; OVERFLOW: hidden; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid
+	BORDER-BOTTOM: #ddd 1px solid; float:left; BORDER-LEFT: #ddd 1px solid; WIDTH: 690px; HEIGHT: 393px; OVERFLOW: hidden; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid
  }
 #featured .word {
 	Z-INDEX: 10; POSITION: absolute; PADDING-BOTTOM: 5px; LINE-HEIGHT: 16px; PADDING-LEFT: 5px; WIDTH: 610px; BOTTOM: 0px; PADDING-RIGHT: 5px; BACKGROUND: #222; HEIGHT: 32px; COLOR: #fff; PADDING-TOP: 5px; LEFT: 0px
@@ -62,13 +62,16 @@ td tr th table{padding:0px;}
 	HEIGHT: 16px; FONT-SIZE: 13px; OVERFLOW: hidden
 }
 
-.slideshowItem img{ width:185px; height:71px;}
+.slideshowItem img{ width:115px; height:68px; float:left}
 #thumbs {
-	WIDTH:190px; HEIGHT:360px; float:left; text-align:center; padding-left:10px;}
+	WIDTH:270px; HEIGHT:360px; float:left; text-align:center; padding-left:10px;}
+
 
 #thumbs ul LI {
-	WIDTH: 190px; DISPLAY: inline;   text-align:center; 
+	WIDTH: 190px; height:68px; DISPLAY:block;   text-align:center;  float:left;
 }
+#thumbs ul LI .first btnPrev{width:183px; height:12px; float:left; display:block; border:none; float:left;}
+#thumbs ul LI .last btnNext{width:183px; height:12px; float:left; display:block; border:none; float:left;}
 #thumbs UL {
   height:360px; width:190px; text-align:center;
 }
@@ -82,15 +85,15 @@ td tr th table{padding:0px;}
 	 WIDTH: 20px; HEIGHT: 13px; CURSOR: pointer
 }
 #thumbs LI A {
-	DISPLAY: block; border:#CCC 1px solid;
+	DISPLAY: block; border:none; font:12px; color:#000000; font-weight:normal;
 }
-#thumbs LI A:hover {
-	BORDER-BOTTOM: #9c3 1px solid; BORDER-LEFT: #9c3 1px solid; BORDER-TOP: #9c3 1px solid; BORDER-RIGHT: #9c3 1px solid
+#thumbs LI a:hover {
+	BORDER-BOTTOM: #9c3 1px solid; BORDER-LEFT: #9c3 1px solid; BORDER-TOP: #9c3 1px solid; BORDER-RIGHT: #9c3 1px solid;
 }
-#thumbs LI A.current {
+#thumbs LI .current {
 	BORDER:#F93 1px solid;}
 .items{ width:770px; height:394px;}
-.items img{ width:770px; height:392px;}
+.items img{ width:690px; height:392px;}
 
 A {
 	
