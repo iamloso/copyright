@@ -29,28 +29,37 @@
 	            }
 	        );
 	    }
+    $(document).ready(function(){
+		 $('#search_button').click(function(){
+			 var $input = $("#input_co").val();
+			 $("#search_co").val($input);
+		     $("#search_from").submit();	
+	     });	
+			
+	});
+   
 	</script>
 
 <div class="search">
-<form>
-  <select name="select" onchange="getcity()" id="one">
+	<form action="?s=Vod-show" method="post" id="search_from">
+  <select  onchange="getcity()" id="one" name='id'>
 	  <option value=''>请选择！</option>	  
 <volist id="menu" name="ppmenu" key="key">
 <option value="{$menu.list_id}">{$menu.list_name}</option>
 </volist>
 </select>
 
-<select onchange="getq()" id='two'>
+<select onchange="getq()" id='two' name='subid'>
 <option>请选择！</option>
 
 </select>
 <select id='three'>
 <option>请选择！</option>
-
 </select>
+  <input style="width:245px; height:25px;" type="hidden" name="search_key" value="" id="search_co"/>
 </form>
 <div class="inputkuang">
-  <input style="width:245px; height:25px;" type="text" />
-  <input type="image" style="width:66px; height:27px;" src="__ROOT__/Public/home/images/searchbutton.png" />
+  <input style="width:245px; height:25px;" type="text" id="input_co" value="" />
+  <input type="image" style="width:66px; height:27px;" src="__ROOT__/Public/home/images/searchbutton.png" id='search_button'/>
 </div>
 </div>

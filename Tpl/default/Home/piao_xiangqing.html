@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet"; type="text/css" href="css/style.css">
+<link rel="stylesheet"; type="text/css" href="__ROOT__/Public/home/css/style.css">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>中数版权</title>
 </head>
 
 <body>
@@ -12,8 +12,15 @@
 <div style="clear:both"></div>
 
 <div class="recommended">
-<div class="dangqianwei"><a href="##">首页</a><span>&gt;</span><a href="##">电视剧</a><span>&gt;</span><a href="##">爱情</a><span>&gt;</span><a href="#">风风雨雨</a></div>
-<include file="./Tpl/default/Home/piao_search.html"/>
+	<div class="dangqianwei"><a href="##">首页</a><span>&gt;</span><a href="?s=Vod-show-id-{$cid}-name-{$name}.html">{$name}</a>
+		<php>
+		if($subname && $subid)
+		{
+           echo "<span>&gt;</span><a href='?s=Vod-show-id-$cid-name-$name-subid-$subid-subname-$subname.html'>$subname</a>";
+		}
+	
+    </php>
+	</div>
 
 <div style="clear:both"></div>
 
@@ -27,8 +34,8 @@
 	<li style="width:190px; height:40px;font-size:15px; color:#616161;font-weight:bold;">{$menu.list_name}<div style="font-size:12px; color:#616161;font-weight:bold;width:190px; height:15px;overflow:hidden; float:left;"> {$menu.list_skin}</div><span style="font-size:14px;color:#933; font-weight:normal;">（{$menu.count}部）</span></li>
 <volist id='son' name="menu['son']">	
 <li>
-<a href="##">{$son.list_name}</a>
-<p><a href="##">{$son.list_skin}</a></p>
+<a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_name}</a>
+<p><a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_skin}</a></p>
 </li>
 </volist>
 </ul>
@@ -41,11 +48,11 @@
 <div class="morerighttil"><p>版权资质</p></div>
 <div class="zizhipic">
 <ul>
-<li><img src="images/ly1.png" /><span>公映许可证</span></li>
-<li><img src="images/ly2.png" /><span>音像批文</span></li>
-<li><img src="images/ly3.png" /><span>引进批文</span></li>
-<li><img src="images/ly4.png" /><span>版权登记</span></li>
-<li><img src="images/ly5.png" /><span>发行许可证</span></li>
+<li><img src="__ROOT__/Public/home/images/ly1.png" /><span>公映许可证</span></li>
+<li><img src="__ROOT__/Public/home/images/ly2.png" /><span>音像批文</span></li>
+<li><img src="__ROOT__/Public/home/images/ly3.png" /><span>引进批文</span></li>
+<li><img src="__ROOT__/Public/home/images/ly4.png" /><span>版权登记</span></li>
+<li><img src="__ROOT__/Public/home/images/ly5.png" /><span>发行许可证</span></li>
 </ul>
 </div>
 
@@ -53,35 +60,76 @@
 </div>
 </div>
 <div class="xiangcontent">
-<div class="xiangpic"><img src="images/xiangpic.jpg" /></div>
+<div class="xiangpic"><img src="./Upload/{$vod_list.vod_pic}" /></div>
 <div class="xiangpicxi">
-<div class="xiangpicxit"><span style="font-size:15px; color:#903;font-weight:bold;">言承旭打造史上最悲情的爱情故事</span></div>
 <div  class="xiangpicxix">
 <ul>
-<li>片名(中文)：</li>
-<li>英文名称：</li>
-<li>主要演员：</li>
-<li>国家地区：</li>
-<li>语言：</li>
-<li>授权期限：</li>
-<li>授权方式：</li>
-<li>片名：</li>
+<li ><span style="display:block;float:left;width:20px;padding-right:15px;text-align:left;">片</span><span>名</span>：{$vod_list.vod_name}</li>
+<li>英文名称：{$vod_list.vod_title}</li>
+<li>主要演员：{$vod_list.vod_actor}</li>
+<li>国家地区：{$vod_list.vod_area}</li>
+<li ><span style="display:block;float:left;width:20px;padding-right:15px;text-align:left;">语</span><span>言</span>：{$vod_list.vod_language}</li>
+<li>授权期限：<php> 
+                     switch($vod_list['vod_color'])
+					 {
+                          case 1:
+						      echo '1-3年';
+							  break;
+						  case 2:
+					           echo '3-5年';	  
+							   break;
+					      case 3:
+				               echo '5-10';
+						       break;
+						  case 4:
+					    	   echo '10年以上';
+						       break;	   
+					 }
+</php></li>
+<li>授权方式：<php> $way_data = explode('|', $vod_list['vod_way']); if($way_data[0]==0 || $vod_list['vod_way']==0) echo '独家'; if($way_data[1]==1 || $vod_list['vod_way']==1) echo '/非独家';</php> </li>
 </ul>
 <ul>
-<li>公映时间：</li>
-<li>导演：</li>
-<li>集数：</li>
-<li>题材分类：</li>
-<li>证明文件：<img src="images/banquanl4.png" /><img src="images/banquanl4.png" /><img src="images/banquanl4.png" /><img src="images/banquanl4.png" /><img src="images/banquanl4.png" /></li>
-<li>授权渠道：</li>
-<li>授权地区：</li>
+	<li>公映时间：<php>echo date('Y-m-s H:i:s', $vod_list['vod_addtime']);</php></li>
+	<li ><span style="display:block;float:left;width:20px;padding-right:15px;text-align:left;">导</span><span>演</span>：{$vod_list.vod_director}</li>
+	<li ><span style="display:block;float:left;width:20px;padding-right:15px;text-align:left;">集</span><span>数</span>：{$vod_list.vod_skin}</li>
+<li>证明文件：<span>
+	<php>
+	    $vod_file = explode('|', $vod_list['vod_file']);
+        for($i=1; $i<6; $i++)
+		{
+		  if(in_array($i, $vod_file))
+		  {
+              $key = 'ly'.$i;
+		  }
+		  else
+		  {
+              $key = $i;
+		  }
+		  echo  "<img style='padding-right:5px;' src='__ROOT__/Public/home/images/".$key.".png' />";
+		}
+	</php>
+</span></li>
+<li style="height:auto;float:left;"><div style="float:left;width:60px;line-height:28px;">授权渠道：</div> <div style="width:140px; float:left;line-height:28px;"><php>$vod_ditch = explode('|', $vod_list['vod_ditch']); $temp = array ('互联网', '无线网', '电视台', '院线', '音像', '其他'); $str = ''; foreach($vod_ditch as $val){ $str .= $temp[$val].'/';} echo trim($str, '/');</php></div></li>
+<li>授权地区：<php>switch($vod_list['vod_stars'])
+                  {
+                        case 1:
+						     echo '国内';
+							 break;
+					    case 2:
+			                 echo '国外';
+				             break;
+				        case 3:
+						echo 'vod_stars国内外';
+		                     break;				
+				  
+				  }</php></li>
 <li style="padding-top:5px;"><a href="##"><img src="images/dinggoubt.jpg" /></a></li>
 </ul>
 
 </div>
 </div>
 <div  style="height:30px; float:left; width:700px;"></div>
-<div class="xiangjianjie" >dghrtrtrtrtrtrtrtrtrtrtf</div>
+<div class="xiangjianjie" >{$vod_list.vod_content}</div>
 
 </div>
 

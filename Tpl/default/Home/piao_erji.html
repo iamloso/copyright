@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/home/css/style.css" />
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>中数版权</title>
 </head>
 
 <body>
@@ -49,7 +49,17 @@
 <div class="moreright">
 <div class="morerightt">
 <div class="morerighttil">
-  <p>爱情</p></div>
+  <p>版权资质</p></div>
+<div class="zizhipic">
+<ul>
+<li><img src="__ROOT__/Public/home/images/ly1.png" /><span>公映许可证</span></li>
+<li><img src="__ROOT__/Public/home/images/ly2.png" /><span>音像批文</span></li>
+<li><img src="__ROOT__/Public/home/images/ly3.png" /><span>引进批文</span></li>
+<li><img src="__ROOT__/Public/home/images/ly4.png" /><span>版权登记</span></li>
+<li><img src="__ROOT__/Public/home/images/ly5.png" /><span>发行许可证</span></li>
+</ul>
+</div>
+  
 <div style="padding-left:645px; padding-top:8px;">
 
 <a href="?s=Vod-show-id-{$cid}-type-1.html"><img src="__ROOT__/Public/home/images/qiehuanxbt.png" /></a>
@@ -60,7 +70,7 @@
 <div class="tumorecontent">
 <volist id='list' name='vod_list'>
 <div class="tumorecont"><div class="xuhao"><span></span></div>
-	<div class="tumorepic"><img src="./Upload-s/{$list.vod_pic}" /></div>
+	<div class="tumorepic"><a href="?s=Vod-show-vod_id-{$list.vod_id}-name-{$name}-subid-{$subid}-subname-{$subname}.html" ><img src="./Upload-s/{$list.vod_pic}" /></a></div>
 <div class="tumorexin">
 <ul>
 	<li>片名：<span style="font:; color:#9725244;"><{$list.vod_name}></span></li>
