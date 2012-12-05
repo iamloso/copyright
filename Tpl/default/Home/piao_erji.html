@@ -4,11 +4,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>中数版权</title>
+
 </head>
 
 <body>
 <include file="./Tpl/default/Home/piao_header.html"/>
-
+<script type="text/javascript">
+    function add_ddzx(vod_obj)
+    {
+		if(vod_obj.checked)
+		{ 
+			var $key = 1;
+		}
+	    else
+		{
+            var $key = 0;
+		}	
+		 var $value = vod_obj.value; 
+         $.post("?s=Index-orderajax", { 
+				vod_id :  $value, key : $key 
+			}, function (data, textStatus){
+			   alert(data);    
+			}
+		);  
+	}	
+</script>`
 
 <div style="clear:both"></div>
 
@@ -82,7 +102,7 @@
 </div>
 
 <div class="jiarudingdanr" style="padding-top:60px;">
-<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox"/></li><li>加入订单</li></UL>
+	<UL><li style="padding-top:2px; padding-right:4px;"><input style=" line-height:5px;" type="checkbox" name="add_order" value="{$list.vod_id}" onClick="add_ddzx(this,{$list.vod_id})"/></li><li>加入订单</li></UL>
 
 </div>
 </div>
@@ -104,7 +124,7 @@
 	</table>
   
     
-    </div>    <div style="float:left; padding-top:20px;"><a href="##" style="font-size:14px; color:#03F;">订单中心</a></div>   
+    </div>    <div style="float:left; padding-top:20px;"><a href="?=Index-order" style="font-size:14px; color:#03F;">订单中心</a></div>   
 
 			
           
