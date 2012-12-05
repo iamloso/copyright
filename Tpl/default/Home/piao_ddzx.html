@@ -4,6 +4,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>中枢版权</title>
+<script type="text/javascript">
+    function add_ddzx(vod_obj)
+    {
+		 var $key = 0;
+		 var $value = vod_obj; 
+         $.post("?s=Index-orderajax", { 
+				vod_id :  $value, key : $key 
+			}, function (data, textStatus){
+			   alert(data);    
+			   history.go(0); 
+			}
+		);  
+	}	
+</script>
 </head>
 
 <body>
@@ -64,20 +78,22 @@
 <li>编号</li>
 <li>类型</li>
 <li>片名</li>
-<li>年代</li>
+<li>地区</li>
 <li>导演</li>
 <li style="width:165px;">主演</li>
 <li>取消</li>
 </ul>
+<foreach name="order_data" item="list">
 <ul class="dingdannei">
-<li><span>sfff</span></li>
-<li><span>sfff</span></li>
-<li><span>sfff</span></li>
-<li><span>sfff</span></li>
-<li><span>sfff</span></li>
-<li style="width:165px;"><span style="width:165px;">sfff</span></li>
-<li><span><input type="button" value="删除" /></span></li>
+	<li><span>{$list.vod_id}</span></li>
+	<li><span>{$list.list_name}</span></li>
+	<li><span>{$list.vod_name}</span></li>
+	<li><span>{$list.vod_area}</span></li>
+	<li><span>{$list.vod_director}</span></li>
+<li style="width:165px;"><span style="width:165px;">{$list.vod_actor}</span></li>
+<li><span><input type="button" onclick="javascript:add_ddzx({$list.vod_id})" value="删除" /></span></li>
 </ul>
+</foreach>
 
 <div class="dingdanlx">
 <ul>
