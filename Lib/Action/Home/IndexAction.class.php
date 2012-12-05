@@ -72,4 +72,33 @@ class IndexAction extends HomeAction{
 			 }
 		 }	
 	}
+
+	public function order()
+	{
+	      $this->display('piao_ddzx');
+	}
+
+	public function orderajax()
+	{
+	    $id  = $_POST['vod_id'];
+		$key = $_POST['key'];
+		$vod_ids = array();
+		$vod_ids =$_COOKIE['vod_ids'];
+			//$vod_ids = unserialize($vod_ids);
+		    var_dump($vod_ids);die;
+			if($key==1)
+			{
+			    array_push($vod_ids, $id);
+			   $str = "加入成功！";
+			}
+		    elseif($key==0)
+			{
+				unset($vod_ids[array_search($id , $vod_ids)]);//利用unset删除这个元素
+			    $str = "删除成功！";
+			}	
+			$vod_ids = array_unique($vod_ids);
+			//$vod_ids = serialize($vod_ids);
+			$_COOKIE['vod_ids'] = 'aaa';
+        exit($str);
+	}
 }?>

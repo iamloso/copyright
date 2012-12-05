@@ -16,7 +16,9 @@
     <ul>
       <!--<li><a href="index.php?s=Admin-Login-Logout" target="_top" onClick="return confirm('确定退出?')">退出登陆</a></li> -->
       <li><a href="index.php?s=Admin-Index-Config" target="content">网站基本设置</a> </li>
+	  <!--
       <li><a href="index.php?s=Admin-List-Show" target="content">网站栏目管理</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-List-Add" target="content">添加</a></a> </li>
+      -->
       <li><a href="index.php?s=Admin-Cache-Show" target="content">网站缓存管理</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-Index-Main" target="content">状态</a></li>
       <li><a href="index.php?s=Admin-Index-Show" target="content">后台用户管理</a> &nbsp;|&nbsp; <a href="index.php?s=Admin-Index-Add" target="content">添加</a></li>
     </ul>

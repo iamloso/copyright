@@ -39,6 +39,7 @@ return array (
   36 => 'vod_mhot',
   37 => 'vod_ditch',
   38 => 'vod_way',
+  39 => 'vod_file',
   '_autoinc' => true,
   '_pk' => 'vod_id',
   '_type' => 
@@ -81,7 +82,8 @@ return array (
     'vod_hot' => 'tinyint(1)',
     'vod_mhot' => 'tinyint(1)',
     'vod_ditch' => 'varchar(255)',
-    'vod_way' => 'tinyint(1)',
+    'vod_way' => 'varchar(255)',
+    'vod_file' => 'varchar(255)',
   ),
 );
 ?>

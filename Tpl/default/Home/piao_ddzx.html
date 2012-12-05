@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet"; type="text/css" href="__ROOT__/Public/home/css/style.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>中枢版权</title>
+</head>
+
+<body>
+
+<include file="./Tpl/default/Home/piao_header.html"/>
+
+<div style="clear:both"></div>
+
+<div class="recommended">
+<div class="dangqianwei"><a href="#">首页</a><span>&gt;</span><a href="?s=Index-order">订单中心</a></div>
+<include file="./Tpl/default/Home/piao_search.html"/>
+
+</div>
+
+</div>
+
+<div style="clear:both"></div>
+
+
+<div class="morecontent">
+<div class="cenav">
+<div class="cetitle">节目分类</div>
+<div class="cefenlei">
+<volist id='menu' name='ppmenu'>
+<ul>
+	<li style="width:190px; height:40px;font-size:15px; color:#616161;font-weight:bold;">{$menu.list_name}<div style="font-size:12px; color:#616161;font-weight:bold;width:190px; height:15px;overflow:hidden; float:left;"> {$menu.list_skin}</div><span style="font-size:14px;color:#933; font-weight:normal;">（{$menu.count}部）</span></li>
+<volist id='son' name="menu['son']">	
+<li>
+<a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_name}</a>
+<p><a href="?s=Vod-show-id-{$menu.list_id}-name-{$menu.list_name}-subid-{$son.list_id}-subname-{$son.list_name}.html">{$son.list_skin}</a></p>
+</li>
+</volist>
+</ul>
+</volist>
+</div>
+</div>
+
+<div class="moreright">
+<div class="morerightt">
+<div class="morerighttil">
+   <p>版权资质</p></div>
+<div class="zizhipic">
+<ul>
+<li><img src="__ROOT__/Public/home/images/ly1.png" /><span>公映许可证</span></li>
+<li><img src="__ROOT__/Public/home/images/ly2.png" /><span>音像批文</span></li>
+<li><img src="__ROOT__/Public/home/images/ly3.png" /><span>引进批文</span></li>
+<li><img src="__ROOT__/Public/home/images/ly4.png" /><span>版权登记</span></li>
+<li><img src="__ROOT__/Public/home/images/ly5.png" /><span>发行许可证</span></li>
+</ul>
+</div>
+
+
+</div>
+</div>
+</div>
+<div class="dingdancont">
+<ul  class="dingdanneis">
+<li>编号</li>
+<li>类型</li>
+<li>片名</li>
+<li>年代</li>
+<li>导演</li>
+<li style="width:165px;">主演</li>
+<li>取消</li>
+</ul>
+<ul class="dingdannei">
+<li><span>sfff</span></li>
+<li><span>sfff</span></li>
+<li><span>sfff</span></li>
+<li><span>sfff</span></li>
+<li><span>sfff</span></li>
+<li style="width:165px;"><span style="width:165px;">sfff</span></li>
+<li><span><input type="button" value="删除" /></span></li>
+</ul>
+
+<div class="dingdanlx">
+<ul>
+<li><div class="dingdanlxzi">联系人：</div><input type="text" /></li>
+<li><div class="dingdanlxzi">联系方式：</div><input type="text" /></li>
+<li><div class="dingdanlxzi">留言：</div><input type="text" /></li>
+<li></li>
+
+</ul>
+</div>
+<div class="dingdantibt"><input type="button" value="提交订单" /></div>
+
+</div>
+
+
+
+<div style="height:10px; clear:both"></div>
+
+<include file="./Tpl/default/Home/piao_footer.html"/>
+</body>
