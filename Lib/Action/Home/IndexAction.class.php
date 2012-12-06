@@ -118,13 +118,14 @@ class IndexAction extends HomeAction{
 		 $content = $_POST['content'];
 		 $time    = time();
          $passwd  = md5('123456');
+		 $date    = date('Y-m-d H:i:s');
 		 $ip      =  $_SERVER["REMOTE_ADDR"];
 		 $sql = " insert into pp_member set username='{$people}', password='{$passwd}', regtime='{$time}', regip='{$ip}'";
 		 M()->query($sql);
          
 		 foreach($vod_ids as $val)
 		 {	 
-	         $sql = " insert into pp_order set people='{$people}', way='{$way}', content='{$content}', vod_id=$val";
+	         $sql = " insert into pp_order set people='{$people}', way='{$way}', content='{$content}', vod_id=$val, createtime='{$date}'";
 	          M()->query($sql);	 
 		 }	 
 		 echo "<script>alert('提交成功！'); history.go(-1);</script>";
