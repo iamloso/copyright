@@ -75,6 +75,11 @@ class IndexAction extends HomeAction{
 
 	public function order()
 	{
+		  $vod_ids = implode(',',$_SESSION['vod_ids']);
+
+		  $sql = " select a.*, b.list_name from pp_vod as a left join pp_list as b on a.vod_cid=b.list_id where vod_id in({$vod_ids})";
+		  $order_data = M()->query($sql);
+		  $this->assign('order_data', $order_data);
 	      $this->display('piao_ddzx');
 	}
 
@@ -82,10 +87,13 @@ class IndexAction extends HomeAction{
 	{
 	    $id  = $_POST['vod_id'];
 		$key = $_POST['key'];
-		$vod_ids = array();
-		$vod_ids =$_COOKIE['vod_ids'];
+		$vod_ids = $_SESSION['vod_ids'];
+		if(!$vod_ids)
+		{
+		   unset($vod_ids);
+		   $vod_ids = array();
+		}
 			//$vod_ids = unserialize($vod_ids);
-		    var_dump($vod_ids);die;
 			if($key==1)
 			{
 			    array_push($vod_ids, $id);
@@ -98,7 +106,27 @@ class IndexAction extends HomeAction{
 			}	
 			$vod_ids = array_unique($vod_ids);
 			//$vod_ids = serialize($vod_ids);
-			$_COOKIE['vod_ids'] = 'aaa';
+			$_SESSION['vod_ids'] = $vod_ids;
         exit($str);
+	}
+
+	public function order_list()
+	{
+	     $vod_ids = $_SESSION['vod_ids'];
+		 $people  = $_POST['people']; 
+		 $way     = $_POST['way'];
+		 $content = $_POST['content'];
+		 $time    = time();
+         $passwd  = md5('123456');
+		 $ip      =  $_SERVER["REMOTE_ADDR"];
+		 $sql = " insert into pp_member set username='{$people}', password='{$passwd}', regtime='{$time}', regip='{$ip}'";
+		 M()->query($sql);
+         
+		 foreach($vod_ids as $val)
+		 {	 
+	         $sql = " insert into pp_order set people='{$people}', way='{$way}', content='{$content}', vod_id=$val";
+	          M()->query($sql);	 
+		 }	 
+		 echo "<script>alert('提交成功！'); history.go(-1);</script>";
 	}
 }?>
