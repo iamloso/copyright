@@ -95,16 +95,17 @@
 </ul>
 </foreach>
 
+<form action="?s=Index-order_list" method="post">
 <div class="dingdanlx">
 <ul>
-<li><div class="dingdanlxzi">联系人：</div><input type="text" /></li>
-<li><div class="dingdanlxzi">联系方式：</div><input type="text" /></li>
-<li><div class="dingdanlxzi">留言：</div><input type="text" /></li>
+<li><div class="dingdanlxzi">联系人：</div><input type="text" name="people" value=''/></li>
+<li><div class="dingdanlxzi">联系方式：</div><input type="text" name='way' value=''/></li>
+<li><div class="dingdanlxzi">留言：</div><input type="text" name='content' value='' /></li>
 <li></li>
 
 </ul>
 </div>
-<div class="dingdantibt"><input type="button" value="提交订单" /></div>
+<div class="dingdantibt"><input type="submit" value="提交订单" /></div>
 
 </div>
 
