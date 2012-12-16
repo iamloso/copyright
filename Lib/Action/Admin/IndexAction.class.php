@@ -206,5 +206,13 @@ class IndexAction extends BaseAction{
 		foreach($_POST['admin_id'] as $value){$rs->where('admin_id='.$value)->delete();}
 		$this->success('批量删除数据成功！');
     }				
+
+	public function take_lx()
+	{
+	   $order_id = $_POST['order_id'];
+       $sql = " update pp_order set status=1 where order_id={$order_id}";	
+	   M()->query($sql);
+	   exit('操作成功');
+	}
 }
 ?>
