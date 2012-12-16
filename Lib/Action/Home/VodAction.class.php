@@ -3,7 +3,7 @@ class VodAction extends HomeAction{
     //影视列表
     public function show(){
 		$cid= is_numeric($_REQUEST['id']) ? $_REQUEST['id'] : 1;
-		$subid= is_numeric($_REQUEST['subid']) ? $_REQUEST['subid'] : 1;
+		$subid= is_numeric($_REQUEST['subid']) ? $_REQUEST['subid'] : 0;
 		$vod_id = $_REQUEST['vod_id'];
 		$search_key = $_REQUEST['search_key'];
 		$name = $_GET['name'];

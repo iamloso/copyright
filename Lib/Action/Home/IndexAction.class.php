@@ -113,6 +113,7 @@ class IndexAction extends HomeAction{
 	public function order_list()
 	{
 	     $vod_ids = $_SESSION['vod_ids'];
+		 var_dump($vod_ids);
 		 $people  = $_POST['people']; 
 		 $way     = $_POST['way'];
 		 $content = $_POST['content'];
@@ -126,6 +127,7 @@ class IndexAction extends HomeAction{
 		 foreach($vod_ids as $val)
 		 {	 
 	         $sql = " insert into pp_order set people='{$people}', way='{$way}', content='{$content}', vod_id=$val, createtime='{$date}'";
+			  echo $sql;
 	          M()->query($sql);	 
 		 }	 
 		 echo "<script>alert('提交成功！'); history.go(-1);</script>";
