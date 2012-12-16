@@ -5,6 +5,20 @@
 <link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin.css'>
 <script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/js/admin.js"></script>
 <script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script>
+ function take_lx(order_id)
+ {
+      $.post("?s=Admin-Index-take_lx", { 
+				order_id : order_id, 
+			}, function (data, textStatus){
+			   alert(data);    
+			   //history.go(0); 
+			   //window.reload();
+			   location.reload();
+			}
+		);   
+ } 	
+</script>
 </head>
 <body>
 <tagLib name="html" />
@@ -23,26 +37,29 @@
       <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
         <tr align="center" class="tb_title" >
           <td width="2%" nowrap >序号</td>
+          <td width="4%" nowrap >状态</td>
           <td width="4%" nowrap >编号</td>
           <td width="5%" nowrap >联系人</td>
           <td width="5%" nowrap >联系方式</td>
           <td width="2%" nowrap >类型</td>
           <td width="4%" nowrap >名称</td>
           <td width="5%" nowrap >时间</td>
-          <td width="5%" nowrap >报价</td>
           <td width="7%" nowrap >留言</td>
+          <td width="3%" nowrap >操作</td>
         </tr>
 		<foreach name="order_list" key='k' item="list">
-		<tr>
+		<tr <php>if($list['status']==1)echo "style='background-color:red'";</php> >
 			<td align='center'>{$k+1}</td>	
+			<td align='center'  ><php>if($list['status']==1)echo '已联系'; else echo '未联系';</php></td>	
 			<td align='center'>{$list.vod_id}</td>
 			<td align='center' >{$list.people}</td>
 			<td align='center' >{$list.way}</td>
 			<td align='center'>{$list.list_name}</td>
 			<td align='center' >{$list.list_name}</td>
 			<td align='center' >{$list.createtime}</td>
-			<td align='center' >{$list.money}</td>
 			<td align='center' >{$list.content}</td>
+			<td align='center' ><a href='#' onclick="take_lx({$list.order_id})" >加入联系</a></td>
+			
 		</tr>
 		</foreach>
 	</table> 

@@ -85,12 +85,14 @@ th			{ font:bold 12px/17px Arial;text-align:left;padding:4px;border-bottom:1px s
       <table width="98%" border="0" cellpadding="5" cellspacing="1" class="tableoutline">
         <tr class="tb_head"><td colspan="2"><h2>添加/修改分类：</h2></td></tr>
         <tr class="firstalt"><td width="12%" style="text-align:right">分类级别：</td><td ><select name="list_pid" onChange="ChangeModel(this.value)" style="width:132px">
-          <option value="0">作为一级分类</option>
+					<!--<option value="0">作为一级分类</option>-->
           <volist name="ppmenu" id="admin">
           <option value="{$admin.list_id}" <eq name="admin.list_id" value="$list_pid">selected</eq>>{$admin.list_name}</option>
+		   <!--
 		       <volist name="admin['son']" id="pp">
 			   <option value="{$pp.list_id}" <eq name="pp.list_id" value="$list_pid">selected</eq>>|-{$pp.list_name}</option> 
                </volist>
+			   -->
           </volist>
           <volist name="listnews" id="admin">
           <option value="{$admin.list_id}" <eq name="admin.list_id" value="$list_pid">selected</eq>>{$admin.list_name}</option>

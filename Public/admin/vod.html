@@ -287,11 +287,21 @@ function showhtml(vodid){
 		<tr class="firstalt">
 			<td align="right">出品公司：</td><td><input name="vod_reurl" type="text" size="60" value="{$vod_reurl}"></td>
 		</tr>	
+		<tr class="firstalt">
+          <td align="right" id="upload_poster">上传海报：</td>
+		  <td><span style="float:left; margin-top:5px"><input name="vod_poster" id="vod_poster" type="hidden" size="60" maxlength="255" value="{$vod_poster}" onMouseOver="if(this.value)showpic(event, '{&upload_path}/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_poster" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span><B>770*394(尺寸)</B></td>
+		  <td><img src="{$http_root}{$vod_poster}"></img></td>
+	  </tr>    
         <tr class="firstalt">
-          <td align="right" id="upload_file">上传海报：</td>
-          <td><span style="float:left; margin-top:5px"><input name="vod_pic" id="vod_pic" type="hidden" size="60" maxlength="255" value="{$vod_pic}" onMouseOver="if(this.value)showpic(event, '{&upload_path}/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_pic" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span></td>
+          <td align="right" id="upload_file">产品图片：</td>
+		  <td><span style="float:left; margin-top:5px"><input name="vod_pic" id="vod_pic" type="hidden" size="60" maxlength="255" value="{$vod_pic}" onMouseOver="if(this.value)showpic(event, '{&upload_path}/'+this.value);" onMouseOut="hiddenpic();" style="height:22px"></span><span style="float:left;margin-top:5px"><iframe src="?s=Admin-Upload-Show-sid-video-fileback-vod_pic" scrolling="no" topmargin="0" width="300" height="28" marginwidth="0" marginheight="0" frameborder="0" align="left"></iframe></span><B>103*136(尺寸)</B></td>
 		  <td><img src="{$http_root}{$vod_pic}"></img></td>
 	  </tr>      
+<tr class="firstalt">
+			<td align="right">热门推荐：</td>
+			<td><input name="vod_hot" value="0" type="radio" <eq name="vod_hot" value="0">checked</eq> />否 <input name="vod_hot" value="1" type="radio" <eq name="vod_hot" value="1">checked</eq> />是  
+			</td>
+		</tr>
         <tr class="firstalt">
 			<td align="right">国家地区：</td><td> <select name="vod_area" style="width:60px;">
           <option value=''>地区</option>
@@ -323,7 +333,7 @@ function showhtml(vodid){
 			<php>$file_arr = explode('|', $vod_file)</php>
 			<td align="right">授权文件：</td><td><input name="vod_file[]" value="1" type="checkbox"  <php> if(in_array(1, $file_arr)) echo "checked=1"</php> />电影公映许可证 <input name="vod_file[]" value="2" type="checkbox"  <php> if(in_array(2, $file_arr)) echo "checked=1"</php> />音像发行许可证  
 				<input name="vod_file[]" value="3" type="checkbox"  <php> if(in_array(3, $file_arr)) echo "checked=1"</php> />引进作品批文  <input name="vod_file[]" value="4" type="checkbox"  <php> if(in_array(4, $file_arr)) echo "checked=1"</php> />中国版权保护中心登记证明
-				<input name="vod_file[]" value="5" type="checkbox"  <php> if(in_array(5, $file_arr)) echo "checked=1"</php>/>音像发行许可证  
+				<input name="vod_file[]" value="5" type="checkbox"  <php> if(in_array(5, $file_arr)) echo "checked=1"</php>/>发行许可证 
 		 </tr>	
 		<tr><td><B>授权情况:</B></td></tr>
 		<tr class="firstalt">
@@ -395,16 +405,8 @@ function showhtml(vodid){
 			</td>
 		</tr>
 		-->
-		<tr class="firstalt">
-			<td align="right">热门推荐：</td>
-			<td><input name="vod_hot" value="0" type="radio" <eq name="vod_hot" value="0">checked</eq> />否 <input name="vod_hot" value="1" type="radio" <eq name="vod_hot" value="1">checked</eq> />是  
-			</td>
-		</tr>
-		<tr class="firstalt">
-			<td align="right">当月推荐：</td>
-			<td><input name="vod_mhot" value="0" type="radio" <eq name="vod_mhot" value="0">checked="true"</eq>/>否 <input name="vod_mhot" value="1" type="radio" <eq name="vod_mhot" value="1">checked="true"</eq> />是  
-			</td>
-		</tr>
+	
+	
 		<!--
         <tbody id="urlmoban" style="display:none;">
         <tr class="firstalt">
@@ -489,10 +491,23 @@ function showhtml(vodid){
 				 $("#yuyan").hide();
                  $("#scjz").text('图文作者：');
 		   }
-	       else if(type_id==7)
+	       else if(type_id==20)
 		   {
 				 $("#gytime").text('首映时间：');
 				 $("#vod_dir").text('栏目名称：');
+		   }
+		   else
+		   {
+				 $("#gytime").text('公映时间：');
+				 $("#vod_dir").text('导演：');
+				 $("#actor").show();
+		         $("#upload_file").text('产品图片：'); 
+				 $("#vod_ac").text('演员：');
+				 $("#jishu").text('集数：');
+				 $("#fzmj").text('分钟/集：');
+				 $("#yuyan").show();
+                 $("#scjz").text('素材介绍：');
+		   
 		   }
 	    }
     );
